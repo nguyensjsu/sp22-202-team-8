@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=LeaderboardScreen
+comment0.text=\n\ Write\ a\ description\ of\ class\ LeaderboardScreen\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=world
+comment1.target=LeaderboardScreen(MyWorld)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ LeaderboardScreen\n
+comment2.params=
+comment2.target=void\ active()
+comment3.params=
+comment3.target=void\ act()
+numComments=4
