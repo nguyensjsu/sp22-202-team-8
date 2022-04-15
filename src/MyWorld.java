@@ -54,9 +54,13 @@ public class MyWorld extends World implements IStopObserver
     protected void prepare()
     {
         Rocket rocket = new Rocket();
+        Rocket2P rocket2 = new Rocket2P();
         rocket.registerObserver(this);
         rocket.registerObserver(horizontalScrolling);
+        rocket2.registerObserver(this);
+        rocket2.registerObserver(horizontalScrolling);
         addObject(rocket,50,200);
+        addObject(rocket2,50,100);
         addRocks(4); 
     }
     
