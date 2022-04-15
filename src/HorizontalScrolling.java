@@ -6,12 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class horizontalScrolling extends Actor
+public class HorizontalScrolling extends Actor implements IStopObserver
 {
     protected int scrollSpeed = -3;
+    private static boolean isStopped = false;
     
-    public horizontalScrolling()
+    public HorizontalScrolling()
     {
+        this.isStopped = false;
     }
     
     /**
@@ -20,7 +22,13 @@ public class horizontalScrolling extends Actor
      */
     public void act()
     {
-        scrollLeft();
+        if (!isStopped) {
+            scrollLeft();
+        }
+    }
+    
+    public void stop() {
+        this.isStopped = true;
     }
     
     protected void scrollLeft()
@@ -32,7 +40,7 @@ public class horizontalScrolling extends Actor
         }
     }
     
-        public void reset()
+    public void reset()
     {
         int x = getWorld().getWidth() - Greenfoot.getRandomNumber(100);
         int y = Greenfoot.getRandomNumber( getWorld().getHeight() );

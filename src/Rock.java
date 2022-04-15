@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Rock extends horizontalScrolling
+public class Rock extends HorizontalScrolling
 {
     private boolean destroyed = false;
     /**
@@ -16,9 +16,9 @@ public class Rock extends horizontalScrolling
     public void act()
     {
         if (!destroyed) {
-            scrollLeft();
+            super.act();
         } else {
-            reset();
+            super.reset();
             this.destroyed = false;
         }
     }

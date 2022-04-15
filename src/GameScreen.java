@@ -1,40 +1,38 @@
 import greenfoot.*;
 /**
- * Write a description of class GameScreen here.
+ * Write a description of class GameS here.
  * 
- * @author (team 8) 
- * @version (v0.1)
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class GameScreen extends Screen  
+public class GameScreen extends Screen 
 {
-    private Button gameoverButton;
-    private Color gameoverButtonColor;
+
+    private static boolean initialized = false;
     
     /**
-     * Constructor for objects of class GameScreen
-     * 
+     * Constructor for objects of class GameS
      */
     public GameScreen(MyWorld world)
     {
-        super(world, new GreenfootImage("cell.jpg"));
-        
-        gameoverButtonColor = new Color(207, 136, 23);
-        gameoverButton = new Button("GameOver", world.WIDTH/4, world.HEIGHT/8, world, gameoverButtonColor);
-        gameoverButton.setNextScreen(MyWorld.SCREENS.LEADERBOARD);
+        super(world, new GreenfootImage("space.jpg"));
     }
 
+    public static void initialize() {
+        initialized= false;
+    }
     
     public void active()
     {
         super.active();
-        world.addObject(gameoverButton, world.WIDTH/2, world.HEIGHT*3/4);
         act();
     }
-
+    
     public void act()
     {
-        if(Greenfoot.mouseClicked(gameoverButton)){
-            gameoverButton.onClick();
+        if (!initialized) {
+            world.prepare();
+            initialized = true;
         }
     }
 }
