@@ -8,12 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Rock extends horizontalScrolling
 {
+    private boolean destroyed = false;
     /**
      * Act - do whatever the Salmon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        scrollLeft();
+        if (!destroyed) {
+            scrollLeft();
+        } else {
+            reset();
+            this.destroyed = false;
+        }
+    }
+    
+    public void destroyed() {
+        this.destroyed = true;
     }
 }

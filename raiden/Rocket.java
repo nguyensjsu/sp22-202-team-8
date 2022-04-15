@@ -10,12 +10,27 @@ public class Rocket extends Actor
 {
     private int speed = 5;
     private int coolDown = 0;
+    
+    
+    /**
+     * Reference: https://www.greenfoot.org/topics/5092
+     */ 
+    public Rocket() {
+        GreenfootImage image = getImage();  
+        image.scale(50, 40);
+        setImage(image);
+    }
+
     /**
      * Act - do whatever the rocket wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
+        if (isTouching(Rock.class)) {
+            Greenfoot.stop();
+        }
+        
         if ( Greenfoot.isKeyDown("up") )
         {
             setLocation( getX(), getY() - speed );

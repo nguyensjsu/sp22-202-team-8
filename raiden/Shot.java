@@ -20,8 +20,21 @@ public class Shot extends Actor
      */
     public void act()
     {
-        setLocation( getX() + shotSpeed , getY() );
-        if (isAtEdge())
+        if (hitRock()) {
             getWorld().removeObject(this);
+        } else if (isAtEdge()) {
+            getWorld().removeObject(this);
+        } else {
+            setLocation( getX() + shotSpeed , getY() );
+        }
+    }
+    
+    private boolean hitRock() {
+        Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
+        if (theRock != null) {
+            theRock.destroyed();
+            return true;
+        }
+        return false;
     }
 }
