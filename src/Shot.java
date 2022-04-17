@@ -21,6 +21,10 @@ public class Shot extends Actor
     public void act()
     {
         if (hitRock()) {
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Counter counter = myWorld.getCounter();
+            counter.add(10);
             getWorld().removeObject(this);
         } else if (isAtEdge()) {
             getWorld().removeObject(this);

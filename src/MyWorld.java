@@ -8,6 +8,7 @@ import greenfoot.*;
  */
 public class MyWorld extends World implements IStopObserver
 {
+    Counter counter = new Counter();
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
     
@@ -17,7 +18,6 @@ public class MyWorld extends World implements IStopObserver
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
     private HorizontalScrolling horizontalScrolling;
-    
     /**
      * Screens' names
      * 
@@ -47,12 +47,16 @@ public class MyWorld extends World implements IStopObserver
         act();
     }
     
+    public Counter getCounter(){
+        return counter;
+    }
+    
         /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     protected void prepare()
-    {
+    {        
         Rocket rocket = new Rocket();
         Rocket2P rocket2 = new Rocket2P();
         rocket.registerObserver(this);
@@ -62,9 +66,11 @@ public class MyWorld extends World implements IStopObserver
         addObject(rocket,50,200);
         addObject(rocket2,50,100);
         addRocks(4); 
+        
+        addObject(counter,731,31);
     }
     
-        private void addRocks(int number)
+    private void addRocks(int number)
     {
         for(int i = 0; i<number; i++)
             addObject(new Rock(), getWidth()-Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber( getHeight() ) );
@@ -99,6 +105,8 @@ public class MyWorld extends World implements IStopObserver
     public void stop() {
         currentScreen = gameOverScreen;
         currentScreen.active();
+        
+        counter.setValue(0);
     }
     /**
      * A "Act" method in the world activate the currentScreen
