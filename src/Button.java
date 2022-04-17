@@ -6,10 +6,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (team 8) 
  * @version (v0.1)
  */
-public class Button extends Actor
+public class Button extends Actor implements IDisplayComponent
 {
     private String buttonName;
     private int width, height;
+    private int x, y; // location
     private GreenfootImage background;
     private MyWorld.SCREENS nextScreen;
     protected MyWorld world;
@@ -29,6 +30,23 @@ public class Button extends Actor
         background.drawString(buttonName, width / 2 - buttonName.length() * 7, height / 2 + 10);
         setImage(background);
     }
+    
+    public void addSubComponent( IDisplayComponent c ) {
+        // nothing
+    };
+    
+    public void removeSubCompnent( IDisplayComponent c ) {
+        // nothing
+    };
+    
+    public void setLocation(int x, int y) {
+        this.x = x;
+        this.y = y;
+    };
+    
+    public void display() {
+        world.addObject(this, x, y);
+    };
     
     public void setNextScreen(MyWorld.SCREENS nextScreen){
         this.nextScreen = nextScreen;
