@@ -5,10 +5,12 @@
   - Try some code on with Greenfoot
   - Create a score counter to calculate the score
   - Merge score counter to the main game frame
+
 2. What am I planning to work on next?
-
+  - Add different strategies of counting score for the different game mode.
+  - Improve the counter code
 3. What tasks are blocked waiting on another team member?
-
+  - Need to have the higher level or complex game logic to do the different score counting.
 
 ## Week 2 Scrum Report
 1. What tasks did I work on / complete?
