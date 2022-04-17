@@ -41,6 +41,8 @@ public class Counter extends Actor
     public Counter()
     {
         this(new String());
+        GreenfootImage image = getImage();  
+        setImage(image);
     }
 
     /**
