@@ -10,6 +10,8 @@ public class LeaderboardScreen extends Screen
 {
     private Button backToMenuButton;
     private Button tryAgainButton;
+    private Leaderboard leaderboard;
+    private Counter counter;
     private Color buttonColor;
 
     /**
@@ -24,6 +26,7 @@ public class LeaderboardScreen extends Screen
         backToMenuButton.setNextScreen(MyWorld.SCREENS.MENU);
         tryAgainButton = new Button("TryAgain", world.WIDTH/5, world.HEIGHT/8, world, buttonColor);
         tryAgainButton.setNextScreen(MyWorld.SCREENS.GAME);
+        counter = world.getCounter();
     }
 
     public void active()
@@ -32,6 +35,8 @@ public class LeaderboardScreen extends Screen
         
         world.addObject(tryAgainButton, world.WIDTH/3, world.HEIGHT*3/4);
         world.addObject(backToMenuButton, world.WIDTH*2/3, world.HEIGHT*3/4);
+        
+        world.addObject(counter, world.WIDTH/2, world.HEIGHT*1/4);
         act();
     }
 

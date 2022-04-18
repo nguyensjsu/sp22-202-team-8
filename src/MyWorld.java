@@ -9,6 +9,7 @@ import greenfoot.*;
 public class MyWorld extends World implements IStopObserver
 {
     Counter counter = new Counter();
+    Leaderboard leaderboard = new Leaderboard(counter);
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
     
@@ -49,6 +50,10 @@ public class MyWorld extends World implements IStopObserver
     
     public Counter getCounter(){
         return counter;
+    }
+    
+    public Leaderboard getLeaderboard(){
+        return leaderboard;
     }
     
         /**
