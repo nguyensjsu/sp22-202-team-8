@@ -5,7 +5,7 @@
 | Name          | Student ID    |  XP Core Value  |
 | ------------- |---------------| --------------- |
 | BingJiun Miu  |               |                 |
-| Di Chen       | 015905760     |                 |
+| Di Chen       |               |                 |
 | Jing Shu      | 015941146     |  Communication  |
 | Yiyang Yin    |               |                 |
 
