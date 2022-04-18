@@ -2,7 +2,7 @@
 
 ## Team members
 
-| Name          | StudentID     |     XPS Value   |
+| Name          | Student ID    |  XP Core Value  |
 | ------------- |---------------| --------------- |
 | BingJiun Miu  |               |                 |
 | Di Chen       |               |                 |
