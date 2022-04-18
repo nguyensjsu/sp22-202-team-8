@@ -18,6 +18,8 @@ public class MyWorld extends World implements IStopObserver
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
     private HorizontalScrolling horizontalScrolling;
+    
+    private boolean is2p = false;
     /**
      * Screens' names
      * 
@@ -59,13 +61,19 @@ public class MyWorld extends World implements IStopObserver
     {        
         Rocket rocket = new Rocket();
         Rocket2P rocket2 = new Rocket2P();
-        rocket.registerObserver(this);
-        rocket.registerObserver(horizontalScrolling);
-        rocket2.registerObserver(this);
-        rocket2.registerObserver(horizontalScrolling);
+        rocket.registerStopObserver(this);
+        rocket.registerStopObserver(horizontalScrolling);
         addObject(rocket,50,200);
-        addObject(rocket2,50,100);
+        
+        if (is2p) {
+            rocket2.registerObserver(this);
+            rocket2.registerObserver(horizontalScrolling);
+            addObject(rocket2,50,100);
+        }
+        
         addRocks(4); 
+        SinRock s_rock = new SinRock();
+        addObject(s_rock,WIDTH,HEIGHT / 2);
         
         addObject(counter,731,31);
     }
@@ -87,6 +95,7 @@ public class MyWorld extends World implements IStopObserver
             case MENU: currentScreen = menuScreen; break;
             case GAME: {
                 GameScreen.initialize();
+                counter.setValue(0);
                 currentScreen = gameScreen; 
                 break;
             }
@@ -105,8 +114,6 @@ public class MyWorld extends World implements IStopObserver
     public void stop() {
         currentScreen = gameOverScreen;
         currentScreen.active();
-        
-        counter.setValue(0);
     }
     /**
      * A "Act" method in the world activate the currentScreen
