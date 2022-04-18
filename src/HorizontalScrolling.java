@@ -23,7 +23,7 @@ public class HorizontalScrolling extends Actor implements IStopObserver
     public void act()
     {
         if (!isStopped) {
-            scrollLeft();
+            scroll();
         }
     }
     
@@ -31,7 +31,7 @@ public class HorizontalScrolling extends Actor implements IStopObserver
         this.isStopped = true;
     }
     
-    protected void scrollLeft()
+    protected void scroll()
     {
         move( scrollSpeed );
         if ( isAtEdge() )

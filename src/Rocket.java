@@ -67,7 +67,7 @@ public class Rocket extends Actor implements IStopSubject
     }
 
     
-    public void registerObserver(IStopObserver o) {
+    public void registerStopObserver(IStopObserver o) {
         observers.add(o);
     }
     

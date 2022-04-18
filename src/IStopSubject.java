@@ -8,6 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public interface IStopSubject
 {
-    void registerObserver(IStopObserver o);
+    void registerStopObserver(IStopObserver o);
     void notifyGameOverObserver();
 }
