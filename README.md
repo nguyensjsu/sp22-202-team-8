@@ -1,10 +1,13 @@
 # Team Project (Team 8)
 
 ## Team members
-1. BingJiun Miu 
-2. Di Chen
-3. Jing Shu
-4. Yiyang Yin
+
+| Name          | StudentID     |     XPS Value   |
+| ------------- |---------------| --------------- |
+| BingJiun Miu  |               |                 |
+| Di Chen       |               |                 |
+| Jing Shu      | 015941146     |  Communication  |
+| Yiyang Yin    |               |                 |
 
 ## About the project
 
@@ -23,6 +26,7 @@
 
 
 ## Project backlog and chart
+[Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit#gid=0)
 
 
 ## Individual Contributions and team journals
