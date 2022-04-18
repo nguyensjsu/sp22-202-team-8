@@ -31,6 +31,9 @@
 
 ## Individual Contributions and team journals
 [BingJiun Miu's Journal](https://github.com/nguyensjsu/sp22-202-team-8/blob/main/journals/BingJiun%20Miu_Project_Journal.md)
+
 [Di Chen's Journal](https://github.com/nguyensjsu/sp22-202-team-8/blob/main/journals/Di%20Chen_Project_Journal.md)
+
 [Jing Shu's Journal](https://github.com/nguyensjsu/sp22-202-team-8/blob/main/journals/Jing%20Shu_Project_Journal.md)
+
 [Yiyang Yin's Journal](https://github.com/nguyensjsu/sp22-202-team-8/blob/main/journals/Yiyang%20Yin_Project_Journal.md)
