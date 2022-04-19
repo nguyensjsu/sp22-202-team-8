@@ -20,7 +20,8 @@ public class MenuScreen extends Screen implements IDisplayComponent
         components = new ArrayList<>();
         
         startButtonColor = new Color(0, 102, 204);
-        startButton = new Button("Start", world.WIDTH/4, world.HEIGHT/8, world, startButtonColor);
+        startButton = new Button( world);
+        startButton.create("Start", world.WIDTH/4, world.HEIGHT/8,startButtonColor);
         startButton.setLocation(world.WIDTH/2, world.HEIGHT*3/4);
         startButton.setNextScreen(MyWorld.SCREENS.GAME);
         

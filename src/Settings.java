@@ -6,7 +6,6 @@
  */
 public class Settings  
 {
-    private int x;
     private MODE mode;
     
     private static Settings theSettings = null;
