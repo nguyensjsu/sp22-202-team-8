@@ -8,12 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Button extends Glyph 
 {
-    //private String buttonName;
-    //private int width, height;
-    //private int x, y; // location
-    //private GreenfootImage background;
     private MyWorld.SCREENS nextScreen;
-    //protected MyWorld world;
     
     public Button(MyWorld world) {
         super(world);

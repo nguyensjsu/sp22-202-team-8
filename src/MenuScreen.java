@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class MenuScreen extends Screen implements IDisplayComponent
 {
     private Button startButton;
+    private Label screenTitle;
     private Color startButtonColor;
     private final ArrayList<IDisplayComponent> components;
     /**
@@ -21,10 +22,13 @@ public class MenuScreen extends Screen implements IDisplayComponent
         
         startButtonColor = new Color(0, 102, 204);
         startButton = new Button( world);
-        startButton.create("Start", world.WIDTH/4, world.HEIGHT/8,startButtonColor);
+        startButton.create("Start", world.WIDTH/4, world.HEIGHT/8, startButtonColor);
         startButton.setLocation(world.WIDTH/2, world.HEIGHT*3/4);
         startButton.setNextScreen(MyWorld.SCREENS.GAME);
         
+        screenTitle = new Label(world);
+        screenTitle.create("JetSpace", world.WIDTH/2, world.HEIGHT/4, Color.BLUE);
+        screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/4);
     }
     
     public void addSubComponent( IDisplayComponent c ) {
@@ -46,6 +50,7 @@ public class MenuScreen extends Screen implements IDisplayComponent
     public void active()
     {
         super.active();
+        addSubComponent(screenTitle);
         addSubComponent(startButton);
         display();
         act();
