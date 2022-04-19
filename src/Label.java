@@ -33,4 +33,5 @@ public class Label extends Glyph
         img.drawString(text, width / 2 - text.length()*9, height / 2 + 10);
         setImage(img);
     }
+    
 }

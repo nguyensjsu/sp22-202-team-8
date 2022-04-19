@@ -18,6 +18,7 @@ public class MyWorld extends World implements IStopObserver
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
     private HorizontalScrolling horizontalScrolling;
+    private MenuScreenGlyphFactory menuScreenGlyphFactory;
     
     private boolean is2p = false;
     /**
@@ -38,6 +39,8 @@ public class MyWorld extends World implements IStopObserver
     {    
         // Create a new world with WIDTHxHEIGHT cells with a cell size of 1x1 pixels.
         super(WIDTH, HEIGHT, 1); 
+        
+        menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
         // Create screens in MyWorld
         menuScreen = new MenuScreen(this);
         gameScreen = new GameScreen(this);
