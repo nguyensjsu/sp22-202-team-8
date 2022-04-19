@@ -2,8 +2,8 @@ import greenfoot.*;
 /**
  * Write a description of class Glyph here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Team 8) 
+ * @version (v0.1)
  */
 public abstract class Glyph extends Actor implements IDisplayComponent 
 {
@@ -32,9 +32,7 @@ public abstract class Glyph extends Actor implements IDisplayComponent
     public void display(){
         world.addObject(this, x, y);
     };
-    /**
-     * 
-     */
+
     public abstract void create(String text,int width, int height, Color textColor);
 
 }

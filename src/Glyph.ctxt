@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Glyph
-comment0.text=\n\ Write\ a\ description\ of\ class\ Glyph\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Glyph\ here.\n\ \n\ @author\ (Team\ 8)\ \n\ @version\ (v0.1)\n
 comment1.params=world
 comment1.target=Glyph(MyWorld)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Glyph\n
@@ -14,5 +14,4 @@ comment5.params=
 comment5.target=void\ display()
 comment6.params=text\ width\ height\ textColor
 comment6.target=void\ create(java.lang.String,\ int,\ int,\ greenfoot.Color)
-comment6.text=\n\ \n
 numComments=7

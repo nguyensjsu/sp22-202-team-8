@@ -1,12 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Button here.
- * 
- * @author (team 8) 
- * @version (v0.1)
- */
-/**
  * Write a description of class Label here.
  * 
  * @author (your name) 
