@@ -8,12 +8,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class HorizontalScrolling extends Actor implements IStopObserver
 {
-    protected int scrollSpeed = -3;
+    protected static int scrollSpeed;
     private static boolean isStopped = false;
     
     public HorizontalScrolling()
     {
         this.isStopped = false;
+        this.scrollSpeed = -3;
+    }
+    
+    public static int getScrollSpeed() {
+        return scrollSpeed;
+    }
+    
+    public static void setScrollSpeed(int speed) {
+        // maximun movind speed = -6
+        scrollSpeed = Math.max(speed, -6);
     }
     
     /**

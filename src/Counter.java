@@ -30,13 +30,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Neil Brown and Michael Kölling 
  * @version 1.0
  */
-public class Counter extends Actor
+public class Counter extends Actor implements IScoreSubject
 {
     private static final Color transparent = new Color(0,0,0,0);
     private GreenfootImage background;
     private int value;
     private int target;
     private String prefix;
+    
+    private IScoreObserver score_o;
     
     public Counter()
     {
@@ -77,6 +79,10 @@ public class Counter extends Actor
     public void add(int score)
     {
         target += score;
+        // upgrade level after gaining 50 points
+        if (target % 50 == 0) {
+            notifyScoreObserver();
+        }
     }
 
     /**
@@ -123,5 +129,13 @@ public class Counter extends Actor
         image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
                         (image.getHeight()-text.getHeight())/2);
         setImage(image);
+    }
+    
+    public void registerScoreObserver(IScoreObserver o) {
+        this.score_o = o;
+    }
+    
+    public void notifyScoreObserver() {
+        score_o.setNextLevel();
     }
 }

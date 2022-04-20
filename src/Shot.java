@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shot extends Actor
 {
     private Rocket owner;
-    private int shotSpeed = 10;
+    private int shotSpeed = 6;
     
     public Shot(Rocket r) {
         this.owner = r;

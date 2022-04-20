@@ -8,7 +8,7 @@ import greenfoot.*;
  */
 public class MyWorld extends World implements IStopObserver
 {
-    Counter counter = new Counter();
+    Counter counter;
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
     
@@ -21,6 +21,9 @@ public class MyWorld extends World implements IStopObserver
     private MenuScreenGlyphFactory menuScreenGlyphFactory;
     
     private boolean is2p = false;
+    private static MyWorld theMyWorld;
+    private LevelStateMachine sm;
+    
     /**
      * Screens' names
      * 
@@ -46,7 +49,13 @@ public class MyWorld extends World implements IStopObserver
         gameScreen = new GameScreen(this);
         gameOverScreen = new GameOverScreen(this);
         leaderboardScreen = new LeaderboardScreen(this);
+        
         horizontalScrolling = new HorizontalScrolling();
+        sm = new LevelStateMachine(this);
+        counter = new Counter();
+        counter.registerScoreObserver(sm);
+        
+        theMyWorld = this;
         
         this.currentScreen = menuScreen;
         act();
@@ -74,14 +83,12 @@ public class MyWorld extends World implements IStopObserver
             addObject(rocket2,50,100);
         }
         
-        addRocks(4); 
-        SinRock s_rock = new SinRock();
-        addObject(s_rock,WIDTH,HEIGHT / 2);
+        sm.setLevel1();
         
         addObject(counter,731,31);
     }
     
-    private void addRocks(int number)
+    protected void addRocks(int number)
     {
         for(int i = 0; i<number; i++)
             addObject(new Rock(), getWidth()-Greenfoot.getRandomNumber(200), Greenfoot.getRandomNumber( getHeight() ) );

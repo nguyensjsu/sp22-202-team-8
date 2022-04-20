@@ -43,8 +43,4 @@ public class SinRock extends Rock
             this.destroyed = false;
         }
     }
-    
-    public void destroyed() {
-        this.destroyed = true;
-    }
 }
