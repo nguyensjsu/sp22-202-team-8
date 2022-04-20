@@ -33,8 +33,8 @@ public class MenuScreenGlyphFactory implements IGlyphFactory
     public void CreateButton() {
         startButtonColor = new Color(0, 102, 204);
         startButton = new Button( world);
-        startButton.create("Start", world.WIDTH/4, world.HEIGHT/8, startButtonColor);
-        startButton.setLocation(world.WIDTH/2, world.HEIGHT*3/4);
+        startButton.create("Start", world.WIDTH/4, world.HEIGHT/10, startButtonColor);
+        startButton.setLocation(world.WIDTH/2, world.HEIGHT*4/5);
         startButton.setNextScreen(MyWorld.SCREENS.GAME);
     
     }
@@ -42,7 +42,7 @@ public class MenuScreenGlyphFactory implements IGlyphFactory
     public void CreateLabel() {
         screenTitle = new Label(world);
         screenTitle.create("JetSpace", world.WIDTH/2, world.HEIGHT/4, Color.BLUE);
-        screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/4);
+        screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/6);
     
     }
 }

@@ -18,16 +18,18 @@ public class MyWorld extends World implements IStopObserver
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
     private HorizontalScrolling horizontalScrolling;
+    
     private MenuScreenGlyphFactory menuScreenGlyphFactory;
+    private LeaderboardScreenGlyphFactory lbSGlyphFactory;
+    private GameOverScreenGlyphFactory gOSGlyphFactory;
     
     private boolean is2p = false;
-    private static MyWorld theMyWorld;
     private LevelStateMachine sm;
     
-    /**
-     * Screens' names
+    private static MyWorld me;
+     /* Screens' names
      * 
-     */
+     */ 
     public enum SCREENS 
     {
         MENU,
@@ -40,10 +42,14 @@ public class MyWorld extends World implements IStopObserver
      */
     public MyWorld()
     {    
+        
         // Create a new world with WIDTHxHEIGHT cells with a cell size of 1x1 pixels.
         super(WIDTH, HEIGHT, 1); 
         
+        // Create GlyphFactory for screens
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
+        lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
+        gOSGlyphFactory = new GameOverScreenGlyphFactory(this);
         // Create screens in MyWorld
         menuScreen = new MenuScreen(this);
         gameScreen = new GameScreen(this);
@@ -59,6 +65,8 @@ public class MyWorld extends World implements IStopObserver
         
         this.currentScreen = menuScreen;
         act();
+        if(me != null)Greenfoot.setWorld(me);
+        else me = this;
     }
     
     public Counter getCounter(){
