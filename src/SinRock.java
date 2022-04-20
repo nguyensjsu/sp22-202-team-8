@@ -21,9 +21,9 @@ public class SinRock extends Rock
         this.d = 0.0;
         this.y = 600;
         this.speed = 3;
+        setImage(new GreenfootImage("asteroid.png"));
         GreenfootImage image = getImage();  
         image.scale(60, 50);
-        setImage(image);
     }
     
     @Override
