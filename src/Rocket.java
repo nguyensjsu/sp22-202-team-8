@@ -61,7 +61,7 @@ public class Rocket extends Actor implements IStopSubject
                 coolDown--;
             } else if (Greenfoot.isKeyDown("enter")) {
                 getWorld().addObject(new Shot(this), getX(), getY());
-                coolDown = 50;
+                coolDown = 30;
             }
         }
     }
