@@ -24,6 +24,8 @@ public class MyWorld extends World implements IStopObserver
     private GameOverScreenGlyphFactory gOSGlyphFactory;
     
     private boolean is2p = false;
+    
+    private static MyWorld me;
     /**
      * Screens' names
      * 
@@ -40,8 +42,10 @@ public class MyWorld extends World implements IStopObserver
      */
     public MyWorld()
     {    
+        
         // Create a new world with WIDTHxHEIGHT cells with a cell size of 1x1 pixels.
         super(WIDTH, HEIGHT, 1); 
+        
         // Create GlyphFactory for screens
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
         lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
@@ -55,6 +59,8 @@ public class MyWorld extends World implements IStopObserver
         
         this.currentScreen = menuScreen;
         act();
+        if(me != null)Greenfoot.setWorld(me);
+        else me = this;
     }
     
     public Counter getCounter(){
