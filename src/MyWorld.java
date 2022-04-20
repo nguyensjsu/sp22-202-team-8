@@ -61,8 +61,6 @@ public class MyWorld extends World implements IStopObserver
         counter = new Counter();
         counter.registerScoreObserver(sm);
         
-        theMyWorld = this;
-        
         this.currentScreen = menuScreen;
         act();
         if(me != null)Greenfoot.setWorld(me);
