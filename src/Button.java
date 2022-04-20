@@ -6,47 +6,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (team 8) 
  * @version (v0.1)
  */
-public class Button extends Actor implements IDisplayComponent
+public class Button extends Glyph 
 {
-    private String buttonName;
-    private int width, height;
-    private int x, y; // location
-    private GreenfootImage background;
     private MyWorld.SCREENS nextScreen;
-    protected MyWorld world;
     
-    public Button(String name,int width, int height, MyWorld world, Color color) {
-        this.buttonName = name;
-        this.width = width;
-        this.height = height;
-        this.world = world;
-        
-        background = new GreenfootImage(width, height);
-        background.setColor(color);
-        background.fill();
-        
-        background.setFont(new Font(25)); 
-        background.setColor(Color.WHITE);
-        background.drawString(buttonName, width / 2 - buttonName.length() * 7, height / 2 + 10);
-        setImage(background);
+    public Button(MyWorld world) {
+        super(world);
     }
     
-    public void addSubComponent( IDisplayComponent c ) {
-        // nothing
-    };
+    public void create(String text,int width, int height, Color backgroundColor) {
     
-    public void removeSubCompnent( IDisplayComponent c ) {
-        // nothing
-    };
-    
-    public void setLocation(int x, int y) {
-        this.x = x;
-        this.y = y;
-    };
-    
-    public void display() {
-        world.addObject(this, x, y);
-    };
+        img = new GreenfootImage(width, height);
+        img.setColor(backgroundColor);
+        img.fill();
+        
+        img.setFont(new Font(25));
+        img.setColor(Color.WHITE);
+        img.drawString(text, width / 2 - text.length() * 7, height / 2 + 10);
+        setImage(img);
+    }
     
     public void setNextScreen(MyWorld.SCREENS nextScreen){
         this.nextScreen = nextScreen;

@@ -8,8 +8,7 @@ import java.util.ArrayList;
  */
 public class MenuScreen extends Screen implements IDisplayComponent
 {
-    private Button startButton;
-    private Color startButtonColor;
+    private MenuScreenGlyphFactory menuScreenGlyphFactory; 
     private final ArrayList<IDisplayComponent> components;
     /**
      * Constructor for objects of class MenuScreen
@@ -18,12 +17,7 @@ public class MenuScreen extends Screen implements IDisplayComponent
     {
         super(world, new GreenfootImage("bluerock.jpg"));
         components = new ArrayList<>();
-        
-        startButtonColor = new Color(0, 102, 204);
-        startButton = new Button("Start", world.WIDTH/4, world.HEIGHT/8, world, startButtonColor);
-        startButton.setLocation(world.WIDTH/2, world.HEIGHT*3/4);
-        startButton.setNextScreen(MyWorld.SCREENS.GAME);
-        
+        menuScreenGlyphFactory = MenuScreenGlyphFactory.getInstance(world);
     }
     
     public void addSubComponent( IDisplayComponent c ) {
@@ -45,15 +39,16 @@ public class MenuScreen extends Screen implements IDisplayComponent
     public void active()
     {
         super.active();
-        addSubComponent(startButton);
+        addSubComponent(menuScreenGlyphFactory.screenTitle);
+        addSubComponent(menuScreenGlyphFactory.startButton);
         display();
         act();
     }
 
     public void act()
     {
-        if(Greenfoot.mouseClicked(startButton)){
-               startButton.onClick();
+        if(Greenfoot.mouseClicked(menuScreenGlyphFactory.startButton)){
+               menuScreenGlyphFactory.startButton.onClick();
         }
     }
 }

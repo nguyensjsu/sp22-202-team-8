@@ -19,7 +19,8 @@ public class GameOverScreen extends Screen
         super(world, new GreenfootImage("space.jpg"));
         
         gameoverButtonColor = new Color(207, 136, 23);
-        gameoverButton = new Button("GameOver", world.WIDTH/4, world.HEIGHT/8, world, gameoverButtonColor);
+        gameoverButton = new Button(world);
+        gameoverButton.create("GameOver", world.WIDTH/4, world.HEIGHT/8,gameoverButtonColor);
         gameoverButton.setNextScreen(MyWorld.SCREENS.LEADERBOARD);
     }
 

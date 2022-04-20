@@ -20,9 +20,11 @@ public class LeaderboardScreen extends Screen
         super(world, new GreenfootImage("sandstone.jpg"));
         
         buttonColor = new Color(165, 165, 165);
-        backToMenuButton = new Button("Back", world.WIDTH/5, world.HEIGHT/8, world, buttonColor);
+        backToMenuButton = new Button(world);
+        backToMenuButton.create("Back", world.WIDTH/5, world.HEIGHT/8,buttonColor); 
         backToMenuButton.setNextScreen(MyWorld.SCREENS.MENU);
-        tryAgainButton = new Button("TryAgain", world.WIDTH/5, world.HEIGHT/8, world, buttonColor);
+        tryAgainButton = new Button(world);
+        tryAgainButton.create("TryAgain", world.WIDTH/5, world.HEIGHT/8,buttonColor); 
         tryAgainButton.setNextScreen(MyWorld.SCREENS.GAME);
     }
 
