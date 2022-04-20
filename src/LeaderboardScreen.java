@@ -10,9 +10,6 @@ public class LeaderboardScreen extends Screen implements IDisplayComponent
 {
     private LeaderboardScreenGlyphFactory lbGlyphFactory; 
     private final ArrayList<IDisplayComponent> components;
-    //private Button backToMenuButton;
-    //private Button tryAgainButton;
-    //private Color buttonColor;
 
     /**
      * Constructor for objects of class LeaderboardScreen
@@ -22,13 +19,6 @@ public class LeaderboardScreen extends Screen implements IDisplayComponent
         super(world, new GreenfootImage("sandstone.jpg"));
         components = new ArrayList<>();
         lbGlyphFactory = LeaderboardScreenGlyphFactory.getInstance(world);
-        //buttonColor = new Color(165, 165, 165);
-        //backToMenuButton = new Button(world);
-        //backToMenuButton.create("Back", world.WIDTH/5, world.HEIGHT/8,buttonColor); 
-        //backToMenuButton.setNextScreen(MyWorld.SCREENS.MENU);
-        //tryAgainButton = new Button(world);
-        //tryAgainButton.create("TryAgain", world.WIDTH/5, world.HEIGHT/8,buttonColor); 
-        //tryAgainButton.setNextScreen(MyWorld.SCREENS.GAME);
     }
     
     public void addSubComponent( IDisplayComponent c ) {

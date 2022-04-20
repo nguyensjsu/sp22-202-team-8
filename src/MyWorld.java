@@ -21,6 +21,7 @@ public class MyWorld extends World implements IStopObserver
     
     private MenuScreenGlyphFactory menuScreenGlyphFactory;
     private LeaderboardScreenGlyphFactory lbSGlyphFactory;
+    private GameOverScreenGlyphFactory gOSGlyphFactory;
     
     private boolean is2p = false;
     /**
@@ -44,6 +45,7 @@ public class MyWorld extends World implements IStopObserver
         // Create GlyphFactory for screens
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
         lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
+        gOSGlyphFactory = new GameOverScreenGlyphFactory(this);
         // Create screens in MyWorld
         menuScreen = new MenuScreen(this);
         gameScreen = new GameScreen(this);

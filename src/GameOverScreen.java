@@ -8,8 +8,6 @@ import java.util.ArrayList;
  */
 public class GameOverScreen extends Screen implements IDisplayComponent 
 {
-    //private Button gameoverButton;
-    //private Color gameoverButtonColor;
     private GameOverScreenGlyphFactory gOSGlyphFactory; 
     private final ArrayList<IDisplayComponent> components;
     /**
@@ -22,10 +20,7 @@ public class GameOverScreen extends Screen implements IDisplayComponent
         
         components = new ArrayList<>();
         gOSGlyphFactory = GameOverScreenGlyphFactory.getInstance(world);
-        //gameoverButtonColor = new Color(207, 136, 23);
-        //gameoverButton = new Button(world);
-        //gameoverButton.create("GameOver", world.WIDTH/4, world.HEIGHT/10,gameoverButtonColor);
-        //gameoverButton.setNextScreen(MyWorld.SCREENS.LEADERBOARD);
+
     }
 
     public void addSubComponent( IDisplayComponent c ) {
@@ -66,7 +61,6 @@ public class GameOverScreen extends Screen implements IDisplayComponent
         }
         if(Greenfoot.mouseClicked(gOSGlyphFactory.tryAgainButton)){
             gOSGlyphFactory.tryAgainButton.onClick();
-            //Greenfoot.start();
         } 
     }
 }
