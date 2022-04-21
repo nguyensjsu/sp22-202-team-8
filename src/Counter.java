@@ -13,6 +13,7 @@ public class Counter extends Actor implements IScoreSubject
     private GreenfootImage background;
     private int value;
     private int target;
+    private int level = 50;
     private String prefix;
     
     private IScoreObserver score_o;
@@ -76,8 +77,9 @@ public class Counter extends Actor implements IScoreSubject
         target = newValue;
         value = newValue;
         updateImage();
-        if (target % 50 == 0 && target!= 0) {
+        if (target >= level ) {
             notifyScoreObserver();
+            level += 50;
         }
     }
     
