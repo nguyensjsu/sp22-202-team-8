@@ -16,10 +16,12 @@ public class Counter extends Actor implements IScoreSubject
     private String prefix;
     
     private IScoreObserver score_o;
+    private int levelTracker;
     
     public Counter()
     {
         this(new String());
+        levelTracker = 50;
     }
 
     /**
@@ -76,10 +78,16 @@ public class Counter extends Actor implements IScoreSubject
         target = newValue;
         value = newValue;
         updateImage();
-        if (target % 50 == 0 && target!= 0) {
+        if (newValue == 0) {
+            levelTracker = 50;
+        }
+        
+        if (value >= levelTracker) {
             notifyScoreObserver();
+            levelTracker += 50;
         }
     }
+    
     
     /**
      * Sets a text prefix that should be displayed before
