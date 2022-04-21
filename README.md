@@ -5,7 +5,7 @@
 | Name          | Student ID    |  XP Core Value  |
 | ------------- |---------------| --------------- |
 | BingJiun Miu  | 015235233     |  Feedback       |
-| Di Chen       | 015905760     |  Courage        |
+| Di Chen       | 015905760     |  Simplicity     |
 | Jing Shu      | 015941146     |  Communication  |
 | Yiyang Yin    |               |                 |
 
