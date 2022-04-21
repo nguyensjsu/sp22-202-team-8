@@ -23,6 +23,7 @@
 
 3. What tasks are blocked waiting on another team member?
 
+4. XP Core Values - Feedback
 
 ## Week 3 Scrum Report
 1. What tasks did I work on / complete?
@@ -31,6 +32,7 @@
 
 3. What tasks are blocked waiting on another team member?
 
+4. XP Core Values - Feedback
 
 ## Week 4 Scrum Report
 1. What tasks did I work on / complete?
@@ -39,3 +41,4 @@
 
 3. What tasks are blocked waiting on another team member?
 
+4. XP Core Values - Feedback
