@@ -9,11 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shot extends Actor
 {
     private Rocket owner;
-    private int shotSpeed = 6;
+    private int shotSpeed = 10;
+    private boolean Rockhit = false;
+    private boolean SinRockhit = false;
     
     public Shot(Rocket r) {
         this.owner = r;
     }
+    
     /**
      * Act - do whatever the Shot wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,7 +27,16 @@ public class Shot extends Actor
             World world = getWorld();
             MyWorld myWorld = (MyWorld)world;
             Counter counter = myWorld.getCounter();
-            counter.add(10);
+            if(Rockhit){
+                ScoreContext context = new ScoreContext(new OperationHitRock());
+                int sum = context.executeStrategy(counter.getValue());
+                counter.setValue(sum);
+            }
+            else if (SinRockhit){
+                ScoreContext context = new ScoreContext(new OperationHitSinRock());
+                int sum = context.executeStrategy(counter.getValue());
+                counter.setValue(sum);
+            }
             getWorld().removeObject(this);
         } else if (isAtEdge()) {
             getWorld().removeObject(this);
@@ -35,7 +47,15 @@ public class Shot extends Actor
     
     private boolean hitRock() {
         Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
-        if (theRock != null) {
+        SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
+        
+        if (theSinRock != null) {
+            SinRockhit = true;
+            theSinRock.destroyed();
+            return true;
+        }
+        else if (theRock != null) {
+            Rockhit = true;
             theRock.destroyed();
             return true;
         }
