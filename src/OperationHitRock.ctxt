@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=OperationHitRock
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ OperationHitRock\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ OperationHitRock\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=num
 comment1.target=int\ doOperation(int)
 numComments=2

@@ -13,14 +13,15 @@ public class Counter extends Actor implements IScoreSubject
     private GreenfootImage background;
     private int value;
     private int target;
-    private int level = 50;
     private String prefix;
     
     private IScoreObserver score_o;
+    private int levelTracker;
     
     public Counter()
     {
         this(new String());
+        levelTracker = 50;
     }
 
     /**
@@ -51,17 +52,6 @@ public class Counter extends Actor implements IScoreSubject
     }
 
     /**
-     * Add a new score to the current counter value.  This will animate
-     * the counter over consecutive frames until it reaches the new value.
-     */
-    /* Using Startegy instead of this
-    public void add(int score)
-    {
-        target += score;
-        // upgrade level after gaining 50 points
-    }
-    */
-    /**
      * Return the current counter value.
      */
     public int getValue()
@@ -77,11 +67,19 @@ public class Counter extends Actor implements IScoreSubject
         target = newValue;
         value = newValue;
         updateImage();
-        if (target >= level ) {
+
+        // reset level when game is reset
+        if (newValue == 0) {
+            levelTracker = 50;
+        }
+        
+        // after gaining every 50 points notify observer
+        if (value >= levelTracker) {
             notifyScoreObserver();
-            level += 50;
+            levelTracker += 50;
         }
     }
+    
     
     /**
      * Sets a text prefix that should be displayed before
