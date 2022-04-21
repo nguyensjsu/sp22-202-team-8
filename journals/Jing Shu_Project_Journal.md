@@ -15,6 +15,9 @@
 
 None
 
+4. XP Core Value: Communication
+We did a weekly meeting on Monday to discuss what tasks we should do and everyone picked one component they're interested in this week. We talked about the progress through Wechat. On Saturday after the class, we sat together to talk about the progress and did the demo we implemented so far.
+
 ## Week 2 Scrum Report
 1. What tasks did I work on / complete?
 
