@@ -52,17 +52,6 @@ public class Counter extends Actor implements IScoreSubject
     }
 
     /**
-     * Add a new score to the current counter value.  This will animate
-     * the counter over consecutive frames until it reaches the new value.
-     */
-    /* Using Startegy instead of this
-    public void add(int score)
-    {
-        target += score;
-        // upgrade level after gaining 50 points
-    }
-    */
-    /**
      * Return the current counter value.
      */
     public int getValue()
@@ -78,10 +67,13 @@ public class Counter extends Actor implements IScoreSubject
         target = newValue;
         value = newValue;
         updateImage();
+
+        // reset level when game is reset
         if (newValue == 0) {
             levelTracker = 50;
         }
         
+        // after gaining every 50 points notify observer
         if (value >= levelTracker) {
             notifyScoreObserver();
             levelTracker += 50;
