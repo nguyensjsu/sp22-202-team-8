@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class LeaderboardScreen extends Screen implements IDisplayComponent
-{
+{   
     private LeaderboardScreenGlyphFactory lbGlyphFactory; 
     private final ArrayList<IDisplayComponent> components;
 
@@ -19,6 +19,7 @@ public class LeaderboardScreen extends Screen implements IDisplayComponent
         super(world, new GreenfootImage("sandstone.jpg"));
         components = new ArrayList<>();
         lbGlyphFactory = LeaderboardScreenGlyphFactory.getInstance(world);
+    
     }
     
     public void addSubComponent( IDisplayComponent c ) {

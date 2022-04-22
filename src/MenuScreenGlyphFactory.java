@@ -7,8 +7,8 @@ import greenfoot.*;
  */
 public class MenuScreenGlyphFactory implements IGlyphFactory
 {
-    public Button startButton;
-    public Label screenTitle;
+    public static Button startButton;
+    public static Label screenTitle;
     private Color startButtonColor;
     private static MenuScreenGlyphFactory menuScreenGlyphFactory = null;
     private MyWorld world;
@@ -45,4 +45,5 @@ public class MenuScreenGlyphFactory implements IGlyphFactory
         screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/6);
     
     }
+    
 }

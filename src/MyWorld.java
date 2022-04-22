@@ -42,10 +42,8 @@ public class MyWorld extends World implements IStopObserver
      */
     public MyWorld()
     {    
-        
         // Create a new world with WIDTHxHEIGHT cells with a cell size of 1x1 pixels.
-        super(WIDTH, HEIGHT, 1); 
-        
+        super(WIDTH, HEIGHT, 1);    
         // Create GlyphFactory for screens
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
         lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
@@ -61,10 +59,8 @@ public class MyWorld extends World implements IStopObserver
         counter = new Counter();
         counter.registerScoreObserver(sm);
         
-        this.currentScreen = menuScreen;
-        act();
-        if(me != null)Greenfoot.setWorld(me);
-        else me = this;
+        setNextScreen(SCREENS.MENU);
+        Greenfoot.start();
     }
     
     public Counter getCounter(){
@@ -106,7 +102,9 @@ public class MyWorld extends World implements IStopObserver
      */
     public void setNextScreen(SCREENS screen)
     {
-        currentScreen.clean();
+        if(currentScreen !=null)
+            currentScreen.clean();
+            
         switch(screen) {
             case MENU: currentScreen = menuScreen; break;
             case GAME: {
