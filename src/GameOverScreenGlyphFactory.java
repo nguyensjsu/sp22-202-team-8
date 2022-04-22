@@ -7,9 +7,9 @@ import greenfoot.*;
  */
 public class GameOverScreenGlyphFactory implements IGlyphFactory  
 {
-    public Label screenTitle;
-    public Button tryAgainButton;
-    public Button leaderboardButton;
+    public static Label screenTitle;
+    public static Button tryAgainButton;
+    public static Button leaderboardButton;
     private Color tryAgainButtonColor;
     private Color leaderboardButtonColor;
     private Color screenTitleColor;
@@ -46,6 +46,7 @@ public class GameOverScreenGlyphFactory implements IGlyphFactory
         leaderboardButton.create("Leaderboard", world.WIDTH/4, world.HEIGHT/10,leaderboardButtonColor);
         leaderboardButton.setLocation(world.WIDTH*2/3, world.HEIGHT*3/4);
         leaderboardButton.setNextScreen(MyWorld.SCREENS.LEADERBOARD);
+       
     }
     
     public void CreateLabel() {
@@ -53,5 +54,6 @@ public class GameOverScreenGlyphFactory implements IGlyphFactory
         screenTitleColor = Color.ORANGE;
         screenTitle.create("Game Over", world.WIDTH/2, world.HEIGHT/4, screenTitleColor);
         screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/3);
+
     }
 }

@@ -8,6 +8,10 @@ import java.util.ArrayList;
  */
 public class MenuScreen extends Screen implements IDisplayComponent
 {
+    private Button startButton;
+    private Label screenTitle;
+    private Color startButtonColor;
+    
     private MenuScreenGlyphFactory menuScreenGlyphFactory; 
     private final ArrayList<IDisplayComponent> components;
     /**
@@ -18,6 +22,9 @@ public class MenuScreen extends Screen implements IDisplayComponent
         super(world, new GreenfootImage("bluerock.jpg"));
         components = new ArrayList<>();
         menuScreenGlyphFactory = MenuScreenGlyphFactory.getInstance(world);
+        startButton = menuScreenGlyphFactory.startButton;
+        screenTitle = menuScreenGlyphFactory.screenTitle;
+
     }
     
     public void addSubComponent( IDisplayComponent c ) {
