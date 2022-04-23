@@ -15,6 +15,7 @@ public class MyWorld extends World implements IStopObserver
     private Screen currentScreen;
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
+    private Leveltext leveltext;
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
     private HorizontalScrolling horizontalScrolling;
@@ -57,6 +58,7 @@ public class MyWorld extends World implements IStopObserver
         horizontalScrolling = new HorizontalScrolling();
         sm = new LevelStateMachine(this);
         counter = new Counter();
+        leveltext = new Leveltext();
         counter.registerScoreObserver(sm);
         
         setNextScreen(SCREENS.MENU);
@@ -87,6 +89,7 @@ public class MyWorld extends World implements IStopObserver
         
         sm.setLevel1();
         
+        addObject(leveltext,402,28);
         addObject(counter,731,31);
     }
     
