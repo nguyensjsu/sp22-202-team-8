@@ -7,7 +7,7 @@
 | BingJiun Miu  | 015235233     |  Feedback       |
 | Di Chen       | 015905760     |  Simplicity     |
 | Jing Shu      | 015941146     |  Communication  |
-| Yiyang Yin    |               |                 |
+| Yiyang Yin    | 015973217     |  Courage        |
 
 ## About the project
 
