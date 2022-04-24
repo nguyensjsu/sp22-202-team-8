@@ -10,6 +10,9 @@ public class MenuScreenGlyphFactory implements IGlyphFactory
     public static Button startButton;
     public static Label screenTitle;
     private Color startButtonColor;
+    public static Mode onePlayerMode;
+    public static Mode twoPlayerMode;
+    
     private static MenuScreenGlyphFactory menuScreenGlyphFactory = null;
     private MyWorld world;
     /**
@@ -20,6 +23,7 @@ public class MenuScreenGlyphFactory implements IGlyphFactory
         this.world = world;
         CreateButton();
         CreateLabel();
+        CreateMode();
     }
 
     public synchronized static MenuScreenGlyphFactory getInstance(MyWorld world) {
@@ -44,6 +48,13 @@ public class MenuScreenGlyphFactory implements IGlyphFactory
         screenTitle.create("JetSpace", world.WIDTH/2, world.HEIGHT/4, Color.BLUE);
         screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/6);
     
+    }
+    
+    public void CreateMode() {
+        onePlayerMode = new Mode(world);
+        onePlayerMode.create("OnePlayer", world.WIDTH/4, world.HEIGHT/8, Color.RED);
+        onePlayerMode.setLocation(world.WIDTH*3/8, world.HEIGHT/2);
+        onePlayerMode.setMode(Settings.MODE.ONE_PLAYER);
     }
     
 }

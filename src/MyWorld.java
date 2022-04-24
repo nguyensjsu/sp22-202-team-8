@@ -23,6 +23,7 @@ public class MyWorld extends World implements IStopObserver
     private LeaderboardScreenGlyphFactory lbSGlyphFactory;
     private GameOverScreenGlyphFactory gOSGlyphFactory;
     
+    private Settings settings;
     private boolean is2p = false;
     private LevelStateMachine sm;
     
@@ -53,6 +54,8 @@ public class MyWorld extends World implements IStopObserver
         gameScreen = new GameScreen(this);
         gameOverScreen = new GameOverScreen(this);
         leaderboardScreen = new LeaderboardScreen(this);
+        
+        settings = new Settings();
         
         horizontalScrolling = new HorizontalScrolling();
         sm = new LevelStateMachine(this);
