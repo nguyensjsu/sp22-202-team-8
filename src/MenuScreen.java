@@ -10,7 +10,8 @@ public class MenuScreen extends Screen implements IDisplayComponent
 {
     private Button startButton;
     private Label screenTitle;
-    private Color startButtonColor;
+    private Mode onePlayerMode;
+    private Mode twoPlayerMode;
     
     private MenuScreenGlyphFactory menuScreenGlyphFactory; 
     private final ArrayList<IDisplayComponent> components;
@@ -24,7 +25,8 @@ public class MenuScreen extends Screen implements IDisplayComponent
         menuScreenGlyphFactory = MenuScreenGlyphFactory.getInstance(world);
         startButton = menuScreenGlyphFactory.startButton;
         screenTitle = menuScreenGlyphFactory.screenTitle;
-
+        onePlayerMode = menuScreenGlyphFactory.onePlayerMode;
+        twoPlayerMode = menuScreenGlyphFactory.twoPlayerMode;
     }
     
     public void addSubComponent( IDisplayComponent c ) {
@@ -48,6 +50,8 @@ public class MenuScreen extends Screen implements IDisplayComponent
         super.active();
         addSubComponent(menuScreenGlyphFactory.screenTitle);
         addSubComponent(menuScreenGlyphFactory.startButton);
+        addSubComponent(menuScreenGlyphFactory.onePlayerMode);
+        addSubComponent(menuScreenGlyphFactory.twoPlayerMode);
         display();
         act();
     }
@@ -56,6 +60,14 @@ public class MenuScreen extends Screen implements IDisplayComponent
     {
         if(Greenfoot.mouseClicked(menuScreenGlyphFactory.startButton)){
                menuScreenGlyphFactory.startButton.onClick();
+        }
+        if(Greenfoot.mouseClicked(menuScreenGlyphFactory.onePlayerMode)){
+               menuScreenGlyphFactory.onePlayerMode.onClick();
+               menuScreenGlyphFactory.twoPlayerMode.unClick();
+        }
+        if(Greenfoot.mouseClicked(menuScreenGlyphFactory.twoPlayerMode)){
+               menuScreenGlyphFactory.twoPlayerMode.onClick();
+               menuScreenGlyphFactory.onePlayerMode.unClick();
         }
     }
 }

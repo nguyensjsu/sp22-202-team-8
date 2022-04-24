@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Mode
+comment0.text=\n\ Write\ a\ description\ of\ class\ Label\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=world
+comment1.target=Mode(MyWorld)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Mode\n
+comment2.params=text\ width\ height\ textColor
+comment2.target=void\ create(java.lang.String,\ int,\ int,\ greenfoot.Color)
+comment3.params=mode
+comment3.target=void\ setMode(Settings.MODE)
+comment4.params=
+comment4.target=void\ onClick()
+comment5.params=
+comment5.target=void\ unClick()
+numComments=6
