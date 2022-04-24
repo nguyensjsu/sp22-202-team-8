@@ -10,6 +10,7 @@ public class Mode extends Glyph
 {
     private Settings settings;
     private Settings.MODE mode;
+    private static final GreenfootSound clickSound = new GreenfootSound("select-click.wav");
     /**
      * Constructor for objects of class Mode
      */
@@ -20,9 +21,9 @@ public class Mode extends Glyph
     public void create(String text, int width, int height, Color textColor) {
     
         img = new GreenfootImage(width, height);
-        img.setFont(new Font(20));
+        img.setFont(new Font( true, true , 20));
         img.setColor(textColor);
-        img.drawString(text, width / 2 - text.length()*9, height / 2 + 10);
+        img.drawString(text, width / 2 - text.length()*5, height / 2 + 10);
         setImage(img);
     }
     
@@ -33,5 +34,13 @@ public class Mode extends Glyph
     public void onClick() {
         settings = Settings.getInstance();
         settings.setPlayMode(mode);
+        clickSound.play();
+        img.setTransparency(150);
+        setImage(img);
+    }
+    
+    public void unClick() {
+        img.setTransparency(255);
+        setImage(img);
     }
 }

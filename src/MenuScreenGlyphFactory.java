@@ -55,6 +55,11 @@ public class MenuScreenGlyphFactory implements IGlyphFactory
         onePlayerMode.create("OnePlayer", world.WIDTH/4, world.HEIGHT/8, Color.RED);
         onePlayerMode.setLocation(world.WIDTH*3/8, world.HEIGHT/2);
         onePlayerMode.setMode(Settings.MODE.ONE_PLAYER);
+        
+        twoPlayerMode = new Mode(world);
+        twoPlayerMode.create("TwoPlayer", world.WIDTH/4, world.HEIGHT/8, Color.RED);
+        twoPlayerMode.setLocation(world.WIDTH*5/8, world.HEIGHT/2);
+        twoPlayerMode.setMode(Settings.MODE.TWO_PLAYER);
     }
     
 }

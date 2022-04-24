@@ -24,7 +24,7 @@ public class MyWorld extends World implements IStopObserver
     private GameOverScreenGlyphFactory gOSGlyphFactory;
     
     private Settings settings;
-    private boolean is2p = false;
+    //private boolean is2p = false;
     private LevelStateMachine sm;
     
     private static MyWorld me;
@@ -82,7 +82,8 @@ public class MyWorld extends World implements IStopObserver
         rocket.registerStopObserver(horizontalScrolling);
         addObject(rocket,50,200);
         
-        if (is2p) {
+        settings = Settings.getInstance();
+        if (settings.getPlayMode() == Settings.MODE.TWO_PLAYER) {
             rocket2.registerObserver(this);
             rocket2.registerObserver(horizontalScrolling);
             addObject(rocket2,50,100);
