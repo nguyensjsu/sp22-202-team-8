@@ -8,7 +8,6 @@ XP Core Value: Simplicity
 - Added support for 2 players 
 2. What am I planning to work on next?
 - Level control system
-- Add buff/ debuff logic
 3. What tasks are blocked waiting on another team member?
 - Need score system to support automatic level upgrade
 4. XP Core Value
@@ -20,10 +19,11 @@ XP Core Value: Simplicity
 - Added new obstacle for new level
 - Fixed the logic problem of resetting the score
 2. What am I planning to work on next?
-
+- Add buff/ debuff logic
 3. What tasks are blocked waiting on another team member?
-
+- Wait for user input from setting screen to control player number
 4. XP Core Value
+- To reuse the code, we used subclasses inheritance to create new obstacles and introduced design patterns to realized level control. 
 
 ## Week 3 Scrum Report
 1. What tasks did I work on / complete?
