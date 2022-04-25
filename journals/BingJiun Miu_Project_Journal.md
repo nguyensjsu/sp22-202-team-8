@@ -20,7 +20,7 @@
 1. What tasks did I work on / complete?
   - Implement strategy pattern into the score counter
   - Implement score counting for the high level obstacle(moving rock)
-  - Implement level count to count and show the level
+  - Implement level counter to count and show the level
 
 2. What am I planning to work on next?
   - Implement score counting function into new objects or obstacles
