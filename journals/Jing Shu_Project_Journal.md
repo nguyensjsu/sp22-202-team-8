@@ -25,11 +25,11 @@ We did a weekly meeting on Monday to discuss what tasks we should do and everyon
 * Design and implement Factory method pattern for creating Buttons, Labels and Modes on screens
 * Design and implement composite pattern for menu screen
 * Fix issues related to reset
-* Learn UI Wirefires  
+* Learn UI Wireframes  
 
 2. What am I planning to work on next?
-* UI Wireframes for starting page (Menu Screen)
-* Enable player to enter name in starting page
+* UI Wireframes for different screens 
+* Design pattern notes
 
 3. What tasks are blocked waiting on another team member?
 
