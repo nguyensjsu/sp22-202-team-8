@@ -9,6 +9,7 @@ public class LeaderboardScreenGlyphFactory implements IGlyphFactory
 {
     public static Button backToMenuButton;
     public static Label screenTitle;
+    public static Leaderboard leaderboard;
     private Color backToMenuButtonColor;
     private static LeaderboardScreenGlyphFactory leaderboardScreenGlyphFactory = null;
     private MyWorld world;
@@ -43,6 +44,8 @@ public class LeaderboardScreenGlyphFactory implements IGlyphFactory
         screenTitle = new Label(world);
         screenTitle.create("Leaderboard", world.WIDTH/2, world.HEIGHT/8, Color.RED);
         screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/6);
-
+        leaderboard = new Leaderboard(world);
+        leaderboard.create(String.valueOf(world.getCounter().getValue()), world.WIDTH/2, world.HEIGHT/4, Color.YELLOW);
+        leaderboard.setLocation(world.WIDTH/2, world.HEIGHT/2);
     }
 }

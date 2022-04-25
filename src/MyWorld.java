@@ -43,9 +43,10 @@ public class MyWorld extends World implements IStopObserver
      * 
      */
     public MyWorld()
-    {    
+    {   
         // Create a new world with WIDTHxHEIGHT cells with a cell size of 1x1 pixels.
-        super(WIDTH, HEIGHT, 1);    
+        super(WIDTH, HEIGHT, 1);
+        counter = new Counter();
         // Create GlyphFactory for screens
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
         lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
@@ -60,7 +61,6 @@ public class MyWorld extends World implements IStopObserver
         
         horizontalScrolling = new HorizontalScrolling();
         sm = new LevelStateMachine(this);
-        counter = new Counter();
         leveltext = new Leveltext();
         counter.registerScoreObserver(sm);
         
