@@ -13,7 +13,7 @@
 
 
 ## Links to project videos
-
+* [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
 
 ## Project architecture
 ### UI Wireframes
