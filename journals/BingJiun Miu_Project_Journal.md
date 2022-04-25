@@ -25,7 +25,7 @@
 2. What am I planning to work on next?
   - Implement score counting function into new objects or obstacles
   - Finish the level counting function
-  - Change the game over logic, make user have three chances to attempt.
+  - Change the game over logic, users have three lives could attempt.
 3. What tasks are blocked waiting on another team member?
   - We haven't decide what's the new objects or items is going to be yet, so can't work on calculating their score.
   
