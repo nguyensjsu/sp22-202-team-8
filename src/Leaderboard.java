@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Leaderboard extends Glyph
 {
     private Counter counter;
-    
     /**
      * Constructor for objects of class Leaderboard
      */
@@ -21,7 +20,11 @@ public class Leaderboard extends Glyph
         img = new GreenfootImage(width, height);
         img.setFont(new Font(40));
         img.setColor(textColor);
-        img.drawString(text, width / 2 - text.length()*9, height / 2 + 10);
+        /**
+        for (int i = 0; i < world.getScores().size(); i++) {
+            img.drawString(String.valueOf(world.getScores().get(i)), width / 2 - text.length()*9, height / 2 + 10);
+        }
+        */
         setImage(img);
     }
 }

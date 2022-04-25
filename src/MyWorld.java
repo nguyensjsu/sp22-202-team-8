@@ -9,9 +9,10 @@ import greenfoot.*;
 public class MyWorld extends World implements IStopObserver
 {
     Counter counter;
+    ScoreList scorelist;
     public static final int WIDTH = 800;
     public static final int HEIGHT = 600;
-    
+
     private Screen currentScreen;
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
@@ -37,7 +38,8 @@ public class MyWorld extends World implements IStopObserver
         MENU,
         GAME,
         LEADERBOARD
-    } 
+    }
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -47,6 +49,7 @@ public class MyWorld extends World implements IStopObserver
         // Create a new world with WIDTHxHEIGHT cells with a cell size of 1x1 pixels.
         super(WIDTH, HEIGHT, 1);
         counter = new Counter();
+        scorelist = new ScoreList();
         // Create GlyphFactory for screens
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
         lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
@@ -67,6 +70,11 @@ public class MyWorld extends World implements IStopObserver
         setNextScreen(SCREENS.MENU);
         Greenfoot.start();
     }
+    
+    public ScoreList getScoreList(){
+        return scorelist;
+    }
+    
     
     public Counter getCounter(){
         return counter;

@@ -45,7 +45,7 @@ public class LeaderboardScreenGlyphFactory implements IGlyphFactory
         screenTitle.create("Leaderboard", world.WIDTH/2, world.HEIGHT/8, Color.RED);
         screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/6);
         leaderboard = new Leaderboard(world);
-        leaderboard.create(String.valueOf(world.getCounter().getValue()), world.WIDTH/2, world.HEIGHT/4, Color.YELLOW);
+        leaderboard.create("dummy", world.WIDTH/2, world.HEIGHT/4, Color.YELLOW);
         leaderboard.setLocation(world.WIDTH/2, world.HEIGHT/2);
     }
 }
