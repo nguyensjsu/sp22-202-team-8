@@ -33,6 +33,8 @@
    * Week 1
 ![image](https://user-images.githubusercontent.com/98684620/163939113-03e051f9-5370-4ed9-a92e-e52039ae3223.png)
 
+   * Week 2
+![image](https://user-images.githubusercontent.com/98684620/165194777-f464028b-ddce-4831-a19e-d856caa20d46.png)
 
 ## Individual Contributions and team journals
 ### Contributions
