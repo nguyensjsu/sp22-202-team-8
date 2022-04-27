@@ -10,8 +10,8 @@ public class Rocket extends Actor implements IStopSubject
 {
     private int speed = 5;
     private int coolDown = 0;
-    public int life = 2;
-    private boolean isStopped = false;
+    public static int life;
+    private static boolean isStopped;
     private ArrayList<IStopObserver> observers;
     
     /**
@@ -22,6 +22,8 @@ public class Rocket extends Actor implements IStopSubject
         GreenfootImage image = getImage();  
         image.scale(50, 40);
         setImage(image);
+        life = 2;
+        isStopped = false;
     }
     
     /**
@@ -75,7 +77,7 @@ public class Rocket extends Actor implements IStopSubject
                 }
                 life--;
                 notifyGameOverObserver( ) ;
-                this.isStopped = true; 
+                isStopped = true; 
             }
         }
         
