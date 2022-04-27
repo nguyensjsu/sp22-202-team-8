@@ -33,6 +33,7 @@ public class GameScreen extends Screen
         if (!initialized) {
             world.prepare();
             initialized = true;
+            
         }
     }
 }
