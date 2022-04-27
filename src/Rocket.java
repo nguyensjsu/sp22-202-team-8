@@ -10,6 +10,7 @@ public class Rocket extends Actor implements IStopSubject
 {
     private int speed = 5;
     private int coolDown = 0;
+    public int life = 2;
     private boolean isStopped = false;
     private ArrayList<IStopObserver> observers;
     
@@ -30,8 +31,56 @@ public class Rocket extends Actor implements IStopSubject
     public void act()
     {
         if (isTouching(Rock.class)) {
-            notifyGameOverObserver( ) ;
-            this.isStopped = true;
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            if(life == 2){
+                Heart3 heart3 = myWorld.getHeart3();
+                heart3.getLifeAmount(0);
+                
+                Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
+                SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
+                if (theSinRock != null) {
+                    theSinRock.destroyed();
+                }
+                else if (theRock != null) {
+                    theRock.destroyed();
+                }
+                life--;
+            }
+            else if (life == 1){
+                Heart2 heart2 = myWorld.getHeart2();
+                heart2.getLifeAmount(0);
+                
+                Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
+                SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
+                if (theSinRock != null) {
+                    theSinRock.destroyed();
+                }
+                else if (theRock != null) {
+                    theRock.destroyed();
+                }
+                life--;
+            }
+            else if (life == 0){
+                Heart1 heart1 = myWorld.getHeart();
+                heart1.getLifeAmount(0);
+                
+                Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
+                SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
+                if (theSinRock != null) {
+                    theSinRock.destroyed();
+                }
+                else if (theRock != null) {
+                    theRock.destroyed();
+                }
+                life--;
+                notifyGameOverObserver( ) ;
+                this.isStopped = true; 
+            }
+            /*else{
+                notifyGameOverObserver( ) ;
+                this.isStopped = true;   
+            }*/
             //Greenfoot.stop();
         }
         

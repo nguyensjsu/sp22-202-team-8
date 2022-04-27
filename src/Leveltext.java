@@ -26,6 +26,9 @@ public class Leveltext extends Actor
         
         if(counter.getValue() >= 50){
             level = (counter.getValue()/50)+1;
+            if(level > 3){
+                level = 3;
+            }
         }
         GreenfootImage img = getImage();
         img.clear();
