@@ -29,43 +29,38 @@ public class Rocket2P extends Rocket
      */
     public void act()
     {
-        if (isTouching(Rock.class)) {
-            notifyGameOverObserver( ) ;
-            this.isStopped = true;
-            //Greenfoot.stop();
-        }
-        
-        if (!isStopped) {
-            
-            if ( Greenfoot.isKeyDown("w") )
-            {
-                setLocation( getX(), getY() - speed );
-            }
-    
-            if ( Greenfoot.isKeyDown("s") )
-            {
-                setLocation( getX(), getY() + speed );
-            }
-    
-            if ( Greenfoot.isKeyDown("a") )
-            {
-                setLocation( getX() - speed , getY() );
-            }
-    
-            if ( Greenfoot.isKeyDown("d") )
-            {
-                setLocation( getX() + speed , getY() );
-            }
-            
-            if (coolDown > 0) {
-                coolDown--;
-            } else if (Greenfoot.isKeyDown("space")) {
-                getWorld().addObject(new Shot(this), getX(), getY());
-                coolDown = 50;
-            }
-        }
+        super.act();
     }
 
+    @Override
+    protected void keySet(){
+        if ( Greenfoot.isKeyDown("w") )
+        {
+            setLocation( getX(), getY() - speed );
+        }
+
+        if ( Greenfoot.isKeyDown("s") )
+        {
+            setLocation( getX(), getY() + speed );
+        }
+
+        if ( Greenfoot.isKeyDown("a") )
+        {
+            setLocation( getX() - speed , getY() );
+        }
+
+        if ( Greenfoot.isKeyDown("d") )
+        {
+            setLocation( getX() + speed , getY() );
+        }
+        
+        if (coolDown > 0) {
+            coolDown--;
+        } else if (Greenfoot.isKeyDown("space")) {
+            getWorld().addObject(new Shot(this), getX(), getY());
+            coolDown = 50;
+        }
+    }
     
     public void registerObserver(IStopObserver o) {
         observers.add(o);

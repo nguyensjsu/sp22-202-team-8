@@ -77,44 +77,41 @@ public class Rocket extends Actor implements IStopSubject
                 notifyGameOverObserver( ) ;
                 this.isStopped = true; 
             }
-            /*else{
-                notifyGameOverObserver( ) ;
-                this.isStopped = true;   
-            }*/
-            //Greenfoot.stop();
         }
         
         if (!isStopped) {
-            
-            if ( Greenfoot.isKeyDown("up") )
-            {
-                setLocation( getX(), getY() - speed );
-            }
-    
-            if ( Greenfoot.isKeyDown("down") )
-            {
-                setLocation( getX(), getY() + speed );
-            }
-    
-            if ( Greenfoot.isKeyDown("left") )
-            {
-                setLocation( getX() - speed , getY() );
-            }
-    
-            if ( Greenfoot.isKeyDown("right") )
-            {
-                setLocation( getX() + speed , getY() );
-            }
-            
-            if (coolDown > 0) {
-                coolDown--;
-            } else if (Greenfoot.isKeyDown("enter")) {
-                getWorld().addObject(new Shot(this), getX(), getY());
-                coolDown = 30;
-            }
+            keySet();
         }
     }
+    
+    protected void keySet() {
+        if ( Greenfoot.isKeyDown("up") )
+        {
+            setLocation( getX(), getY() - speed );
+        }
 
+        if ( Greenfoot.isKeyDown("down") )
+        {
+            setLocation( getX(), getY() + speed );
+        }
+
+        if ( Greenfoot.isKeyDown("left") )
+        {
+            setLocation( getX() - speed , getY() );
+        }
+
+        if ( Greenfoot.isKeyDown("right") )
+        {
+            setLocation( getX() + speed , getY() );
+        }
+        
+        if (coolDown > 0) {
+            coolDown--;
+        } else if (Greenfoot.isKeyDown("enter")) {
+            getWorld().addObject(new Shot(this), getX(), getY());
+            coolDown = 30;
+        }
+    }
     
     public void registerStopObserver(IStopObserver o) {
         observers.add(o);
