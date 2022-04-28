@@ -25,7 +25,7 @@ public class Heart1 extends Actor
             setImage(image);
         }
         else{
-            GreenfootImage image = new GreenfootImage("space2.png");
+            GreenfootImage image = new GreenfootImage("emptyheart.png");
             setImage(image);
         }
     }
