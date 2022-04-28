@@ -8,8 +8,11 @@ import java.util.*;
  */
 public class Rocket extends Actor implements IStopSubject
 {
-    private int speed = 5;
-    private int coolDown = 0;
+    private int speed;
+    private int coolDown;
+    private int coolDownRange;
+    private int speedEffect;
+    private int cdEffect;
     public static int life;
     private static boolean isStopped;
     private ArrayList<IStopObserver> observers;
@@ -22,6 +25,11 @@ public class Rocket extends Actor implements IStopSubject
         GreenfootImage image = getImage();  
         image.scale(50, 40);
         setImage(image);
+        speed = 5;
+        coolDown = 0;
+        coolDownRange = 30;
+        speedEffect = 0;
+        cdEffect = 0;
         life = 2;
         isStopped = false;
     }
@@ -82,6 +90,7 @@ public class Rocket extends Actor implements IStopSubject
         }
         
         if (!isStopped) {
+            getBuff();
             keySet();
         }
     }
@@ -111,7 +120,7 @@ public class Rocket extends Actor implements IStopSubject
             coolDown--;
         } else if (Greenfoot.isKeyDown("enter")) {
             getWorld().addObject(new Shot(this), getX(), getY());
-            coolDown = 30;
+            coolDown = coolDownRange;
         }
     }
     
@@ -119,11 +128,44 @@ public class Rocket extends Actor implements IStopSubject
         observers.add(o);
     }
     
-    public void notifyGameOverObserver(){
+    public void notifyGameOverObserver() {
         for (int i = 0; i < observers.size(); i++)
         {
             IStopObserver observer = observers.get(i) ;
             observer.stop();
+        }
+    }
+    
+    protected void getBuff() {
+        speedEffect--;
+        cdEffect--;
+        speedEffect = Math.max(0, speedEffect);
+        cdEffect = Math.max(0, cdEffect);
+        
+        // when exceed the effect time, set speed to initial value
+        if (speedEffect == 0) {
+            this.speed = 5;
+        }
+        
+        // when exceed the effect time, set cool down time to initial value
+        if (cdEffect == 0) {
+            this.coolDownRange = 30;
+        }
+        
+        // check speed up buff
+        if (isTouching(SpeedUp.class)) {
+            // maximum speed is 10
+            this.speed = Math.min(2 + speed, 10);
+            this.speedEffect = 300;
+            removeTouching(SpeedUp.class);
+        }
+        
+        // check faster shot buff
+        if (isTouching(FasterShot.class)) {
+            // minimum cool down range is 10
+            this.coolDownRange = Math.max(coolDownRange - 10, 10);
+            this.cdEffect = 300;
+            removeTouching(FasterShot.class);
         }
     }
 }
