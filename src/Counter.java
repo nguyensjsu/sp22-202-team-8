@@ -17,11 +17,15 @@ public class Counter extends Actor implements IScoreSubject
     
     private IScoreObserver score_o;
     private int levelTracker;
+    private int cdTracker;
+    private int suTracker;
     
     public Counter()
     {
         this(new String());
         levelTracker = 50;
+        cdTracker = 250;
+        suTracker = 100;
     }
 
     /**
@@ -71,6 +75,8 @@ public class Counter extends Actor implements IScoreSubject
         // reset level when game is reset
         if (newValue == 0) {
             levelTracker = 50;
+            suTracker = 100;
+            cdTracker = 250;
         }
         
         // after gaining every 50 points notify observer
@@ -78,8 +84,35 @@ public class Counter extends Actor implements IScoreSubject
             notifyScoreObserver();
             levelTracker += 50;
         }
+        
+        // after gaining every 100 points release a speed up buff
+        if (value >= suTracker) {
+            addSpeedUp();
+            suTracker += 100;
+        }
+        
+        // after gaining every 250 points release a faster shot buff
+        if (value >= cdTracker) {
+            addFasterShot();
+            cdTracker += 250;
+        }
     }
     
+    private void addSpeedUp() {
+        if (!getImage().toString().contains("speedup.png")) {
+            SpeedUp su = new SpeedUp();
+            int x = getWorld().getWidth() - Greenfoot.getRandomNumber(200) - 50;
+            int y = Greenfoot.getRandomNumber(getWorld().getHeight() / 2);
+            getWorld().addObject(su,x, y);
+        }
+    }
+    
+    private void addFasterShot() {
+        FasterShot fs = new FasterShot();
+        int x = getWorld().getWidth() - Greenfoot.getRandomNumber(200) - 200;
+        int y = Greenfoot.getRandomNumber(getWorld().getHeight() / 2);
+        getWorld().addObject(fs,x, y);
+    }
     
     /**
      * Sets a text prefix that should be displayed before

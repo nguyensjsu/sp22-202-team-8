@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class HorizontalScrolling extends Actor implements IStopObserver
 {
     protected static int scrollSpeed;
-    private static boolean isStopped = false;
+    private static boolean isStopped;
     
     public HorizontalScrolling()
     {

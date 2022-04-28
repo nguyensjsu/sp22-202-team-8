@@ -22,6 +22,8 @@ public class MyWorld extends World implements IStopObserver
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
     private HorizontalScrolling horizontalScrolling;
+    private Buff buff;
+    private Shot shot;
     
     private MenuScreenGlyphFactory menuScreenGlyphFactory;
     private LeaderboardScreenGlyphFactory lbSGlyphFactory;
@@ -62,6 +64,7 @@ public class MyWorld extends World implements IStopObserver
         settings = new Settings();
         
         horizontalScrolling = new HorizontalScrolling();
+        buff = new Buff();
         sm = new LevelStateMachine(this);
         counter = new Counter();
         leveltext = new Leveltext();
@@ -97,18 +100,22 @@ public class MyWorld extends World implements IStopObserver
     protected void prepare()
     {        
         Rocket rocket = new Rocket();
+        shot = new Shot(rocket);
         Rocket2P rocket2 = new Rocket2P();
         rocket.registerStopObserver(this);
         rocket.registerStopObserver(horizontalScrolling);
+        rocket.registerStopObserver(buff);
+        rocket.registerStopObserver(shot);
         addObject(rocket,50,200);
         
         settings = Settings.getInstance();
         if (settings.getPlayMode() == Settings.MODE.TWO_PLAYER) {
             rocket2.registerObserver(this);
             rocket2.registerObserver(horizontalScrolling);
+            rocket2.registerStopObserver(buff);
             addObject(rocket2,50,100);
         }
-        
+
         sm.setLevel1();
         
         addObject(leveltext,402,28);

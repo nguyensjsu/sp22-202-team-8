@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=Buff
+comment0.text=\n\ Write\ a\ description\ of\ class\ Buff\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Buff()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ setImg()
+comment4.params=
+comment4.target=void\ stop()
+numComments=5

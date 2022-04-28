@@ -13,4 +13,6 @@ comment4.params=o
 comment4.target=void\ registerObserver(IStopObserver)
 comment5.params=
 comment5.target=void\ notifyGameOverObserver()
-numComments=6
+comment6.params=
+comment6.target=void\ getBuff()
+numComments=7

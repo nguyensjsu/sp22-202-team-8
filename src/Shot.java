@@ -6,15 +6,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Shot extends Actor
+public class Shot extends Actor implements IStopObserver
 {
     private Rocket owner;
     private int shotSpeed = 10;
     private boolean Rockhit = false;
     private boolean SinRockhit = false;
+    private static boolean isStopped;
     
     public Shot(Rocket r) {
         this.owner = r;
+        isStopped = false;
     }
     
     /**
@@ -23,6 +25,8 @@ public class Shot extends Actor
      */
     public void act()
     {
+        if (isStopped)
+            return;
         if (hitRock()) {
             World world = getWorld();
             MyWorld myWorld = (MyWorld)world;
@@ -60,5 +64,9 @@ public class Shot extends Actor
             return true;
         }
         return false;
+    }
+    
+    public void stop() {
+        isStopped = true;
     }
 }
