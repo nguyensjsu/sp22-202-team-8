@@ -33,6 +33,19 @@ The factory method is used to create item objects (button, label) for different 
 
 ![image](https://user-images.githubusercontent.com/98684620/165898089-7f72e115-d58a-4c6e-8538-fb194c2a3705.png)
 
+### Singleton Pattern
+#### Factories as singletons
+* An application typically needs only one instance of a ConcreteFactory per product family. So it’s usually best implemented as a singleton.
+* In this project, MenuScreenGlyphFactory, GameOverScreenGlyphFactory, and LeaderboardScreenGlyphFactory are all implemented as singletons.
+
+#### Settings as a singleton
+* Users can select play mode in Menu Screen, which is stored in Settings Class.
+* Settings must be exactly one instance of a class, and should be easily accessible to different Screens. 
+* So it's perfectly implemented as a singleton
+                                      
+![image](https://user-images.githubusercontent.com/98684620/165899251-bd6243cf-52d1-429b-9af0-ec27061999df.png)
+
+
 
 ## Project backlog and chart
 * [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit#gid=0)
