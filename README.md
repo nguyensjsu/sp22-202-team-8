@@ -45,6 +45,10 @@ The factory method is used to create item objects (button, label) for different 
                                       
 ![image](https://user-images.githubusercontent.com/98684620/165899251-bd6243cf-52d1-429b-9af0-ec27061999df.png)
 
+### Composite Pattern
+Different items should be displayed in Menu Screen. Composite pattern is used to let client treat these objects uniformly. The key of the Composite pattern is the interface IDisplayComponent, which declares operations that all composite object share for accessing and managing its child components, and also defines operation (setLocation()) that is specific to graphical objects.
+
+![image](https://user-images.githubusercontent.com/98684620/165987438-2153fcbd-dbd5-4303-8d69-b070df2f4eaf.png)
 
 
 ## Project backlog and chart
