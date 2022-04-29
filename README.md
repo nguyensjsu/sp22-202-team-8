@@ -23,6 +23,15 @@
 
 
 ## Key feature designs
+### Abstract Factory Pattern
+The factory method is used to create item objects (button, label) for different screens: Menu Screen, Game Over Screen and Leaderboard Screen.
+* AbstractFactory(IGlyphFactory): declares an interface for operations that create products.
+* ConcreteFactory(MenuScreenGlyphFactory, GameOverScreenGlyphFactory, and LeaderboardScreenGlyphFactory): implements the factory method to create the concrete products for specific screen. So, the clients (Screens) could just use these products and be independent of how its products are created, composed and represented.
+* AbstractProduct (Button, Label): declares an interface for a type of product object.
+* ConcreteProduct (eg: startButton, tryAgainButton, screenTitle): defines a product object to be created by the corresponding concrete factory.
+* Client(MenuScreen,GameOverScreen and LeaderboardScreen): uses a set of related products created in ConcreteFactory and doesn’t need to know how these products are created.
+
+![image](https://user-images.githubusercontent.com/98684620/165898089-7f72e115-d58a-4c6e-8538-fb194c2a3705.png)
 
 
 ## Project backlog and chart
