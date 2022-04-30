@@ -44,8 +44,8 @@ public class Rocket extends Actor implements IStopSubject
             World world = getWorld();
             MyWorld myWorld = (MyWorld)world;
             if(life == 2){
-                Heart3 heart3 = myWorld.getHeart3();
-                heart3.getLifeAmount(0);
+                Heart heart3 = myWorld.getHeart3();
+                heart3.setLifeAmount(0);
                 
                 Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
                 SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
@@ -58,8 +58,8 @@ public class Rocket extends Actor implements IStopSubject
                 life--;
             }
             else if (life == 1){
-                Heart2 heart2 = myWorld.getHeart2();
-                heart2.getLifeAmount(0);
+                Heart heart2 = myWorld.getHeart2();
+                heart2.setLifeAmount(0);
                 
                 Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
                 SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
@@ -72,8 +72,8 @@ public class Rocket extends Actor implements IStopSubject
                 life--;
             }
             else if (life == 0){
-                Heart1 heart1 = myWorld.getHeart();
-                heart1.getLifeAmount(0);
+                Heart heart1 = myWorld.getHeart();
+                heart1.setLifeAmount(0);
                 
                 Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
                 SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
