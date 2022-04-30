@@ -12,8 +12,17 @@ public class SpeedUp extends Buff
      * Act - do whatever the SpeedUp wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public SpeedUp() {
+    private static SpeedUp theSUinstance;
+    
+    private SpeedUp() {
         super();
+    }
+    
+    public synchronized static SpeedUp getInstance()
+    {
+        if (theSUinstance == null)
+            theSUinstance = new SpeedUp();
+        return theSUinstance;
     }
     
     public void act()

@@ -12,8 +12,17 @@ public class FasterShot extends Buff
      * Act - do whatever the FasterShot wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public FasterShot() {
+    private static FasterShot theFSinstance;
+    
+    private FasterShot() {
         super();
+    }
+    
+    public synchronized static FasterShot getInstance()
+    {
+        if (theFSinstance == null)
+            theFSinstance = new FasterShot();
+        return theFSinstance;
     }
     
     public void act()

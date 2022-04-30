@@ -20,6 +20,7 @@ public class GameScreen extends Screen
 
     public static void initialize() {
         initialized= false;
+        Buff.reset();
     }
     
     public void active()
@@ -33,7 +34,6 @@ public class GameScreen extends Screen
         if (!initialized) {
             world.prepare();
             initialized = true;
-            
         }
     }
 }
