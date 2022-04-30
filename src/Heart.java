@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Heart3 here.
+ * Write a description of class Heart1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Heart3 extends Actor
+public class Heart extends Actor
 {
     private int lifeamount = 1;
     /**
@@ -30,7 +30,7 @@ public class Heart3 extends Actor
         }
     }
     
-    public void getLifeAmount(int life)
+    public void setLifeAmount(int life)
     {
         lifeamount=life;
     }

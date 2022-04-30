@@ -16,9 +16,9 @@ public class MyWorld extends World implements IStopObserver
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
     private Leveltext leveltext;
-    private Heart1 heart1;
-    private Heart2 heart2;
-    private Heart3 heart3;
+    private Heart heart1;
+    private Heart heart2;
+    private Heart heart3;
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
     private HorizontalScrolling horizontalScrolling;
@@ -68,9 +68,9 @@ public class MyWorld extends World implements IStopObserver
         sm = new LevelStateMachine(this);
         counter = new Counter();
         leveltext = new Leveltext();
-        heart1 = new Heart1();
-        heart2 = new Heart2();
-        heart3 = new Heart3();
+        heart1 = new Heart();
+        heart2 = new Heart();
+        heart3 = new Heart();
         counter.registerScoreObserver(sm);
         
         setNextScreen(SCREENS.MENU);
@@ -81,15 +81,15 @@ public class MyWorld extends World implements IStopObserver
         return counter;
     }
     
-    public Heart1 getHeart(){
+    public Heart getHeart(){
         return heart1;
     }
     
-    public Heart2 getHeart2(){
+    public Heart getHeart2(){
         return heart2;
     }
     
-    public Heart3 getHeart3(){
+    public Heart getHeart3(){
         return heart3;
     }
     
@@ -145,9 +145,9 @@ public class MyWorld extends World implements IStopObserver
             case GAME: {
                 GameScreen.initialize();
                 counter.setValue(0);
-                heart1.getLifeAmount(1);
-                heart2.getLifeAmount(1);
-                heart3.getLifeAmount(1);
+                heart1.setLifeAmount(1);
+                heart2.setLifeAmount(1);
+                heart3.setLifeAmount(1);
                 currentScreen = gameScreen; 
                 break;
             }
