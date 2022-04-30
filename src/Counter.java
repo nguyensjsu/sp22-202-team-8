@@ -100,7 +100,7 @@ public class Counter extends Actor implements IScoreSubject
     
     private void addSpeedUp() {
         if (!getImage().toString().contains("speedup.png")) {
-            SpeedUp su = new SpeedUp();
+            SpeedUp su = SpeedUp.getInstance();
             int x = getWorld().getWidth() - Greenfoot.getRandomNumber(200) - 50;
             int y = Greenfoot.getRandomNumber(getWorld().getHeight() / 2);
             getWorld().addObject(su,x, y);
@@ -108,7 +108,7 @@ public class Counter extends Actor implements IScoreSubject
     }
     
     private void addFasterShot() {
-        FasterShot fs = new FasterShot();
+        FasterShot fs = FasterShot.getInstance();
         int x = getWorld().getWidth() - Greenfoot.getRandomNumber(200) - 200;
         int y = Greenfoot.getRandomNumber(getWorld().getHeight() / 2);
         getWorld().addObject(fs,x, y);

@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ setImg()
 comment4.params=
 comment4.target=void\ stop()
-numComments=5
+comment5.params=
+comment5.target=void\ reset()
+numComments=6
