@@ -14,15 +14,15 @@ public class Button extends Glyph
         super(world);
     }
     
-    public void create(String text,int width, int height, Color backgroundColor) {
+    public void create(String text,int fontSize, Color textColor, int width, int height, Color backgroundColor) {
     
         img = new GreenfootImage(width, height);
         img.setColor(backgroundColor);
         img.fill();
         
-        img.setFont(new Font(25));
-        img.setColor(Color.WHITE);
-        img.drawString(text, width / 2 - text.length() * 7, height / 2 + 10);
+        img.setFont(new Font("Merlin", fontSize));
+        img.setColor(textColor);
+        img.drawString(text, width / 2 - text.length() * 8, height / 2 + 10);
         setImage(img);
     }
     

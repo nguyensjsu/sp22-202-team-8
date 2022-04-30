@@ -18,12 +18,9 @@ public class Mode extends Glyph
         super(world);
     }
 
-    public void create(String text, int width, int height, Color textColor) {
+    public void create(String filename, int fontSize, Color textColor, int width, int height, Color bgColor) {
     
-        img = new GreenfootImage(width, height);
-        img.setFont(new Font( true, true , 20));
-        img.setColor(textColor);
-        img.drawString(text, width / 2 - text.length()*5, height / 2 + 10);
+        img = new GreenfootImage(filename);
         setImage(img);
     }
     

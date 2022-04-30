@@ -33,6 +33,6 @@ public abstract class Glyph extends Actor implements IDisplayComponent
         world.addObject(this, x, y);
     };
 
-    public abstract void create(String text,int width, int height, Color textColor);
+    public abstract void create(String text, int fontSize, Color textColor, int width, int height, Color backgroundColor);
 
 }

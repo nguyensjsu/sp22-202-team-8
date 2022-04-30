@@ -9,8 +9,8 @@ import greenfoot.*;
 public class MyWorld extends World implements IStopObserver
 {
     Counter counter;
-    public static final int WIDTH = 800;
-    public static final int HEIGHT = 600;
+    public static final int WIDTH = 1280;
+    public static final int HEIGHT = 800;
     
     private Screen currentScreen;
     private MenuScreen menuScreen;

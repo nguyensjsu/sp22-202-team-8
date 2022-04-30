@@ -16,12 +16,12 @@ public class Label extends Glyph
         super(world);
     }
     
-    public void create(String text, int width, int height, Color textColor) {
+    public void create(String text, int fontSize, Color textColor, int width, int height, Color bgColor) {
     
         img = new GreenfootImage(width, height);
-        img.setFont(new Font(40));
+        img.setFont(new Font(fontSize));
         img.setColor(textColor);
-        img.drawString(text, width / 2 - text.length()*9, height / 2 + 10);
+        img.drawString(text, width / 2 - text.length()*10, height / 2 );
         setImage(img);
     }
     
