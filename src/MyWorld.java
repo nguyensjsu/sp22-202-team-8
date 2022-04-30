@@ -113,6 +113,7 @@ public class MyWorld extends World implements IStopObserver
             rocket2.registerObserver(this);
             rocket2.registerObserver(horizontalScrolling);
             rocket2.registerStopObserver(buff);
+            rocket2.registerStopObserver(shot);
             addObject(rocket2,50,100);
         }
 
