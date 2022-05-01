@@ -1,4 +1,4 @@
-# Team Project (Team 8)
+# JetSpace (Team 8)
 
 ## Team members
 
@@ -17,6 +17,8 @@
 
 ## Project architecture
 ### UI Wireframes
+* Start Screen
+![image](https://user-images.githubusercontent.com/98684620/166135322-bd7f4c1d-7fd7-43d6-b952-761a55ff7e66.png)
 
 
 ### High level diagrams
