@@ -51,9 +51,11 @@ Weekly Zoom meeting were held on Monday and face-to-face meeting held on Saturda
 * Documentation
 
 3. What tasks are blocked waiting on another team member?
+
 None
 
 4. XP Core Value: Communication
+
 On Monday we did weekly stand-up meeting and made video recording. After the class on Saturday, we reviewed the progress. During the week, we talked about the progress through WeChat and notified other team member when we found some bugs. 
 
 ## Week 4 Scrum Report
