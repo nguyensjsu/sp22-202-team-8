@@ -18,9 +18,9 @@ public class Buff extends Actor implements IStopObserver
     private int frequency;
     private static boolean isStopped;
     
-    public Buff() {
+    protected Buff() {
          timer = 0;
-         duration = 500;
+         duration = 150;
          frequency = 20;
          GreenfootImage image = getImage();  
          image.scale(40,40);
@@ -36,16 +36,17 @@ public class Buff extends Actor implements IStopObserver
                 if (timer % (frequency * 2) == 0) {
                     setImg();
                 }
-            } else if (timer < 2 * duration) {
+            } else if (timer < 1.5 * duration) {
                 if (timer % frequency == 0) {
                     setImg();
                 }
-            } else if (timer < 2.5 * duration) {
+            } else if (timer < 2 * duration) {
                 if (timer % (frequency / 2) == 0) {
                     setImg();
                 }
             } else {
                 getWorld().removeObject(this);
+                timer = 0;
             }
         }
     }

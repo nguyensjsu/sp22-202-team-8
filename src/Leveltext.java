@@ -23,12 +23,13 @@ public class Leveltext extends Actor
         World world = getWorld();
         MyWorld myWorld = (MyWorld)world;
         Counter counter = myWorld.getCounter();
-        
-        if(counter.getValue() >= 50){
-            level = (counter.getValue()/50)+1;
-            if(level > 3){
-                level = 3;
-            }
+        int value = counter.getValue();
+        if (value <= 100){
+            level = 1;
+        }  else if (value <= 400) {
+            level = 2;
+        } else {
+            level = 3;
         }
         GreenfootImage img = getImage();
         img.clear();

@@ -14,7 +14,7 @@ public class HorizontalScrolling extends Actor implements IStopObserver
     public HorizontalScrolling()
     {
         this.isStopped = false;
-        this.scrollSpeed = -3;
+        this.scrollSpeed = -4;
     }
     
     public static int getScrollSpeed() {
@@ -22,8 +22,8 @@ public class HorizontalScrolling extends Actor implements IStopObserver
     }
     
     public static void setScrollSpeed(int speed) {
-        // maximun movind speed = -6
-        scrollSpeed = Math.max(speed, -6);
+        // maximun movind speed = -10
+        scrollSpeed = Math.max(speed, -10);
     }
     
     /**
