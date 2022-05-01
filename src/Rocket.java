@@ -17,6 +17,7 @@ public class Rocket extends Actor implements IStopSubject
     protected static boolean isStopped;
     protected static int crashedCount;
     private ArrayList<IStopObserver> observers;
+    private List<Heart> hp;
     
     /**
      * Reference: https://www.greenfoot.org/topics/5092
@@ -33,7 +34,7 @@ public class Rocket extends Actor implements IStopSubject
         cdEffect = 0;
         life = 2;
         isStopped = false;
-        crashedCount = 0;
+        crashedCount = 1;
     }
     
     /**
@@ -42,7 +43,7 @@ public class Rocket extends Actor implements IStopSubject
      */
     public void act()
     {
-        if (crashedCount == 2) {
+        if (crashedCount == 0) {
             notifyGameOverObserver() ;
         }
         
@@ -52,16 +53,19 @@ public class Rocket extends Actor implements IStopSubject
     }
     
     protected void updateHP() {
-        if (isTouching(Rock.class) && !isStopped) {
+        if (isStopped) {
+            rescured();
+        } else if (isTouching(Rock.class)) {
             if (life == 0){
                 //notifyGameOverObserver( ) ;
                 isStopped = true; 
-                crashedCount++;
+                crashedCount--;
+                GreenfootImage image = new GreenfootImage("CrashedRocket.png");  
+                image.scale(160, 130);
+                setImage(image);
             }
             removeRock();
-            World world = getWorld();
-            MyWorld myWorld = (MyWorld)world;
-            Heart heart = myWorld.getP1HP().get(life);
+            Heart heart = hp.get(life);
             heart.setLifeAmount(0);
             life--;
             life = Math.max(0, life);
@@ -72,7 +76,7 @@ public class Rocket extends Actor implements IStopSubject
         if (!isStopped) {
             getBuff();
             keySet();
-        }
+       }
     }
     
     protected void keySet() {
@@ -158,5 +162,27 @@ public class Rocket extends Actor implements IStopSubject
         else if (theRock != null) {
             theRock.destroyed();
         }
+    }
+    
+    public static void setPlayerNum(int num) {
+        crashedCount = num;
+    }
+    
+    private void rescured() {
+         if (isTouching(Rocket2P.class)) {
+             crashedCount++;
+             isStopped = false;
+             life = 2;
+             for (Heart heart : hp) {
+                 heart.setLifeAmount(1);
+             }
+             GreenfootImage image = new GreenfootImage("rocket.png");  
+             image.scale(50, 40);
+             setImage(image);
+        }
+    }
+    
+    public void setHP(List<Heart> list) {
+        hp = list;
     }
 }

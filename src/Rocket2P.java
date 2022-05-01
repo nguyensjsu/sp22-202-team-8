@@ -16,6 +16,7 @@ public class Rocket2P extends Rocket
     private int life;
     private static boolean isStopped;
     private ArrayList<IStopObserver> observers;
+    private List<Heart> hp;
     
     /**
      * Reference: https://www.greenfoot.org/topics/5092
@@ -36,16 +37,19 @@ public class Rocket2P extends Rocket
     
     @Override
     protected void updateHP() {
-        if (isTouching(Rock.class) && !isStopped) {
+        if (isStopped) {
+            rescured();
+        } else if (isTouching(Rock.class)) {
             if (life == 0){
                 //notifyGameOverObserver( ) ;
                 isStopped = true; 
-                super.crashedCount++;
+                super.crashedCount--;
+                GreenfootImage image = new GreenfootImage("CrashedRocket2P.png");  
+                image.scale(100, 80);
+                setImage(image);
             }
             removeRock();
-            World world = getWorld();
-            MyWorld myWorld = (MyWorld)world;
-            Heart heart = myWorld.getP2HP().get(life);
+            Heart heart = hp.get(life);
             heart.setLifeAmount(0);
             life--;
             life = Math.max(0, life);
@@ -145,5 +149,24 @@ public class Rocket2P extends Rocket
             FasterShot theFS = (FasterShot)getOneIntersectingObject(FasterShot.class);
             getWorld().removeObject(theFS);
         }
+    }
+    
+    private void rescured() {
+         if (isTouching(Rocket.class)) {
+             super.crashedCount++;
+             isStopped = false;
+             life = 2;
+             for (Heart heart : hp) {
+                 heart.setLifeAmount(1);
+             }
+             GreenfootImage image = new GreenfootImage("rocket2P.png");  
+             image.scale(50, 40);
+             setImage(image);
+        }
+    }
+    
+    @Override
+    public void setHP(List<Heart> list) {
+        hp = list;
     }
 }

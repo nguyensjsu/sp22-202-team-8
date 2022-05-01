@@ -106,6 +106,7 @@ public class MyWorld extends World implements IStopObserver
             addRocket(rocket2);
             addObject(rocket2,50,100);
             addHeart(rocket2);
+            Rocket.setPlayerNum(2);
         }
 
         sm.setLevel1();
@@ -143,9 +144,11 @@ public class MyWorld extends World implements IStopObserver
         if (player.getClass().getName().contains("2P")) {
             icon_img = "rocket2P.png";
             width = 218;
+            player.setHP(player2hp);
         } else {
            icon_img = "rocket.png";
            width = 28;
+           player.setHP(player1hp);
         }
         
         Icon rocketIcon = new Icon(this);
