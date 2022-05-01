@@ -4,6 +4,7 @@ XP Core Value: Simplicity
 1. What tasks did I work on / complete?
 - Completed the class design for major game actor classes
 - Designed and implemented the basic game logic
+- Introduced `Observer` pattern to stop objects when game is over
 - Merged Game world into `Screen` frame
 - Added support for 2 players 
 2. What am I planning to work on next?
@@ -15,7 +16,7 @@ XP Core Value: Simplicity
 
 ## Week 2 Scrum Report
 1. What tasks did I work on / complete?
-- Designed and implemented the level system
+- Designed and implemented the level system by using `StateMachine` pattern
 - Added new obstacle for new level
 - Fixed the logic problem of resetting the score
 2. What am I planning to work on next?
@@ -27,12 +28,18 @@ XP Core Value: Simplicity
 
 ## Week 3 Scrum Report
 1. What tasks did I work on / complete?
-
+- Designed and implemented the buff logic
+- Add two Buff classes
+  - SpeedUp: make the rocket move faster, buff last for 5 seconds
+  - FasterShot: shorten the cooldown of the rocket after shooting, buff last for 5 seconds
+- Introduced `Singleton` pattern to control the number of `Buff` objects
+- Fixed the game over control issue in two players mode
 2. What am I planning to work on next?
-
+- Restrict the area in which buff objects can exist
 3. What tasks are blocked waiting on another team member?
-
+- N/A
 4. XP Core Value
+- Merge classes with similar functionalities into one
 
 ## Week 4 Scrum Report
 1. What tasks did I work on / complete?

@@ -13,7 +13,7 @@ public class Buff extends Actor implements IStopObserver
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    private int timer;
+    private static int timer;
     private int duration;
     private int frequency;
     private static boolean isStopped;
@@ -56,5 +56,10 @@ public class Buff extends Actor implements IStopObserver
 
     public void stop() {
         isStopped = true;
+    }
+    
+    public static void reset() {
+        isStopped = false;
+        timer = 0;
     }
 }
