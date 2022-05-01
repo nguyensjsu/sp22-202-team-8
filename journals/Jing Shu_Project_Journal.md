@@ -39,16 +39,22 @@ None
 
 Weekly Zoom meeting were held on Monday and face-to-face meeting held on Saturday to talk about the progress and blockers. When a new feature/functionality merged, we notify other members in WeChat. Also, after bugs related to reset were found by BingJiun and Di, they talked about the problems through WeChat and I responded to the issue quickly.
 
-## Week 3 Scrum Report
+## Week 3 Scrum Report(Apr 25th ~ May 1st)
 1. What tasks did I work on / complete?
+* Finish menu screen(start screen)/gameOver screen UI design and code modification 
+* Finish Factory method, singleton, composite design pattern notes
 
 2. What am I planning to work on next?
+* Add music controller to the game
+* Change the background music according to different level
+* Finish UI modification
+* Documentation
 
 3. What tasks are blocked waiting on another team member?
 None
 
 4. XP Core Value: Communication
-
+On Monday we did weekly stand-up meeting and made video recording. After the class on Saturday, we reviewed the progress. During the week, we talked about the progress through WeChat and notified other team member when we found some bugs. 
 
 ## Week 4 Scrum Report
 1. What tasks did I work on / complete?
