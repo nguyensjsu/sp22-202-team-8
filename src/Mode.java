@@ -18,13 +18,18 @@ public class Mode extends Glyph
         super(world);
     }
 
-    public void create(String text, int width, int height, Color textColor) {
-    
-        img = new GreenfootImage(width, height);
-        img.setFont(new Font( true, true , 20));
-        img.setColor(textColor);
-        img.drawString(text, width / 2 - text.length()*5, height / 2 + 10);
-        setImage(img);
+    public void create(Boolean hasInputImg, String str, int fontSize, Color textColor, int width, int height, Color bgColor) {
+        if(hasInputImg) {
+            img = new GreenfootImage(str);
+            setImage(img);
+        }
+        else {
+            img = new GreenfootImage(width, height);
+            img.setFont(new Font( true, true , 20));
+            img.setColor(textColor);
+            img.drawString(str, width / 2 - str.length()*5, height / 2 + 10);
+            setImage(img);
+        }
     }
     
     public void setMode(Settings.MODE mode ){

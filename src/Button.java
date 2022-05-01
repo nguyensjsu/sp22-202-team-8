@@ -14,16 +14,24 @@ public class Button extends Glyph
         super(world);
     }
     
-    public void create(String text,int width, int height, Color backgroundColor) {
-    
-        img = new GreenfootImage(width, height);
-        img.setColor(backgroundColor);
-        img.fill();
+    public void create(Boolean hasInputImg, String str, int fontSize, Color textColor, int width, int height, Color backgroundColor) {
         
-        img.setFont(new Font(25));
-        img.setColor(Color.WHITE);
-        img.drawString(text, width / 2 - text.length() * 7, height / 2 + 10);
-        setImage(img);
+        if(hasInputImg){
+            img = new GreenfootImage(str);
+            setImage(img);
+        }
+        else {
+            img = new GreenfootImage(width, height);
+            img.setColor(backgroundColor);
+            img.fill();
+            
+            img.setFont(new Font(fontSize));
+            img.setColor(textColor);
+            img.drawString(str, width / 2 - str.length() * 8, height / 2 + 10);
+            setImage(img);
+        }
+        
+        
     }
     
     public void setNextScreen(MyWorld.SCREENS nextScreen){

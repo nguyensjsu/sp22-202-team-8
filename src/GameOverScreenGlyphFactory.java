@@ -10,8 +10,7 @@ public class GameOverScreenGlyphFactory implements IGlyphFactory
     public static Label screenTitle;
     public static Button tryAgainButton;
     public static Button leaderboardButton;
-    private Color tryAgainButtonColor;
-    private Color leaderboardButtonColor;
+    private Color ButtonBgColor;
     private Color screenTitleColor;
     
     private static GameOverScreenGlyphFactory gOSGlyphFactory = null;
@@ -35,15 +34,15 @@ public class GameOverScreenGlyphFactory implements IGlyphFactory
     }
 
     public void CreateButton() {
-        tryAgainButtonColor = new Color(207, 136, 23);
+        ButtonBgColor = new Color(207, 136, 23);
+        
         tryAgainButton = new Button(world);
-        tryAgainButton.create("Try again", world.WIDTH/4, world.HEIGHT/10, tryAgainButtonColor);
+        tryAgainButton.create(true, "tryAgainButton.png", 30, Color.WHITE, world.WIDTH/4, world.HEIGHT/10, ButtonBgColor);
         tryAgainButton.setLocation(world.WIDTH/3, world.HEIGHT*3/4);
         tryAgainButton.setNextScreen(MyWorld.SCREENS.GAME);
-    
-        leaderboardButtonColor = new Color(207, 136, 23);
+
         leaderboardButton = new Button(world);
-        leaderboardButton.create("Leaderboard", world.WIDTH/4, world.HEIGHT/10,leaderboardButtonColor);
+        leaderboardButton.create(true, "leaderBoardButton.png", 30, Color.WHITE, world.WIDTH/4, world.HEIGHT/10,ButtonBgColor);
         leaderboardButton.setLocation(world.WIDTH*2/3, world.HEIGHT*3/4);
         leaderboardButton.setNextScreen(MyWorld.SCREENS.LEADERBOARD);
        
@@ -51,8 +50,7 @@ public class GameOverScreenGlyphFactory implements IGlyphFactory
     
     public void CreateLabel() {
         screenTitle = new Label(world);
-        screenTitleColor = Color.ORANGE;
-        screenTitle.create("Game Over", world.WIDTH/2, world.HEIGHT/4, screenTitleColor);
+        screenTitle.create(true, "gameOver.png", 50, new Color(0, 0, 0, 0), world.WIDTH/2, world.HEIGHT/4, new Color(0, 0, 0, 0));
         screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/3);
 
     }
