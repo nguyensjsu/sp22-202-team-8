@@ -13,8 +13,9 @@ public class Rocket extends Actor implements IStopSubject
     private int coolDownRange;
     private int speedEffect;
     private int cdEffect;
-    public static int life;
-    private static boolean isStopped;
+    public int life;
+    protected static boolean isStopped;
+    protected static int crashedCount;
     private ArrayList<IStopObserver> observers;
     
     /**
@@ -32,6 +33,7 @@ public class Rocket extends Actor implements IStopSubject
         cdEffect = 0;
         life = 2;
         isStopped = false;
+        crashedCount = 0;
     }
     
     /**
@@ -40,55 +42,33 @@ public class Rocket extends Actor implements IStopSubject
      */
     public void act()
     {
-        if (isTouching(Rock.class)) {
-            World world = getWorld();
-            MyWorld myWorld = (MyWorld)world;
-            if(life == 2){
-                Heart heart3 = myWorld.getHeart3();
-                heart3.setLifeAmount(0);
-                
-                Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
-                SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
-                if (theSinRock != null) {
-                    theSinRock.destroyed();
-                }
-                else if (theRock != null) {
-                    theRock.destroyed();
-                }
-                life--;
-            }
-            else if (life == 1){
-                Heart heart2 = myWorld.getHeart2();
-                heart2.setLifeAmount(0);
-                
-                Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
-                SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
-                if (theSinRock != null) {
-                    theSinRock.destroyed();
-                }
-                else if (theRock != null) {
-                    theRock.destroyed();
-                }
-                life--;
-            }
-            else if (life == 0){
-                Heart heart1 = myWorld.getHeart();
-                heart1.setLifeAmount(0);
-                
-                Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
-                SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
-                if (theSinRock != null) {
-                    theSinRock.destroyed();
-                }
-                else if (theRock != null) {
-                    theRock.destroyed();
-                }
-                life--;
-                notifyGameOverObserver( ) ;
-                isStopped = true; 
-            }
+        if (crashedCount == 2) {
+            notifyGameOverObserver() ;
         }
         
+        updateHP();
+        
+        move();
+    }
+    
+    protected void updateHP() {
+        if (isTouching(Rock.class) && !isStopped) {
+            if (life == 0){
+                //notifyGameOverObserver( ) ;
+                isStopped = true; 
+                crashedCount++;
+            }
+            removeRock();
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Heart heart = myWorld.getP1HP().get(life);
+            heart.setLifeAmount(0);
+            life--;
+            life = Math.max(0, life);
+        }
+    }
+    
+    protected void move() {
         if (!isStopped) {
             getBuff();
             keySet();
@@ -166,6 +146,17 @@ public class Rocket extends Actor implements IStopSubject
             this.coolDownRange = Math.max(coolDownRange - 10, 10);
             this.cdEffect = 300;
             removeTouching(FasterShot.class);
+        }
+    }
+    
+    protected void removeRock() {
+        Rock theRock = (Rock)(getOneIntersectingObject( Rock.class ));
+        SinRock theSinRock = (SinRock)(getOneIntersectingObject( SinRock.class ));
+        if (theSinRock != null) {
+            theSinRock.destroyed();
+        }
+        else if (theRock != null) {
+            theRock.destroyed();
         }
     }
 }

@@ -1,4 +1,5 @@
 import greenfoot.*;  
+import java.util.*;
 
 /**
  * Write a description of class MyWorld here.
@@ -16,9 +17,9 @@ public class MyWorld extends World implements IStopObserver
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
     private Leveltext leveltext;
-    private Heart heart1;
-    private Heart heart2;
-    private Heart heart3;
+    private List<Heart> player1hp;
+    private List<Heart> player2hp;
+
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
     private HorizontalScrolling horizontalScrolling;
@@ -67,9 +68,8 @@ public class MyWorld extends World implements IStopObserver
         sm = new LevelStateMachine(this);
         counter = new Counter();
         leveltext = new Leveltext();
-        heart1 = new Heart();
-        heart2 = new Heart();
-        heart3 = new Heart();
+        player1hp = new ArrayList<>();
+        player2hp = new ArrayList<>();
         counter.registerScoreObserver(sm);
         
         setNextScreen(SCREENS.MENU);
@@ -80,16 +80,12 @@ public class MyWorld extends World implements IStopObserver
         return counter;
     }
     
-    public Heart getHeart(){
-        return heart1;
+    public List<Heart> getP1HP(){
+        return player1hp;
     }
     
-    public Heart getHeart2(){
-        return heart2;
-    }
-    
-    public Heart getHeart3(){
-        return heart3;
+    public List<Heart> getP2HP(){
+        return player2hp;
     }
     
         /**
@@ -100,29 +96,61 @@ public class MyWorld extends World implements IStopObserver
     {        
         Rocket rocket = new Rocket();
         shot = new Shot(rocket);
-        Rocket2P rocket2 = new Rocket2P();
-        rocket.registerStopObserver(this);
-        rocket.registerStopObserver(horizontalScrolling);
-        rocket.registerStopObserver(buff);
-        rocket.registerStopObserver(shot);
+        addRocket(rocket);
         addObject(rocket,50,200);
+        addHeart(rocket);
         
         settings = Settings.getInstance();
         if (settings.getPlayMode() == Settings.MODE.TWO_PLAYER) {
-            rocket2.registerObserver(this);
-            rocket2.registerObserver(horizontalScrolling);
-            rocket2.registerStopObserver(buff);
-            rocket2.registerStopObserver(shot);
+            Rocket2P rocket2 = new Rocket2P();
+            addRocket(rocket2);
             addObject(rocket2,50,100);
+            addHeart(rocket2);
         }
 
         sm.setLevel1();
         
         addObject(leveltext,402,28);
-        addObject(heart1,28,25);
-        addObject(heart2,68,25);
-        addObject(heart3,108,25);
         addObject(counter,731,31);
+    }
+    
+    private void addHeart(Rocket player) {
+        List<Heart> list;
+        int dis = 0;
+        if (player.getClass().getName().contains("2P")) {
+            list = player2hp;
+            dis = 228; // start at 218
+        } else {
+            list = player1hp;
+            dis = 38; // start at 28
+        }
+        
+        for (int i = 0; i < 3; i++) {
+            list.add(new Heart());
+            dis += 40;
+            addObject(list.get(i), dis, 25);
+        }
+    }
+    
+    private void addRocket(Rocket player) {
+        player.registerStopObserver(this);
+        player.registerStopObserver(horizontalScrolling);
+        player.registerStopObserver(buff);
+        player.registerStopObserver(shot);
+        
+        String icon_img;
+        int width = 0, height = 25;
+        if (player.getClass().getName().contains("2P")) {
+            icon_img = "rocket2P.png";
+            width = 218;
+        } else {
+           icon_img = "rocket.png";
+           width = 28;
+        }
+        
+        Icon rocketIcon = new Icon(this);
+        rocketIcon.create(true, icon_img, 25, new Color(0, 0, 0, 0), 0, 0, new Color(0, 0, 0, 0));
+        addObject(rocketIcon, width, height);
     }
     
     protected void addRocks(int number)
@@ -145,9 +173,13 @@ public class MyWorld extends World implements IStopObserver
             case GAME: {
                 GameScreen.initialize();
                 counter.setValue(0);
-                heart1.setLifeAmount(1);
-                heart2.setLifeAmount(1);
-                heart3.setLifeAmount(1);
+                for (Heart heart : player1hp) {
+                    heart.setLifeAmount(1);
+                }
+                
+                for (Heart heart : player2hp) {
+                    heart.setLifeAmount(1);
+                }
                 currentScreen = gameScreen; 
                 break;
             }
