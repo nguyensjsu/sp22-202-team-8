@@ -22,7 +22,7 @@ public class MenuScreen extends Screen implements IDisplayComponent
      */
     public MenuScreen(MyWorld world)
     {
-        super(world, new GreenfootImage("startPage.png"));
+        super(world, new GreenfootImage("startPage-medium.png"));
         components = new ArrayList<>();
         menuScreenGlyphFactory = MenuScreenGlyphFactory.getInstance(world);
         startButton = menuScreenGlyphFactory.startButton;

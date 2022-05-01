@@ -9,9 +9,9 @@ import greenfoot.*;
 public class MyWorld extends World implements IStopObserver
 {
     Counter counter;
-    public static final int WIDTH = 1280;
-    public static final int HEIGHT = 800;
-    
+    public static final int WIDTH = 1104;
+    public static final int HEIGHT = 690;
+
     private Screen currentScreen;
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
@@ -30,7 +30,6 @@ public class MyWorld extends World implements IStopObserver
     private GameOverScreenGlyphFactory gOSGlyphFactory;
     
     private Settings settings;
-    //private boolean is2p = false;
     private LevelStateMachine sm;
     
     private static MyWorld me;

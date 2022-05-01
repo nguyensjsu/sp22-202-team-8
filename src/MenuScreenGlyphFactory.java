@@ -37,37 +37,34 @@ public class MenuScreenGlyphFactory implements IGlyphFactory
     
     public void CreateButton() {
         startButton = new Button(world);
-        startButton.create("Start", 50, new Color(0, 0, 0, 0), 280, 80, new Color(0, 0, 0, 0));
-        startButton.setLocation(235, 640);
+        startButton.create(false, "Start", 50, new Color(0, 0, 0, 0), 250, 70, new Color(0, 0, 0, 0));
+        startButton.setLocation(world.WIDTH*9/50, world.HEIGHT*4/5);
         startButton.setNextScreen(MyWorld.SCREENS.GAME);
         
         lbButton = new Button(world);
-        lbButton.create("Leaderboard", 20, new Color(0, 0, 0, 0), 220, 60, new Color(0, 0, 0, 0));
-        lbButton.setLocation(700, 640);
+        lbButton.create(false, "Leaderboard", 20, new Color(0, 0, 0, 0), 184, 50, new Color(0, 0, 0, 0));
+        lbButton.setLocation(world.WIDTH*11/20, world.HEIGHT*4/5);
         lbButton.setNextScreen(MyWorld.SCREENS.LEADERBOARD);
         
         exitButton = new Button(world);
-        exitButton.create("Exit", 30, new Color(0, 0, 0, 0), 120, 55, new Color(0, 0, 0, 0));
-        exitButton.setLocation(1150, 680);
+        exitButton.create(false, "Exit", 30, new Color(0, 0, 0, 0), 100, 50, new Color(0, 0, 0, 0));
+        exitButton.setLocation(world.WIDTH*9/10, world.HEIGHT*17/20);
     
     }
     
     public void CreateLabel() {
-        screenTitle = new Label(world);
-        screenTitle.create("JetSpace", 50, Color.BLUE, world.WIDTH/2, world.HEIGHT/4, new Color(0, 0, 0, 0));
-        screenTitle.setLocation(world.WIDTH*3/8, world.HEIGHT/5);
     
     }
     
     public void CreateMode() {
         onePlayerMode = new Mode(world);
-        onePlayerMode.create("mode1.png", 25, new Color(0, 0, 0, 0), world.WIDTH/4, world.HEIGHT/8, new Color(0, 0, 0, 0));
-        onePlayerMode.setLocation(320, world.HEIGHT*2/5);
+        onePlayerMode.create(true, "mode1.png", 25, new Color(0, 0, 0, 0), world.WIDTH/4, world.HEIGHT/8, new Color(0, 0, 0, 0));
+        onePlayerMode.setLocation(world.WIDTH/4, world.HEIGHT*2/5);
         onePlayerMode.setMode(Settings.MODE.ONE_PLAYER);
         
         twoPlayerMode = new Mode(world);
-        twoPlayerMode.create("mode2.png", 25, new Color(0, 0, 0, 0), world.WIDTH/4, world.HEIGHT/8, new Color(0, 0, 0, 0));
-        twoPlayerMode.setLocation(630, world.HEIGHT*2/5);
+        twoPlayerMode.create(true, "mode2.png", 25, new Color(0, 0, 0, 0), world.WIDTH/4, world.HEIGHT/8, new Color(0, 0, 0, 0));
+        twoPlayerMode.setLocation(world.WIDTH/2, world.HEIGHT*2/5);
         twoPlayerMode.setMode(Settings.MODE.TWO_PLAYER);
     }
     
