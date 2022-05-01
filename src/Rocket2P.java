@@ -13,7 +13,8 @@ public class Rocket2P extends Rocket
     private int coolDownRange;
     private int speedEffect;
     private int cdEffect;
-    private boolean isStopped = false;
+    private int life;
+    private static boolean isStopped;
     private ArrayList<IStopObserver> observers;
     
     /**
@@ -29,8 +30,35 @@ public class Rocket2P extends Rocket
         coolDownRange = 25;
         speedEffect = 0;
         cdEffect = 0;
+        life = 2;
+        isStopped = false;
     }
     
+    @Override
+    protected void updateHP() {
+        if (isTouching(Rock.class) && !isStopped) {
+            if (life == 0){
+                //notifyGameOverObserver( ) ;
+                isStopped = true; 
+                super.crashedCount++;
+            }
+            removeRock();
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Heart heart = myWorld.getP2HP().get(life);
+            heart.setLifeAmount(0);
+            life--;
+            life = Math.max(0, life);
+        }
+    }
+    
+    @Override
+    protected void move() {
+        if (!isStopped) {
+            getBuff();
+            keySet();
+        }
+    }
     /**
      * Act - do whatever the rocket wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -75,6 +103,7 @@ public class Rocket2P extends Rocket
     }
     
     public void notifyGameOverObserver(){
+        super.notifyGameOverObserver();
         for (int i = 0; i < observers.size(); i++)
         {
             IStopObserver observer = observers.get(i) ;
