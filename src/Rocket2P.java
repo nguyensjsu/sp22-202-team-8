@@ -13,7 +13,7 @@ public class Rocket2P extends Rocket
     private int coolDownRange;
     private int speedEffect;
     private int cdEffect;
-    private int lift;
+    private int life;
     private static boolean isStopped;
     private ArrayList<IStopObserver> observers;
     
