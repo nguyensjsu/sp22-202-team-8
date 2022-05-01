@@ -149,7 +149,7 @@ public class Counter extends Actor implements IScoreSubject
     private void updateImage()
     {
         GreenfootImage image = new GreenfootImage("Counter.png");
-        GreenfootImage text = new GreenfootImage(prefix + value, 22, Color.BLACK, transparent);
+        GreenfootImage text = new GreenfootImage(prefix + value, 25, Color.BLACK, transparent);
         
         if (text.getWidth() > image.getWidth() - 20)
         {

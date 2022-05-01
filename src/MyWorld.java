@@ -111,8 +111,8 @@ public class MyWorld extends World implements IStopObserver
 
         sm.setLevel1();
         
-        addObject(leveltext,402,28);
-        addObject(counter,731,31);
+        addObject(leveltext,550,28);
+        addObject(counter,980, 31);
     }
     
     private void addHeart(Rocket player) {
