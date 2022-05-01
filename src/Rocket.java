@@ -27,7 +27,7 @@ public class Rocket extends Actor implements IStopSubject
         setImage(image);
         speed = 5;
         coolDown = 0;
-        coolDownRange = 30;
+        coolDownRange = 25;
         speedEffect = 0;
         cdEffect = 0;
         life = 2;
@@ -149,7 +149,7 @@ public class Rocket extends Actor implements IStopSubject
         
         // when exceed the effect time, set cool down time to initial value
         if (cdEffect == 0) {
-            this.coolDownRange = 30;
+            this.coolDownRange = 25;
         }
         
         // check speed up buff

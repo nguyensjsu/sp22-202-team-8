@@ -19,13 +19,16 @@ public class Counter extends Actor implements IScoreSubject
     private int levelTracker;
     private int cdTracker;
     private int suTracker;
+    private int timer;
+    private static boolean released;
     
     public Counter()
     {
         this(new String());
-        levelTracker = 50;
-        cdTracker = 250;
-        suTracker = 100;
+        levelTracker = 100;
+        cdTracker = 550;
+        suTracker = 300;
+        released = false;
     }
 
     /**
@@ -45,6 +48,8 @@ public class Counter extends Actor implements IScoreSubject
      */
     public void act() 
     {
+
+        
         if (value < target) {
             value++;
             updateImage();
@@ -71,46 +76,60 @@ public class Counter extends Actor implements IScoreSubject
         target = newValue;
         value = newValue;
         updateImage();
-
+        timer++;
+        // add buff lock, reset after 15 shots
+        if (timer % 15 == 0) {
+            released = false;
+        }
         // reset level when game is reset
         if (newValue == 0) {
-            levelTracker = 50;
-            suTracker = 100;
-            cdTracker = 250;
+            levelTracker = 100;
+            suTracker = 300;
+            cdTracker = 550;
+            timer = 0;
+            released = false;
         }
         
-        // after gaining every 50 points notify observer
+        // after gaining every 100 points notify observer
         if (value >= levelTracker) {
             notifyScoreObserver();
-            levelTracker += 50;
+            levelTracker += 100;
         }
         
-        // after gaining every 100 points release a speed up buff
+        // after gaining every 300 points triger a speed up buff release
         if (value >= suTracker) {
-            addSpeedUp();
-            suTracker += 100;
+            if (!released) {
+                addSpeedUp();
+                released = true;
+                timer = 0;
+            }
+            suTracker += 300;
         }
         
-        // after gaining every 250 points release a faster shot buff
+        // after gaining every 550 points triger a faster shot buff release
         if (value >= cdTracker) {
-            addFasterShot();
-            cdTracker += 250;
+            if (!released) {
+                addFasterShot();
+                released = true;
+                timer = 0;
+            }
+            cdTracker += 550;
         }
     }
     
     private void addSpeedUp() {
         if (!getImage().toString().contains("speedup.png")) {
             SpeedUp su = SpeedUp.getInstance();
-            int x = getWorld().getWidth() - Greenfoot.getRandomNumber(200) - 50;
-            int y = Greenfoot.getRandomNumber(getWorld().getHeight() / 2);
+            int x = getWorld().getWidth() - Greenfoot.getRandomNumber(200) - 300;
+            int y = Greenfoot.getRandomNumber(getWorld().getHeight() - 200) + 100;
             getWorld().addObject(su,x, y);
         }
     }
     
     private void addFasterShot() {
         FasterShot fs = FasterShot.getInstance();
-        int x = getWorld().getWidth() - Greenfoot.getRandomNumber(200) - 200;
-        int y = Greenfoot.getRandomNumber(getWorld().getHeight() / 2);
+        int x = getWorld().getWidth() - Greenfoot.getRandomNumber(200) - 300;
+        int y = Greenfoot.getRandomNumber(getWorld().getHeight() - 200) + 100;
         getWorld().addObject(fs,x, y);
     }
     

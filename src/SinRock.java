@@ -20,7 +20,7 @@ public class SinRock extends Rock
     public SinRock() {
         this.d = 0.0;
         this.y = 600;
-        this.speed = 3;
+        this.speed = 4;
         setImage(new GreenfootImage("asteroid.png"));
         GreenfootImage image = getImage();  
         image.scale(60, 50);
@@ -35,7 +35,7 @@ public class SinRock extends Rock
                 reset(); 
             } else {
                 this.d += 0.02;
-                this.y = this.getY() - (int)(Math.sin(this.d) * 4.0);
+                this.y = this.getY() - (int)(Math.sin(this.d) * 4.5);
                 setLocation(this.getX() - this.speed, this.y);
             }
         } else {
