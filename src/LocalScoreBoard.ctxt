@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=LocalScoreBoard
+comment0.text=\r\n\ An\ actor\ class\ that\ can\ display\ a\ scoreboard\ locally,\ using\ arraylist\ to\ track\ score.\r\n\ Based\ on\ default\ ScoreBoard\ class\ in\ Greenfoot.\r\n\ @author\ Team\ 8\r\n\ @version\ 1.0\r\n
+comment1.params=width\ height\ world
+comment1.target=LocalScoreBoard(int,\ int,\ MyWorld)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ScoreBoard.\r\n\ <p>\r\n\ You\ can\ specify\ the\ width\ and\ height\ that\ the\ score\ board\ should\ be,\ but\r\n\ a\ minimum\ width\ of\ 600\ will\ be\ enforced.\r\n
+comment2.params=c
+comment2.target=void\ addSubComponent(IDisplayComponent)
+comment3.params=c
+comment3.target=void\ removeSubCompnent(IDisplayComponent)
+comment4.params=x\ y
+comment4.target=void\ setLocation(int,\ int)
+comment5.params=
+comment5.target=void\ display()
+comment6.params=text\ x\ y\ color\ height
+comment6.target=void\ drawString(java.lang.String,\ int,\ int,\ greenfoot.Color,\ int)
+comment7.params=
+comment7.target=void\ drawScores()
+comment8.params=left\ top\ right\ bottom\ scores
+comment8.target=void\ localDrawUserPanel(int,\ int,\ int,\ int,\ LocalScoreList)
+comment9.params=left\ top\ right\ bottom\ users
+comment9.target=void\ drawUserPanel(int,\ int,\ int,\ int,\ java.util.List)
+numComments=10

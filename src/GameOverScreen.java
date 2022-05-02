@@ -48,6 +48,7 @@ public class GameOverScreen extends Screen implements IDisplayComponent
         addSubComponent(gOSGlyphFactory.screenTitle);
         addSubComponent(gOSGlyphFactory.tryAgainButton);
         addSubComponent(gOSGlyphFactory.leaderboardButton);
+        
         display();
         act();
     }
@@ -55,6 +56,7 @@ public class GameOverScreen extends Screen implements IDisplayComponent
     public void act()
     {
         if(Greenfoot.mouseClicked(gOSGlyphFactory.leaderboardButton)){
+            world.getScores().addScore(world.getCounter().getValue());
             gOSGlyphFactory.leaderboardButton.onClick();
             //Greenfoot.start();
         }

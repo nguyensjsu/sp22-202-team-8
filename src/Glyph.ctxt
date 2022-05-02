@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Glyph
-comment0.text=\n\ Write\ a\ description\ of\ class\ Glyph\ here.\n\ \n\ @author\ (Team\ 8)\ \n\ @version\ (v0.1)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Glyph\ here.\r\n\ \r\n\ @author\ (Team\ 8)\ \r\n\ @version\ (v0.1)\r\n
 comment1.params=world
 comment1.target=Glyph(MyWorld)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Glyph\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Glyph\r\n
 comment2.params=c
 comment2.target=void\ addSubComponent(IDisplayComponent)
 comment3.params=c

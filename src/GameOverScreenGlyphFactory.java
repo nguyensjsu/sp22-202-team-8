@@ -45,13 +45,11 @@ public class GameOverScreenGlyphFactory implements IGlyphFactory
         leaderboardButton.create(true, "leaderBoardButton.png", 30, Color.WHITE, world.WIDTH/4, world.HEIGHT/10,ButtonBgColor);
         leaderboardButton.setLocation(world.WIDTH*2/3, world.HEIGHT*3/4);
         leaderboardButton.setNextScreen(MyWorld.SCREENS.LEADERBOARD);
-       
     }
     
     public void CreateLabel() {
         screenTitle = new Label(world);
         screenTitle.create(true, "gameOver.png", 50, new Color(0, 0, 0, 0), world.WIDTH/2, world.HEIGHT/4, new Color(0, 0, 0, 0));
         screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/3);
-
     }
 }

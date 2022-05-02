@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Rocket2P
-comment0.text=\n\ Write\ a\ description\ of\ class\ rocket\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ rocket\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Rocket2P()
-comment1.text=\n\ Reference\:\ https\://www.greenfoot.org/topics/5092\n
+comment1.text=\r\n\ Reference\:\ https\://www.greenfoot.org/topics/5092\r\n
 comment10.params=list
 comment10.target=void\ setHP(java.util.List)
 comment2.params=
@@ -12,7 +12,7 @@ comment3.params=
 comment3.target=void\ move()
 comment4.params=
 comment4.target=void\ act()
-comment4.text=\n\ Act\ -\ do\ whatever\ the\ rocket\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment4.text=\r\n\ Act\ -\ do\ whatever\ the\ rocket\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment5.params=
 comment5.target=void\ keySet()
 comment6.params=o
