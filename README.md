@@ -10,7 +10,15 @@
 | Yiyang Yin    | 015973217     |  Courage        |
 
 ## About the project
+## Description 
 
+## Feature Set
+- Support both one player and two players mode
+- Support player-to-player rescue in two-players mode
+- Automatic level upgrade 
+- Automatic buff objects release
+- Shot obstacles to gain scores 
+- Get buff objects to speedup/ shorten cooldown after shooting
 
 ## Links to project videos
 * [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
