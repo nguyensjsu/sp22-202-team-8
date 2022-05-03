@@ -274,6 +274,7 @@ dependency89.type=UsesDependency
 dependency9.from=MyWorld
 dependency9.to=HorizontalScrolling
 dependency9.type=UsesDependency
+<<<<<<< HEAD
 dependency90.from=MenuScreenGlyphFactory
 dependency90.to=Settings
 dependency90.type=UsesDependency
@@ -293,6 +294,15 @@ editor.fx.0.y=41
 height=830
 package.numDependencies=93
 package.numTargets=43
+=======
+editor.fx.0.height=1222
+editor.fx.0.width=1622
+editor.fx.0.x=421
+editor.fx.0.y=138
+height=1017
+package.numDependencies=89
+package.numTargets=42
+>>>>>>> b5d08df (upload introMusic.mp3)
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -609,7 +619,14 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.0.0
+<<<<<<< HEAD
 width=1440
 world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=70
+=======
+width=1395
+world.lastInstantiated=MyWorld
+xPosition=1173
+yPosition=187
+>>>>>>> b5d08df (upload introMusic.mp3)

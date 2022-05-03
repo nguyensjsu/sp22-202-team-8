@@ -12,7 +12,8 @@ public class MyWorld extends World implements IStopObserver
     Counter counter;
     public static final int WIDTH = 1104;
     public static final int HEIGHT = 690;
-
+    private static final GreenfootSound introMusic = new GreenfootSound("introMusic.mp3");
+    
     private Screen currentScreen;
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
@@ -33,7 +34,6 @@ public class MyWorld extends World implements IStopObserver
     private Settings settings;
     private LevelStateMachine sm;
     
-    private static MyWorld me;
      /* Screens' names
      * 
      */ 
@@ -172,7 +172,13 @@ public class MyWorld extends World implements IStopObserver
             currentScreen.clean();
             
         switch(screen) {
-            case MENU: currentScreen = menuScreen; break;
+            case MENU: {
+                currentScreen = menuScreen; 
+                if (!introMusic.isPlaying()) {
+                    introMusic.playLoop();
+                }
+                break;
+            }
             case GAME: {
                 GameScreen.initialize();
                 counter.setValue(0);
@@ -184,9 +190,18 @@ public class MyWorld extends World implements IStopObserver
                     heart.setLifeAmount(1);
                 }
                 currentScreen = gameScreen; 
+                if (introMusic.isPlaying()) {
+                    introMusic.stop();
+                }
                 break;
             }
-            case LEADERBOARD: currentScreen = leaderboardScreen; break;
+            case LEADERBOARD: {
+                currentScreen = leaderboardScreen; 
+                if (introMusic.isPlaying()) {
+                    introMusic.stop();
+                }
+                break;
+            }
             default: currentScreen = menuScreen;
         }
         currentScreen.active();
