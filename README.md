@@ -85,6 +85,8 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
 * [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit#gid=0)
 * Burn down chart
 
+![Team 8 Burndown Chart](https://user-images.githubusercontent.com/90799662/167264001-e2251ba1-6fbe-429f-bef4-d10d6df2b987.svg)
+
 * Weekly Scrum Task Board
    * Week 1
 ![image](https://user-images.githubusercontent.com/98684620/163939113-03e051f9-5370-4ed9-a92e-e52039ae3223.png)
