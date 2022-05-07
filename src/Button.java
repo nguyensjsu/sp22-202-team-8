@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Button extends Glyph 
 {
     private MyWorld.SCREENS nextScreen;
-    
+
     public Button(MyWorld world) {
         super(world);
     }
@@ -43,7 +43,9 @@ public class Button extends Glyph
      * To transite to nextScreen.
      */   
     public void onClick() {
+        clickSound.play();
         world.setNextScreen(nextScreen);
+
     }
     
     

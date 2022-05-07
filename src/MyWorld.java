@@ -33,7 +33,7 @@ public class MyWorld extends World implements IStopObserver
     Settings settings;
     MusicController mc;
     private LevelStateMachine sm;
-  
+    
     //public final GreenfootSound startMusic = new GreenfootSound("try.wav");
      /* Screens' names
      * 
@@ -218,11 +218,20 @@ public class MyWorld extends World implements IStopObserver
      * A "Act" method in the world activate the currentScreen
      * 
      */    
+    @Override
     public void act()
     {
         if(currentScreen != null) {
             currentScreen.active();
         }
+    }
+    @Override
+    public void started() {
+        mc.playLoop(MusicController.MusicState.START);
+    }
+    @Override
+    public void stopped() {
+        mc.stop();
     }
 }
 
