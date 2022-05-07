@@ -1,4 +1,5 @@
 import greenfoot.*;
+import greenfoot.GreenfootSound;
 import java.util.ArrayList;
 /**
  * Write a description of class GameScreen here.
@@ -44,7 +45,7 @@ public class GameOverScreen extends Screen implements IDisplayComponent
     {
         super.active();
         world.stopped();
-        
+        //MusicController.getInstance().play(MusicController.MusicState.GAME_OVER);
         addSubComponent(gOSGlyphFactory.screenTitle);
         addSubComponent(gOSGlyphFactory.tryAgainButton);
         addSubComponent(gOSGlyphFactory.leaderboardButton);
@@ -56,7 +57,6 @@ public class GameOverScreen extends Screen implements IDisplayComponent
     {
         if(Greenfoot.mouseClicked(gOSGlyphFactory.leaderboardButton)){
             gOSGlyphFactory.leaderboardButton.onClick();
-            //Greenfoot.start();
         }
         if(Greenfoot.mouseClicked(gOSGlyphFactory.tryAgainButton)){
             gOSGlyphFactory.tryAgainButton.onClick();

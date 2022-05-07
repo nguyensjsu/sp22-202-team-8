@@ -11,21 +11,22 @@ import java.util.HashMap;
 public class MusicController  
 {
     private HashMap<MusicState, GreenfootSound> musicMap;
-    private static final GreenfootSound startMusic = new GreenfootSound("introMusic.mp3");
-    private static final GreenfootSound level1GameMusic = new GreenfootSound("gameMusic.mp3");
-    private static final GreenfootSound level2GameMusic = new GreenfootSound("gameMusic.mp3");
-    private static final GreenfootSound level3GameMusic = new GreenfootSound("gameMusic.mp3");
+    private final GreenfootSound startMusic = new GreenfootSound("startMusic.wav");
+    private final GreenfootSound level1GameMusic = new GreenfootSound("gameMusic.wav");
+    //private static final GreenfootSound level2GameMusic = new GreenfootSound("game1.mp3");
+    //private static final GreenfootSound level3GameMusic = new GreenfootSound("game1.mp3");
+    private final GreenfootSound gameOverMusic = new GreenfootSound("gameOver.wav");
     
     private static MusicController theMusicController = null;
     
     private MusicState currentMusicState = MusicState.NO_MUSIC;
-    private MusicState prevMusicState = MusicState.NO_MUSIC;
 
     enum MusicState {
         START,
         LEVEL1,
         LEVEL2,
         LEVEL3,
+        GAME_OVER,
         NO_MUSIC
     }
     /**
@@ -52,38 +53,33 @@ public class MusicController
         musicMap = new HashMap<>();
         musicMap.put(MusicState.START,startMusic);
         musicMap.put(MusicState.LEVEL1,level1GameMusic);
-        musicMap.put(MusicState.LEVEL2,level2GameMusic);
-        musicMap.put(MusicState.LEVEL3,level3GameMusic);
+        musicMap.put(MusicState.LEVEL2,level1GameMusic);
+        musicMap.put(MusicState.LEVEL3,level1GameMusic);
+        musicMap.put(MusicState.GAME_OVER,gameOverMusic);
         currentMusicState = MusicState.START;
+        musicMap.get(currentMusicState).stop();
     }
-    public void play()
+    public void play(MusicState state)
     {
-        if(prevMusicState != MusicState.NO_MUSIC){
-            if(musicMap.get(prevMusicState).isPlaying()){
-                musicMap.get(prevMusicState).stop();
-            }
-        }
-        
+        stop();
+        currentMusicState = state;
         if(currentMusicState != MusicState.NO_MUSIC) {
-            if(!musicMap.get(currentMusicState).isPlaying()){
-                musicMap.get(currentMusicState).playLoop();
-            }
+            musicMap.get(currentMusicState).play();
         }
     }
-    
+    public void playLoop(MusicState state)
+    {
+        stop();
+        currentMusicState = state;
+        if(currentMusicState != MusicState.NO_MUSIC) {
+            musicMap.get(currentMusicState).playLoop();
+        }
+    }
     public void stop()
     {
         if(currentMusicState != MusicState.NO_MUSIC) {
-            if(musicMap.get(currentMusicState).isPlaying()){
-                musicMap.get(currentMusicState).stop();
-            }
+            musicMap.get(currentMusicState).stop();
         }
-        prevMusicState = currentMusicState;
         currentMusicState = MusicState.NO_MUSIC;
-    }
-    
-    public void setMusicState(MusicState state){
-        prevMusicState = currentMusicState;
-        currentMusicState = state;
     }
 }

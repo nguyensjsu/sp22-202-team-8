@@ -30,9 +30,11 @@ public class MyWorld extends World implements IStopObserver
     private LeaderboardScreenGlyphFactory lbSGlyphFactory;
     private GameOverScreenGlyphFactory gOSGlyphFactory;
     
-    private Settings settings;
+    Settings settings;
+    MusicController mc;
     private LevelStateMachine sm;
-    private MusicController mc;
+  
+    //public final GreenfootSound startMusic = new GreenfootSound("try.wav");
      /* Screens' names
      * 
      */ 
@@ -71,7 +73,7 @@ public class MyWorld extends World implements IStopObserver
         player1hp = new ArrayList<>();
         player2hp = new ArrayList<>();
         counter.registerScoreObserver(sm);
-
+ 
         setNextScreen(SCREENS.MENU);
         Greenfoot.start();
     }
@@ -174,15 +176,13 @@ public class MyWorld extends World implements IStopObserver
         switch(screen) {
             case MENU: {
                 currentScreen = menuScreen; 
-                mc.setMusicState(MusicController.MusicState.START);
-                mc.play();
+                mc.playLoop(MusicController.MusicState.START);
                 break;
             }
             case GAME: {
                 GameScreen.initialize();
                 counter.setValue(0);
-                mc.setMusicState(MusicController.MusicState.LEVEL1);
-                mc.play();
+                mc.playLoop(MusicController.MusicState.LEVEL1);
                 for (Heart heart : player1hp) {
                     heart.setLifeAmount(1);
                 }
@@ -211,8 +211,8 @@ public class MyWorld extends World implements IStopObserver
     
     public void stop() {
         currentScreen = gameOverScreen;
-        MusicController.getInstance().stop();
         currentScreen.active();
+        mc.play(MusicController.MusicState.GAME_OVER);
     }
     /**
      * A "Act" method in the world activate the currentScreen
