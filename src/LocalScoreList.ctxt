@@ -6,7 +6,6 @@ comment1.target=LocalScoreList()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ LocalScoreList\r\n
 comment2.params=y
 comment2.target=void\ addScore(int)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
 comment3.params=i
 comment3.target=int\ getScore(int)
 comment4.params=

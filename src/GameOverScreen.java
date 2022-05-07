@@ -48,7 +48,7 @@ public class GameOverScreen extends Screen implements IDisplayComponent
         addSubComponent(gOSGlyphFactory.screenTitle);
         addSubComponent(gOSGlyphFactory.tryAgainButton);
         addSubComponent(gOSGlyphFactory.leaderboardButton);
-        
+     
         display();
         act();
     }
@@ -56,11 +56,26 @@ public class GameOverScreen extends Screen implements IDisplayComponent
     public void act()
     {
         if(Greenfoot.mouseClicked(gOSGlyphFactory.leaderboardButton)){
-            world.getScores().addScore(world.getCounter().getValue());
+            if (UserInfo.isStorageAvailable()) {
+                int newScore= world.getCounter().getValue();
+                UserInfo myInfo = UserInfo.getMyInfo();
+                if ( newScore > myInfo.getScore()) {
+                    myInfo.setScore(newScore);
+                    myInfo.store();  // write back to server
+                }
+            }
             gOSGlyphFactory.leaderboardButton.onClick();
             //Greenfoot.start();
         }
         if(Greenfoot.mouseClicked(gOSGlyphFactory.tryAgainButton)){
+            if (UserInfo.isStorageAvailable()) {
+                int newScore= world.getCounter().getValue();
+                UserInfo myInfo = UserInfo.getMyInfo();
+                if ( newScore > myInfo.getScore()) {
+                    myInfo.setScore(newScore);
+                    myInfo.store();  // write back to server
+                }
+            }
             gOSGlyphFactory.tryAgainButton.onClick();
         } 
     }
