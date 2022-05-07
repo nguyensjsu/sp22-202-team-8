@@ -73,13 +73,19 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
 * Once game is over, current screen should be set to GameOver screen and all moving object should be stopped.
 * To make sure all related objects will be stopped at the same time, we introduced observer pattern.
 
+![observer pattern-stop](https://user-images.githubusercontent.com/90799662/167265314-809a6526-02ab-44a5-89f5-69d586d57d3d.png)
+
 #### Observer for Upgrading Level
 * Once the user has gained a specific amount of scores, it will trigger the level upgrade system and change the level state.
 * To avoid tight coupling of socres and updating level, we introduced observer pattern.
 
+![observer pattern-level](https://user-images.githubusercontent.com/90799662/167265324-07ef0331-b330-468e-b97b-88c9c2452d9a.png)
+
 ### State Machine Pattern
 * Totally we designed three levels, each level will add more obstacles than the previous one.
 * To allow later extension, we introduced state machine pattern.
+
+![state machine pattern-level](https://user-images.githubusercontent.com/90799662/167265328-79207e11-2167-4b54-9bdb-7d9bec77a266.png)
 
 ## Project backlog and chart
 * [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit#gid=0)
