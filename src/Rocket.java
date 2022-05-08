@@ -18,6 +18,7 @@ public class Rocket extends Actor implements IStopSubject
     protected static int crashedCount;
     private ArrayList<IStopObserver> observers;
     private List<Heart> hp;
+    private boolean notified;
     
     /**
      * Reference: https://www.greenfoot.org/topics/5092
@@ -35,6 +36,7 @@ public class Rocket extends Actor implements IStopSubject
         life = 2;
         isStopped = false;
         crashedCount = 1;
+        notified = false;
     }
     
     /**
@@ -43,8 +45,9 @@ public class Rocket extends Actor implements IStopSubject
      */
     public void act()
     {
-        if (crashedCount == 0) {
+        if (crashedCount == 0 && !notified) {
             notifyGameOverObserver() ;
+            notified = true;
         }
         
         updateHP();

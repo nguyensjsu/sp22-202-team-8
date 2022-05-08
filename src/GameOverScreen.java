@@ -43,8 +43,9 @@ public class GameOverScreen extends Screen implements IDisplayComponent
     public void active()
     {
         super.active();
-        world.stopped();
-        
+        //world.stopped();
+        //MusicController.getInstance().play(MusicController.MusicState.GAME_OVER);
+
         addSubComponent(gOSGlyphFactory.screenTitle);
         addSubComponent(gOSGlyphFactory.tryAgainButton);
         addSubComponent(gOSGlyphFactory.leaderboardButton);
