@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class GameScreen here.
  * 
- * @author (team 8) 
- * @version (v0.1)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class GameOverScreen extends Screen implements IDisplayComponent 
 {
@@ -50,7 +50,8 @@ public class GameOverScreen extends Screen implements IDisplayComponent
         display();
         act();
     }
-
+    
+    @Override
     public void act()
     {
         if(Greenfoot.mouseClicked(gOSGlyphFactory.leaderboardButton)){

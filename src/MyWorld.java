@@ -33,8 +33,7 @@ public class MyWorld extends World implements IStopObserver
     Settings settings;
     MusicController mc;
     private LevelStateMachine sm;
-    
-    //public final GreenfootSound startMusic = new GreenfootSound("try.wav");
+
      /* Screens' names */ 
     public enum SCREENS 
     {

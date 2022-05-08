@@ -2,8 +2,8 @@ import greenfoot.*;
 /**
  * Write a description of class Glyph here.
  * 
- * @author (Team 8) 
- * @version (v0.1)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public abstract class Glyph extends Actor implements IDisplayComponent 
 {
@@ -11,6 +11,7 @@ public abstract class Glyph extends Actor implements IDisplayComponent
     protected int x, y; // location 
     protected MyWorld world;
     protected static final GreenfootSound clickSound = new GreenfootSound("select-click.wav");
+    
     /**
      * Constructor for objects of class Glyph
      */

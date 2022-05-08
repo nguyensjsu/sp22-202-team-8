@@ -3,8 +3,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class MenuScreen here.
  * 
- * @author (team 8) 
- * @version (v0.1)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class MenuScreen extends Screen implements IDisplayComponent
 {
@@ -52,7 +52,7 @@ public class MenuScreen extends Screen implements IDisplayComponent
     public void active()
     {
         super.active();
-        //addSubComponent(menuScreenGlyphFactory.screenTitle);
+
         addSubComponent(startButton);
         addSubComponent(lbButton);
         addSubComponent(exitButton);  
@@ -62,10 +62,10 @@ public class MenuScreen extends Screen implements IDisplayComponent
         act();
     }
 
+    @Override
     public void act()
     {       
-        //MusicController.getInstance().playLoop(MusicController.MusicState.START);
-        if(Greenfoot.mouseClicked(startButton)){
+         if(Greenfoot.mouseClicked(startButton)){
                 startButton.onClick();
         }
         if(Greenfoot.mouseClicked(lbButton)){

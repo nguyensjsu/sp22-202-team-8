@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=IDisplayComponent
+comment0.text=\n\ Write\ a\ description\ of\ class\ IDisplayComponent\ here.\n\ \n\ @author\ (Jing)\ \n\ @version\ (v1.0)\n
 comment1.params=c
 comment1.target=void\ addSubComponent(IDisplayComponent)
 comment2.params=c

@@ -2,8 +2,8 @@ import greenfoot.*;
 /**
  * Write a description of class GameS here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class GameScreen extends Screen 
 {
@@ -29,6 +29,7 @@ public class GameScreen extends Screen
         act();
     }
     
+    @Override
     public void act()
     {
         if (!initialized) {

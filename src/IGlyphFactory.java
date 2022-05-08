@@ -1,8 +1,8 @@
 /**
  * Write a description of class IGlyphFactory here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public interface IGlyphFactory  
 {

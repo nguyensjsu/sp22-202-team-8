@@ -3,8 +3,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class LeaderboardScreen here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class LeaderboardScreen extends Screen implements IDisplayComponent
 {   
@@ -49,6 +49,7 @@ public class LeaderboardScreen extends Screen implements IDisplayComponent
 
     }
 
+    @Override
     public void act()
     {
         if(Greenfoot.mouseClicked(lbGlyphFactory.backToMenuButton)){
