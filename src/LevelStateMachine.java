@@ -1,9 +1,9 @@
 import greenfoot.*;  
 /**
- * Write a description of class Level2 here.
+ * Write a description of class LevelStateMachine here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Dee) 
+ * @version (v1.0)
  */
 public class LevelStateMachine implements ILevelStateMachine, IScoreObserver 
 {

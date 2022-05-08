@@ -1,8 +1,8 @@
 /**
- * Write a description of class Level2 here.
+ * Write a description of class Level3 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Dee) 
+ * @version (v1.0)
  */
 public class Level3 implements ILevelState 
 {

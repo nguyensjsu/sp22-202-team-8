@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class rocket here.
+ * Write a description of class Rocket here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Dee, Joseph) 
+ * @version (v1.3)
  */
 public class Rocket extends Actor implements IStopSubject
 {
@@ -18,6 +18,7 @@ public class Rocket extends Actor implements IStopSubject
     protected static int crashedCount;
     private ArrayList<IStopObserver> observers;
     private List<Heart> hp;
+    private boolean notified;
     
     /**
      * Reference: https://www.greenfoot.org/topics/5092
@@ -35,6 +36,7 @@ public class Rocket extends Actor implements IStopSubject
         life = 2;
         isStopped = false;
         crashedCount = 1;
+        notified = false;
     }
     
     /**
@@ -43,8 +45,9 @@ public class Rocket extends Actor implements IStopSubject
      */
     public void act()
     {
-        if (crashedCount == 0) {
+        if (crashedCount == 0 && !notified) {
             notifyGameOverObserver() ;
+            notified = true;
         }
         
         updateHP();
