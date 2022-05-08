@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class horizontalScrolling here.
+ * Write a description of class HorizontalScrolling here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Dee) 
+ * @version (v1.1)
  */
 public class HorizontalScrolling extends Actor implements IStopObserver
 {
@@ -27,7 +27,7 @@ public class HorizontalScrolling extends Actor implements IStopObserver
     }
     
     /**
-     * Act - do whatever the horizontalScrolling wants to do. This method is called whenever
+     * Act - do whatever the HorizontalScrolling wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()

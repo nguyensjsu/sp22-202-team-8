@@ -5,7 +5,7 @@ import java.util.*;
  * Write a description of class MyWorld here.
  * 
  * @author (team 8) 
- * @version (v0.1)
+ * @version (v1.0)
  */
 public class MyWorld extends World implements IStopObserver
 {
@@ -35,9 +35,7 @@ public class MyWorld extends World implements IStopObserver
     private LevelStateMachine sm;
     
     //public final GreenfootSound startMusic = new GreenfootSound("try.wav");
-     /* Screens' names
-     * 
-     */ 
+     /* Screens' names */ 
     public enum SCREENS 
     {
         MENU,

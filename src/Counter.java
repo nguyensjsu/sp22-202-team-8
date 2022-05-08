@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Shot here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Joseph, Dee) 
+ * @version (v1.2)
  */
 
 public class Counter extends Actor implements IScoreSubject

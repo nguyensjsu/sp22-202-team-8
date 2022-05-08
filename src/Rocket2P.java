@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class rocket here.
+ * Write a description of class Rocket2P here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Dee) 
+ * @version (v1.3)
  */
 public class Rocket2P extends Rocket
 {
