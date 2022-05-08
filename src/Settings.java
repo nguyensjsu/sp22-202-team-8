@@ -1,8 +1,8 @@
 /**
  * Write a description of class Settings here.
  * 
- * @author (team 8) 
- * @version (v0.1)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class Settings  
 {

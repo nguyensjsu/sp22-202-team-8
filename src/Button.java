@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Button here.
  * 
- * @author (team 8) 
- * @version (v0.1)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class Button extends Glyph 
 {
@@ -14,6 +14,7 @@ public class Button extends Glyph
         super(world);
     }
     
+    @Override
     public void create(Boolean hasInputImg, String str, int fontSize, Color textColor, int width, int height, Color backgroundColor) {
         
         if(hasInputImg){

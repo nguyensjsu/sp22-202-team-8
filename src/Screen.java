@@ -3,8 +3,8 @@ import greenfoot.*;
 /**
  * Write a description of class Screen here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public abstract class Screen  
 {

@@ -5,8 +5,8 @@ import java.util.HashMap;
 /**
  * Write a description of class musicController here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class MusicController  
 {
@@ -32,7 +32,7 @@ public class MusicController
     /**
      * Constructor for objects of class musicController
      */
-    private MusicController(){}
+    public MusicController(){}
 
     public synchronized static MusicController getNewInstance() {
             theMusicController = new MusicController();
