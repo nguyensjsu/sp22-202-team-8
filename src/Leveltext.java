@@ -33,7 +33,7 @@ public class Leveltext extends Actor
         }
         GreenfootImage img = getImage();
         img.clear();
-        setImage(new GreenfootImage("Level : " + level , 20 , Color.ORANGE, Color.BLACK));
+        setImage(new GreenfootImage("Level : " + level , 25 , Color.ORANGE, Color.BLACK));
     }
     
 }

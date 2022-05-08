@@ -32,7 +32,7 @@ public class MusicController
     /**
      * Constructor for objects of class musicController
      */
-    private MusicController(){}
+    public MusicController(){}
 
     public synchronized static MusicController getNewInstance() {
             theMusicController = new MusicController();
@@ -42,7 +42,9 @@ public class MusicController
     
     public synchronized static MusicController getInstance() {
         if(theMusicController == null) {
-            return getNewInstance();
+            theMusicController = new MusicController();
+            theMusicController.startUp();
+            return theMusicController;
         }
         return theMusicController;
     }

@@ -33,13 +33,16 @@
   - After we discussed the contents that we wanted to achieve this week, we had a five minutes talk and discussed about our opinions and feedbacks about last week content, so we can make our project better and understand more about what we want to make. 
 ## Week 3 Scrum Report
 1. What tasks did I work on / complete?
-
+  - Implement score counting function to all obstacles
+  - Implement level counting function
+  - Implement user's lives
 2. What am I planning to work on next?
-
+  - Finish some code diagrams
+  - Improve some documentations of program
 3. What tasks are blocked waiting on another team member?
-
+  - Nothing got blocked this week.
 4. XP Core Values - Feedback
-
+  - In the late period of the project, share our feedbacks and make sure everbody have the same view for the final result.
 ## Week 4 Scrum Report
 1. What tasks did I work on / complete?
 

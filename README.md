@@ -10,7 +10,15 @@
 | Yiyang Yin    | 015973217     |  Courage        |
 
 ## About the project
+## Description 
 
+## Feature Set
+- Support both one player and two players mode
+- Support player-to-player rescue in two-players mode
+- Automatic level upgrade 
+- Automatic buff objects release
+- Shot obstacles to gain scores 
+- Get buff objects to speedup/ shorten cooldown after shooting
 
 ## Links to project videos
 * [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
@@ -18,8 +26,13 @@
 ## Project architecture
 ### UI Wireframes
 * Start Screen
-![image](https://user-images.githubusercontent.com/98684620/166135322-bd7f4c1d-7fd7-43d6-b952-761a55ff7e66.png)
+  <img width="1101" alt="image" src="https://user-images.githubusercontent.com/90799662/166169722-7d798897-a194-4922-ae7c-b6aeb8873104.png">
 
+* Game Screen - Two Players Mode
+  <img width="1102" alt="image" src="https://user-images.githubusercontent.com/90799662/166169943-604959a9-48a6-45b2-8359-6fb50b59ebd6.png">
+
+* Game Over Screen
+  <img width="1101" alt="image" src="https://user-images.githubusercontent.com/90799662/166169680-c3ddc250-e7e0-40f3-920d-d47129e36a8e.png">
 
 ### High level diagrams
 
@@ -46,16 +59,39 @@ The factory method is used to create item objects (button, label) for different 
 * So it's perfectly implemented as a singleton
                                       
 ![image](https://user-images.githubusercontent.com/98684620/165899251-bd6243cf-52d1-429b-9af0-ec27061999df.png)
+#### Subclasses of Buff as a singleton
+* The user can get one buff object from the same class at a time, but there could be two buff objects from different classes.
+* Introduced singleton pattern for subclasses of `Buff` to control the realse of buff object.
 
 ### Composite Pattern
 Different items should be displayed in Menu Screen. Composite pattern is used to let client treat these objects uniformly. The key of the Composite pattern is the interface IDisplayComponent, which declares operations that all composite object share for accessing and managing its child components, and also defines operation (setLocation()) that is specific to graphical objects.
 
 ![image](https://user-images.githubusercontent.com/98684620/165987438-2153fcbd-dbd5-4303-8d69-b070df2f4eaf.png)
 
+### Observer Pattern
+#### Observer for Stopping Game
+* Once game is over, current screen should be set to GameOver screen and all moving object should be stopped.
+* To make sure all related objects will be stopped at the same time, we introduced observer pattern.
+
+![observer pattern-stop](https://user-images.githubusercontent.com/90799662/167265314-809a6526-02ab-44a5-89f5-69d586d57d3d.png)
+
+#### Observer for Upgrading Level
+* Once the user has gained a specific amount of scores, it will trigger the level upgrade system and change the level state.
+* To avoid tight coupling of socres and updating level, we introduced observer pattern.
+
+![observer pattern-level](https://user-images.githubusercontent.com/90799662/167265324-07ef0331-b330-468e-b97b-88c9c2452d9a.png)
+
+### State Machine Pattern
+* Totally we designed three levels, each level will add more obstacles than the previous one.
+* To allow later extension, we introduced state machine pattern.
+
+![state machine pattern-level](https://user-images.githubusercontent.com/90799662/167265328-79207e11-2167-4b54-9bdb-7d9bec77a266.png)
 
 ## Project backlog and chart
 * [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit#gid=0)
 * Burn down chart
+
+![Team 8 Burndown Chart](https://user-images.githubusercontent.com/90799662/167264001-e2251ba1-6fbe-429f-bef4-d10d6df2b987.svg)
 
 * Weekly Scrum Task Board
    * Week 1
@@ -63,6 +99,9 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
 
    * Week 2
 ![image](https://user-images.githubusercontent.com/98684620/165194777-f464028b-ddce-4831-a19e-d856caa20d46.png)
+
+   * Week 3
+![image](https://user-images.githubusercontent.com/98684620/166723448-c5ab79a9-fbee-4cc7-91bb-33557c332211.png)
 
 ## Individual Contributions and team journals
 ### Contributions

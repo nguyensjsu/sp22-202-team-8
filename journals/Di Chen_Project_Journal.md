@@ -36,6 +36,7 @@ XP Core Value: Simplicity
 - Fixed the game over control issue in two players mode
 2. What am I planning to work on next?
 - Restrict the area in which buff objects can exist
+- Allow rescues between two players
 3. What tasks are blocked waiting on another team member?
 - N/A
 4. XP Core Value
@@ -43,9 +44,14 @@ XP Core Value: Simplicity
 
 ## Week 4 Scrum Report
 1. What tasks did I work on / complete?
-
+- Designed and implemented rescue logic between players
+- Adjusted game balance
+- Finished documentation 
+  - Plot burndown chart
+  - Add class diagrams for design patterns
 2. What am I planning to work on next?
-
+- N/A
 3. What tasks are blocked waiting on another team member?
-
+- N/A
 4. XP Core Value
+- This week we finished final code clean up to keep the code as simple as possible.

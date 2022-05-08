@@ -47,7 +47,7 @@ Weekly Zoom meeting were held on Monday and face-to-face meeting held on Saturda
 2. What am I planning to work on next?
 * Add music controller to the game
 * Change the background music according to different level
-* Finish UI modification
+* User story video
 * Documentation
 
 3. What tasks are blocked waiting on another team member?
