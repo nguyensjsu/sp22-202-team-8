@@ -19,7 +19,7 @@ public class MyWorld extends World implements IStopObserver
     private Leveltext leveltext;
     private List<Heart> player1hp;
     private List<Heart> player2hp;
-    private LocalScoreList scores;
+    private LocalScoreBoard scoreBoard;
 
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
@@ -71,7 +71,7 @@ public class MyWorld extends World implements IStopObserver
         leveltext = new Leveltext();
         player1hp = new ArrayList<>();
         player2hp = new ArrayList<>();
-        scores = new LocalScoreList();
+        scoreBoard = LocalScoreBoard.getInstance(400,300,me);
         counter.registerScoreObserver(sm);
         
         setNextScreen(SCREENS.MENU);
@@ -82,8 +82,8 @@ public class MyWorld extends World implements IStopObserver
         return counter;
     }
     
-    public LocalScoreList getScores(){
-        return scores;
+    public LocalScoreBoard getScoreBoard(){
+        return scoreBoard;
     }
     
     public List<Heart> getP1HP(){

@@ -64,6 +64,8 @@ public class GameOverScreen extends Screen implements IDisplayComponent
                     myInfo.store();  // write back to server
                 }
             }
+            world.getScoreBoard().drawNewScore("Your new score is: " + String.valueOf(world.getCounter().getValue()), 200, 20, new Color(0x0, 0x0, 0x0), 25);
+            world.getScoreBoard().drawScores();
             gOSGlyphFactory.leaderboardButton.onClick();
             //Greenfoot.start();
         }

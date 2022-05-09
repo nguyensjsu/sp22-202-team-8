@@ -21,6 +21,7 @@ public class LocalScoreBoard extends Actor implements IDisplayComponent
     private static final Color BACKGROUND_COLOR = new Color(0xFF, 0xFF, 0xFF, 0xB0);
     private static final Color BACKGROUND_HIGHLIGHT_COLOR = new Color(180, 230, 255, 0xB0);
 
+    private static LocalScoreBoard instance;
     protected GreenfootImage img;
     protected int x, y; // location 
     protected MyWorld world;
@@ -32,11 +33,17 @@ public class LocalScoreBoard extends Actor implements IDisplayComponent
      * You can specify the width and height that the score board should be, but
      * a minimum width of 600 will be enforced.
      */
-    public LocalScoreBoard(int width, int height, MyWorld world)
-    {    
+    
+    private LocalScoreBoard(int width, int height, MyWorld world) {
         this.world = world;
         setImage(new GreenfootImage(Math.max(600, width), height)); 
-        drawScores();
+    }
+    
+    public static LocalScoreBoard getInstance(int width, int height, MyWorld world) {
+        if (instance == null) {
+            instance = new LocalScoreBoard(width, height, world);
+        }
+        return instance;
     }
     
     public void addSubComponent( IDisplayComponent c ) {
@@ -57,11 +64,17 @@ public class LocalScoreBoard extends Actor implements IDisplayComponent
     };
     
     private void drawString(String text, int x, int y, Color color, int height)
-    {
+    {   
         getImage().drawImage(new GreenfootImage(text, height, color, new Color (0,0,0,0)), x, y);
     }
     
-    private void drawScores()
+    public void drawNewScore(String text, int x, int y, Color color, int height)
+    {   
+        getImage().clear();
+        getImage().drawImage(new GreenfootImage(text, height, color, new Color (0,0,0,0)), x, y);
+    }
+    
+    public void drawScores()
     {
         // 50 pixels is the max height of the user image
         final int pixelsPerUser = 50 + 2*GAP;
@@ -72,7 +85,6 @@ public class LocalScoreBoard extends Actor implements IDisplayComponent
         getImage().setColor(BACKGROUND_COLOR);
         getImage().fill();
 
-        drawString("Your new high score is: " + String.valueOf(world.getCounter().getValue()), 30 + getImage().getWidth() / 4, topSpace - HEADER_TEXT_HEIGHT - 50, MAIN_COLOR, HEADER_TEXT_HEIGHT);
         drawString("All Players", 100, topSpace - HEADER_TEXT_HEIGHT - 5, MAIN_COLOR, HEADER_TEXT_HEIGHT);
         drawString("Near You", 100 + getImage().getWidth() / 2, topSpace - HEADER_TEXT_HEIGHT - 5, MAIN_COLOR, HEADER_TEXT_HEIGHT);        
         
