@@ -10,7 +10,15 @@
 | Yiyang Yin    | 015973217     |  Courage        |
 
 ## About the project
+## Description 
 
+## Feature Set
+- Support both one player and two players mode
+- Support player-to-player rescue in two-players mode
+- Automatic level upgrade 
+- Automatic buff objects release
+- Shot obstacles to gain scores 
+- Get buff objects to speedup/ shorten cooldown after shooting
 
 ## Links to project videos
 * [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
@@ -65,17 +73,25 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
 * Once game is over, current screen should be set to GameOver screen and all moving object should be stopped.
 * To make sure all related objects will be stopped at the same time, we introduced observer pattern.
 
+![observer pattern-stop](https://user-images.githubusercontent.com/90799662/167265314-809a6526-02ab-44a5-89f5-69d586d57d3d.png)
+
 #### Observer for Upgrading Level
 * Once the user has gained a specific amount of scores, it will trigger the level upgrade system and change the level state.
 * To avoid tight coupling of socres and updating level, we introduced observer pattern.
+
+![observer pattern-level](https://user-images.githubusercontent.com/90799662/167265324-07ef0331-b330-468e-b97b-88c9c2452d9a.png)
 
 ### State Machine Pattern
 * Totally we designed three levels, each level will add more obstacles than the previous one.
 * To allow later extension, we introduced state machine pattern.
 
+![state machine pattern-level](https://user-images.githubusercontent.com/90799662/167265328-79207e11-2167-4b54-9bdb-7d9bec77a266.png)
+
 ## Project backlog and chart
 * [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit#gid=0)
 * Burn down chart
+
+![Team 8 Burndown Chart](https://user-images.githubusercontent.com/90799662/167264001-e2251ba1-6fbe-429f-bef4-d10d6df2b987.svg)
 
 * Weekly Scrum Task Board
    * Week 1
@@ -83,6 +99,9 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
 
    * Week 2
 ![image](https://user-images.githubusercontent.com/98684620/165194777-f464028b-ddce-4831-a19e-d856caa20d46.png)
+
+   * Week 3
+![image](https://user-images.githubusercontent.com/98684620/166723448-c5ab79a9-fbee-4cc7-91bb-33557c332211.png)
 
 ## Individual Contributions and team journals
 ### Contributions

@@ -12,7 +12,7 @@ public class MyWorld extends World implements IStopObserver
     Counter counter;
     public static final int WIDTH = 1104;
     public static final int HEIGHT = 690;
-
+    
     private Screen currentScreen;
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
@@ -31,10 +31,11 @@ public class MyWorld extends World implements IStopObserver
     private LeaderboardScreenGlyphFactory lbSGlyphFactory;
     private GameOverScreenGlyphFactory gOSGlyphFactory;
     
-    private Settings settings;
+    Settings settings;
+    MusicController mc;
     private LevelStateMachine sm;
     
-    private static MyWorld me;
+    //public final GreenfootSound startMusic = new GreenfootSound("try.wav");
      /* Screens' names
      * 
      */ 
@@ -57,13 +58,14 @@ public class MyWorld extends World implements IStopObserver
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
         lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
         gOSGlyphFactory = new GameOverScreenGlyphFactory(this);
+        // Create singleton Settings and MusicControoller
+        settings = new Settings();
+        mc = MusicController.getNewInstance();
         // Create screens in MyWorld
         menuScreen = new MenuScreen(this);
         gameScreen = new GameScreen(this);
         gameOverScreen = new GameOverScreen(this);
         leaderboardScreen = new LeaderboardScreen(this);
-        
-        settings = new Settings();
         
         horizontalScrolling = new HorizontalScrolling();
         buff = new Buff();
@@ -74,7 +76,7 @@ public class MyWorld extends World implements IStopObserver
         scoreBoard = LocalScoreBoard.getInstance(400,300,me);
         scoreBoard.drawScores();
         counter.registerScoreObserver(sm);
-        
+ 
         setNextScreen(SCREENS.MENU);
         Greenfoot.start();
     }
@@ -179,10 +181,15 @@ public class MyWorld extends World implements IStopObserver
             currentScreen.clean();
             
         switch(screen) {
-            case MENU: currentScreen = menuScreen; break;
+            case MENU: {
+                currentScreen = menuScreen; 
+                mc.playLoop(MusicController.MusicState.START);
+                break;
+            }
             case GAME: {
                 GameScreen.initialize();
                 counter.setValue(0);
+                mc.playLoop(MusicController.MusicState.LEVEL1);
                 for (Heart heart : player1hp) {
                     heart.setLifeAmount(1);
                 }
@@ -193,7 +200,11 @@ public class MyWorld extends World implements IStopObserver
                 currentScreen = gameScreen; 
                 break;
             }
-            case LEADERBOARD: currentScreen = leaderboardScreen; break;
+            case LEADERBOARD: {
+                currentScreen = leaderboardScreen; 
+                mc.stop();
+                break;
+            }
             default: currentScreen = menuScreen;
         }
         currentScreen.active();
@@ -208,16 +219,26 @@ public class MyWorld extends World implements IStopObserver
     public void stop() {
         currentScreen = gameOverScreen;
         currentScreen.active();
+        mc.play(MusicController.MusicState.GAME_OVER);
     }
     /**
      * A "Act" method in the world activate the currentScreen
      * 
      */    
+    @Override
     public void act()
     {
         if(currentScreen != null) {
             currentScreen.active();
         }
+    }
+    @Override
+    public void started() {
+        mc.playLoop(MusicController.MusicState.START);
+    }
+    @Override
+    public void stopped() {
+        mc.stop();
     }
 }
 

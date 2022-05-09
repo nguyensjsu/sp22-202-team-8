@@ -14,7 +14,6 @@ public class MenuScreen extends Screen implements IDisplayComponent
     private Label screenTitle;
     private Mode onePlayerMode;
     private Mode twoPlayerMode;
-    
     private MenuScreenGlyphFactory menuScreenGlyphFactory; 
     private final ArrayList<IDisplayComponent> components;
     /**
@@ -31,6 +30,7 @@ public class MenuScreen extends Screen implements IDisplayComponent
         screenTitle = menuScreenGlyphFactory.screenTitle;
         onePlayerMode = menuScreenGlyphFactory.onePlayerMode;
         twoPlayerMode = menuScreenGlyphFactory.twoPlayerMode;
+
     }
     
     public void addSubComponent( IDisplayComponent c ) {
@@ -63,9 +63,10 @@ public class MenuScreen extends Screen implements IDisplayComponent
     }
 
     public void act()
-    {
+    {       
+        //MusicController.getInstance().playLoop(MusicController.MusicState.START);
         if(Greenfoot.mouseClicked(startButton)){
-               startButton.onClick();
+                startButton.onClick();
         }
         if(Greenfoot.mouseClicked(lbButton)){
                world.getScoreBoard().drawNewScore("Your new score is: " + String.valueOf(world.getCounter().getValue()), 200, 20, new Color(0x0, 0x0, 0x0), 25);
@@ -73,7 +74,8 @@ public class MenuScreen extends Screen implements IDisplayComponent
                lbButton.onClick();
         }
         if(Greenfoot.mouseClicked(exitButton)){
-               Greenfoot.stop();
+                MusicController.getInstance().stop();
+                Greenfoot.stop();
         }
         if(Greenfoot.mouseClicked(onePlayerMode)){
                onePlayerMode.onClick();

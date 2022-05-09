@@ -10,7 +10,7 @@ public class Mode extends Glyph
 {
     private Settings settings;
     private Settings.MODE mode;
-    private static final GreenfootSound clickSound = new GreenfootSound("select-click.wav");
+    //private static final GreenfootSound clickSound = new GreenfootSound("select-click.wav");
     /**
      * Constructor for objects of class Mode
      */
