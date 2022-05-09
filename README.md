@@ -87,6 +87,12 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
 
 ![state machine pattern-level](https://user-images.githubusercontent.com/90799662/167265328-79207e11-2167-4b54-9bdb-7d9bec77a266.png)
 
+### Strategy Pattern
+* Use strategy pattern for counting score of different obstacles.
+* It's easy to maintain and allow later extension of new obstacles and different counting methods.
+
+![image](https://user-images.githubusercontent.com/98665601/167326537-2e6e6a08-1cb8-419e-aa81-64b79866b9df.png)
+
 ## Project backlog and chart
 * [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit#gid=0)
 * Burn down chart
