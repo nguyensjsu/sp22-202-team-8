@@ -10,17 +10,21 @@
 | Yiyang Yin    | 015973217     |  Courage        |
 
 ## About the project
-## Description 
+### Description 
 - This project was built in Greenfoot integrated development environment and the mainly language we use is Java. The goal of this project is that we want to build a game which allow user to play together with their family or friends during the Covid pandemic.
 
 - This game support one-player mode and two players mode, each player have three lifes to spend. You need to avoid the obstacles and shot them to get the score. As more obstacles you destoryed, the game will become more difficult. Try to survive in the space and get the higher score!
-## Feature Set
+### Feature Set
 - Support both one player and two players mode
 - Support player-to-player rescue in two-players mode
 - Automatic level upgrade 
 - Automatic buff objects release
 - Shot obstacles to gain scores 
 - Get buff objects to speedup/ shorten cooldown after shooting
+### How to run this project
+* Install Greenfoot
+* Clone this repository
+* Run project.greenfoot inside the src folder
 
 ## Links to project videos
 * [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
