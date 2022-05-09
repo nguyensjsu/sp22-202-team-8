@@ -45,9 +45,12 @@
   - In the late period of the project, share our feedbacks and make sure everbody have the same view for the final result.
 ## Week 4 Scrum Report
 1. What tasks did I work on / complete?
-
+  - Add some documentations to the project
+  - Game description
+  - Strategy pattern diagram
 2. What am I planning to work on next?
-
+  - N/A
 3. What tasks are blocked waiting on another team member?
-
+  - N/A
 4. XP Core Values - Feedback
+  - We gave some feedbacks about how to improve our user story and demo video.
