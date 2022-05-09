@@ -72,6 +72,7 @@ public class MyWorld extends World implements IStopObserver
         player1hp = new ArrayList<>();
         player2hp = new ArrayList<>();
         scoreBoard = LocalScoreBoard.getInstance(400,300,me);
+        scoreBoard.drawScores();
         counter.registerScoreObserver(sm);
         
         setNextScreen(SCREENS.MENU);
