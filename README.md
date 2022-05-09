@@ -22,9 +22,9 @@
 - Shot obstacles to gain scores 
 - Get buff objects to speedup/ shorten cooldown after shooting
 ### How to run this project
-* Install Greenfoot
-* Clone this repository
-* Run project.greenfoot inside the src folder
+* Install [Greenfoot](https://www.greenfoot.org/download)
+* Clone this [repository](https://github.com/nguyensjsu/sp22-202-team-8)
+* Run `project.greenfoot` inside the src folder
 
 ## Links to project videos
 * [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
