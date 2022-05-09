@@ -72,6 +72,7 @@ public class LocalScoreBoard extends Actor implements IDisplayComponent
         getImage().setColor(BACKGROUND_COLOR);
         getImage().fill();
 
+        drawString("Your new high score is: " + String.valueOf(world.getCounter().getValue()), 30 + getImage().getWidth() / 4, topSpace - HEADER_TEXT_HEIGHT - 50, MAIN_COLOR, HEADER_TEXT_HEIGHT);
         drawString("All Players", 100, topSpace - HEADER_TEXT_HEIGHT - 5, MAIN_COLOR, HEADER_TEXT_HEIGHT);
         drawString("Near You", 100 + getImage().getWidth() / 2, topSpace - HEADER_TEXT_HEIGHT - 5, MAIN_COLOR, HEADER_TEXT_HEIGHT);        
         
