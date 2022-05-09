@@ -10,10 +10,19 @@ comment10.text=\r\n\ A\ method\ to\ set\ nextScreen\ and\ activate\ the\ Screen\
 comment11.params=
 comment11.target=void\ setGameScreen()
 comment12.params=
+<<<<<<< HEAD
 comment12.target=void\ stop()
 comment13.params=
 comment13.target=void\ act()
 comment13.text=\r\n\ A\ "Act"\ method\ in\ the\ world\ activate\ the\ currentScreen\r\n\ \r\n
+=======
+comment12.target=void\ act()
+comment12.text=\n\ A\ "Act"\ method\ in\ the\ world\ activate\ the\ currentScreen\n\ \n
+comment13.params=
+comment13.target=void\ started()
+comment14.params=
+comment14.target=void\ stopped()
+>>>>>>> main
 comment2.params=
 comment2.target=Counter\ getCounter()
 comment3.params=
@@ -26,9 +35,19 @@ comment6.params=
 comment6.target=void\ prepare()
 comment6.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
 comment7.params=player
+<<<<<<< HEAD
 comment7.target=void\ addHeart(Rocket)
 comment8.params=player
 comment8.target=void\ addRocket(Rocket)
 comment9.params=number
 comment9.target=void\ addRocks(int)
 numComments=14
+=======
+comment7.target=void\ addRocket(Rocket)
+comment8.params=number
+comment8.target=void\ addRocks(int)
+comment9.params=screen
+comment9.target=void\ setNextScreen(MyWorld.SCREENS)
+comment9.text=\n\ A\ method\ to\ set\ nextScreen\ and\ activate\ the\ Screen\n\ \n
+numComments=15
+>>>>>>> main
