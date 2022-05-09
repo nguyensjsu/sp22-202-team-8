@@ -1,10 +1,11 @@
 import greenfoot.*;
+import greenfoot.GreenfootSound;
 import java.util.ArrayList;
 /**
  * Write a description of class GameScreen here.
  * 
- * @author (team 8) 
- * @version (v0.1)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class GameOverScreen extends Screen implements IDisplayComponent 
 {
@@ -43,8 +44,6 @@ public class GameOverScreen extends Screen implements IDisplayComponent
     public void active()
     {
         super.active();
-        world.stopped();
-        
         addSubComponent(gOSGlyphFactory.screenTitle);
         addSubComponent(gOSGlyphFactory.tryAgainButton);
         addSubComponent(gOSGlyphFactory.leaderboardButton);
@@ -52,7 +51,8 @@ public class GameOverScreen extends Screen implements IDisplayComponent
         display();
         act();
     }
-
+    
+    @Override
     public void act()
     {
         if(Greenfoot.mouseClicked(gOSGlyphFactory.leaderboardButton)){
@@ -67,7 +67,6 @@ public class GameOverScreen extends Screen implements IDisplayComponent
             world.getScoreBoard().drawNewScore("Your new score is: " + String.valueOf(world.getCounter().getValue()), 200, 20, new Color(0x0, 0x0, 0x0), 25);
             world.getScoreBoard().drawScores();
             gOSGlyphFactory.leaderboardButton.onClick();
-            //Greenfoot.start();
         }
         if(Greenfoot.mouseClicked(gOSGlyphFactory.tryAgainButton)){
             if (UserInfo.isStorageAvailable()) {

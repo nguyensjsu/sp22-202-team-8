@@ -2,8 +2,8 @@ import greenfoot.*;
 /**
  * Write a description of class MenuScreenGlyphFactory here.
  * 
- * @author (Team 8) 
- * @version (v0.1)
+ * @author (Jing) 
+ * @version (v1.0)
  */
 public class LeaderboardScreenGlyphFactory implements IGlyphFactory
 {

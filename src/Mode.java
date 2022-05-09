@@ -10,7 +10,7 @@ public class Mode extends Glyph
 {
     private Settings settings;
     private Settings.MODE mode;
-    private static final GreenfootSound clickSound = new GreenfootSound("select-click.wav");
+    
     /**
      * Constructor for objects of class Mode
      */
@@ -18,6 +18,7 @@ public class Mode extends Glyph
         super(world);
     }
 
+    @Override
     public void create(Boolean hasInputImg, String str, int fontSize, Color textColor, int width, int height, Color bgColor) {
         if(hasInputImg) {
             img = new GreenfootImage(str);

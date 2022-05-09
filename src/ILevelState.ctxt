@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=ILevelState
+comment0.text=\n\ Write\ a\ description\ of\ class\ ILevelState\ here.\n\ \n\ @author\ (Dee)\ \n\ @version\ (v1.0)\n
 comment1.params=
 comment1.target=void\ nextLevel()
 numComments=2

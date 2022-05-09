@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class icon here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Dee) 
+ * @version (v1.0)
  */
 public class Icon extends Glyph
 {

@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Shot here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Dee, Joseph) 
+ * @version (v1.2)
  */
 public class Shot extends Actor implements IStopObserver
 {
