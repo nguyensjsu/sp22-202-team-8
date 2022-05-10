@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Settings
+comment0.text=\n\ Write\ a\ description\ of\ class\ Settings\ here.\n\ \n\ @author\ (Jing)\ \n\ @version\ (v1.0)\n
+comment1.params=
+comment1.target=Settings()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Settings\n
+comment2.params=
+comment2.target=Settings\ getInstance()
+comment3.params=
+comment3.target=Settings.MODE\ getPlayMode()
+comment4.params=mode
+comment4.target=void\ setPlayMode(Settings.MODE)
+numComments=5

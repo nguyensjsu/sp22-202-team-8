@@ -27,7 +27,6 @@ public class MenuScreen extends Screen implements IDisplayComponent
         startButton = menuScreenGlyphFactory.startButton;
         lbButton = menuScreenGlyphFactory.lbButton;
         exitButton = menuScreenGlyphFactory.exitButton;
-        screenTitle = menuScreenGlyphFactory.screenTitle;
         onePlayerMode = menuScreenGlyphFactory.onePlayerMode;
         twoPlayerMode = menuScreenGlyphFactory.twoPlayerMode;
     }

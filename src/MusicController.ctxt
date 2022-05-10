@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=MusicController
+comment0.text=\n\ Write\ a\ description\ of\ class\ musicController\ here.\n\ \n\ @author\ (Jing)\ \n\ @version\ (v1.0)\n
+comment1.params=
+comment1.target=MusicController()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ musicController\n
+comment2.params=
+comment2.target=MusicController\ getNewInstance()
+comment3.params=
+comment3.target=MusicController\ getInstance()
+comment4.params=
+comment4.target=void\ startUp()
+comment5.params=state
+comment5.target=void\ play(MusicController.MusicState)
+comment6.params=state
+comment6.target=void\ playLoop(MusicController.MusicState)
+comment7.params=
+comment7.target=void\ stop()
+numComments=8

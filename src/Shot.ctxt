@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Shot
+comment0.text=\n\ Write\ a\ description\ of\ class\ Shot\ here.\n\ \n\ @author\ (Dee,\ Joseph)\ \n\ @version\ (v1.2)\n
+comment1.params=r
+comment1.target=Shot(Rocket)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ Shot\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=
+comment3.target=boolean\ hitRock()
+comment4.params=
+comment4.target=void\ stop()
+numComments=5

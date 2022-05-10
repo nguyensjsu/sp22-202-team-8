@@ -33,19 +33,16 @@ public class LeaderboardScreenGlyphFactory implements IGlyphFactory
     }
     
     public void CreateButton() {
-        backToMenuButtonBgColor = new Color(165, 165, 165);
-        backToMenuButtonTxtColor = new Color(255, 255, 255);
         backToMenuButton = new Button(world);
-        backToMenuButton.create(false, "Back", 30, backToMenuButtonTxtColor, world.WIDTH/4, world.HEIGHT/10, backToMenuButtonBgColor);
-        backToMenuButton.setLocation(world.WIDTH/2, world.HEIGHT*4/5);
+        backToMenuButton.create(false, "Back", 30, new Color(0, 0, 0, 0), world.WIDTH/4, world.HEIGHT/10, new Color(0, 0, 0, 0));
+        backToMenuButton.setLocation(world.WIDTH/2, world.HEIGHT*8/9);
         backToMenuButton.setNextScreen(MyWorld.SCREENS.MENU);
-    
     }
     
     public void CreateLabel() {
-        screenTitle = new Label(world);
-        screenTitle.create(false, "Leaderboard", 50, Color.RED, world.WIDTH/2, world.HEIGHT/8, new Color(0, 0, 0, 0));
-        screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/6);
+        //screenTitle = new Label(world);
+        //screenTitle.create(false, "Leaderboard", 50, Color.RED, world.WIDTH/2, world.HEIGHT/8, new Color(0, 0, 0, 0));
+        //screenTitle.setLocation(world.WIDTH/2, world.HEIGHT/6);
 
         leaderboard = LocalScoreBoard.getInstance(400,300,world);
         leaderboard.setLocation(world.WIDTH/2, world.HEIGHT/2);

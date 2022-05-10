@@ -16,7 +16,7 @@ public class LeaderboardScreen extends Screen implements IDisplayComponent
      */
     public LeaderboardScreen(MyWorld world)
     {
-        super(world, new GreenfootImage("sandstone.jpg"));
+        super(world, new GreenfootImage("leaderboard.png"));
         components = new ArrayList<>();
         lbGlyphFactory = LeaderboardScreenGlyphFactory.getInstance(world);
     
@@ -42,7 +42,7 @@ public class LeaderboardScreen extends Screen implements IDisplayComponent
     public void active()
     {
         super.active();
-        addSubComponent(lbGlyphFactory.screenTitle);
+        //addSubComponent(lbGlyphFactory.screenTitle);
         addSubComponent(lbGlyphFactory.leaderboard);
         addSubComponent(lbGlyphFactory.backToMenuButton);
         display();
