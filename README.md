@@ -28,6 +28,7 @@
 
 ## Links to project videos
 * [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
+* [Retrospective meeting](https://youtu.be/H5FF4OmhRXU)
 
 ## Project architecture
 ### UI Wireframes
