@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=ScoreContext
-comment0.text=\n\ Write\ a\ description\ of\ class\ ScoreContext\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=strategy
-comment1.target=ScoreContext(IScoreStrategy)
-comment2.params=num
-comment2.target=int\ executeStrategy(int)
-numComments=3

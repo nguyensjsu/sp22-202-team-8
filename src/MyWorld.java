@@ -70,10 +70,11 @@ public class MyWorld extends World implements IStopObserver
         leveltext = new Leveltext();
         player1hp = new ArrayList<>();
         player2hp = new ArrayList<>();
-        scoreBoard = LocalScoreBoard.getInstance(400,300,me);
+        scoreBoard = LocalScoreBoard.getInstance(400,300,this);
+        scoreBoard.drawNewScore("Your new score is: " + String.valueOf(this.getCounter().getValue()), 200, 20, new Color(0x0, 0x0, 0x0), 25);
         scoreBoard.drawScores();
         counter.registerScoreObserver(sm);
- 
+        
         setNextScreen(SCREENS.MENU);
         Greenfoot.start();
     }

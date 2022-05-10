@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=Label
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Label\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=world
-comment1.target=Label(MyWorld)
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Label\r\n
-comment2.params=hasInputImg\ str\ fontSize\ textColor\ width\ height\ bgColor
-comment2.target=void\ create(java.lang.Boolean,\ java.lang.String,\ int,\ greenfoot.Color,\ int,\ int,\ greenfoot.Color)
-numComments=3

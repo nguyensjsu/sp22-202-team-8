@@ -30,7 +30,6 @@ public class MenuScreen extends Screen implements IDisplayComponent
         screenTitle = menuScreenGlyphFactory.screenTitle;
         onePlayerMode = menuScreenGlyphFactory.onePlayerMode;
         twoPlayerMode = menuScreenGlyphFactory.twoPlayerMode;
-
     }
     
     public void addSubComponent( IDisplayComponent c ) {
