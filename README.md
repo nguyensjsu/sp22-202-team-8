@@ -27,6 +27,7 @@
 * Run `project.greenfoot` inside the src folder
 
 ## Links to project videos
+* [User Story Video](https://youtu.be/rzyDlRgbWqk)
 * [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
 * [Retrospective meeting](https://youtu.be/H5FF4OmhRXU)
 
