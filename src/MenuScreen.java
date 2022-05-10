@@ -30,7 +30,6 @@ public class MenuScreen extends Screen implements IDisplayComponent
         screenTitle = menuScreenGlyphFactory.screenTitle;
         onePlayerMode = menuScreenGlyphFactory.onePlayerMode;
         twoPlayerMode = menuScreenGlyphFactory.twoPlayerMode;
-
     }
     
     public void addSubComponent( IDisplayComponent c ) {
@@ -69,6 +68,8 @@ public class MenuScreen extends Screen implements IDisplayComponent
                 startButton.onClick();
         }
         if(Greenfoot.mouseClicked(lbButton)){
+               world.getScoreBoard().drawNewScore("Your new score is: " + String.valueOf(world.getCounter().getValue()), 200, 20, new Color(0x0, 0x0, 0x0), 25);
+               world.getScoreBoard().drawScores();
                lbButton.onClick();
         }
         if(Greenfoot.mouseClicked(exitButton)){

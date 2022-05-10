@@ -43,6 +43,7 @@ public class LeaderboardScreen extends Screen implements IDisplayComponent
     {
         super.active();
         addSubComponent(lbGlyphFactory.screenTitle);
+        addSubComponent(lbGlyphFactory.leaderboard);
         addSubComponent(lbGlyphFactory.backToMenuButton);
         display();
         act();

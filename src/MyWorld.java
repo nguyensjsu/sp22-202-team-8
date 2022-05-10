@@ -19,6 +19,7 @@ public class MyWorld extends World implements IStopObserver
     private Leveltext leveltext;
     private List<Heart> player1hp;
     private List<Heart> player2hp;
+    private LocalScoreBoard scoreBoard;
 
     private GameOverScreen gameOverScreen;
     private LeaderboardScreen leaderboardScreen;
@@ -48,7 +49,8 @@ public class MyWorld extends World implements IStopObserver
     public MyWorld()
     {    
         // Create a new world with WIDTHxHEIGHT cells with a cell size of 1x1 pixels.
-        super(WIDTH, HEIGHT, 1);    
+        super(WIDTH, HEIGHT, 1);  
+        counter = new Counter();
         // Create GlyphFactory for screens
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
         lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
@@ -65,18 +67,24 @@ public class MyWorld extends World implements IStopObserver
         horizontalScrolling = new HorizontalScrolling();
         buff = new Buff();
         sm = new LevelStateMachine(this);
-        counter = new Counter();
         leveltext = new Leveltext();
         player1hp = new ArrayList<>();
         player2hp = new ArrayList<>();
+        scoreBoard = LocalScoreBoard.getInstance(400,300,this);
+        scoreBoard.drawNewScore("Your new score is: " + String.valueOf(this.getCounter().getValue()), 200, 20, new Color(0x0, 0x0, 0x0), 25);
+        scoreBoard.drawScores();
         counter.registerScoreObserver(sm);
- 
+        
         setNextScreen(SCREENS.MENU);
         Greenfoot.start();
     }
     
     public Counter getCounter(){
         return counter;
+    }
+    
+    public LocalScoreBoard getScoreBoard(){
+        return scoreBoard;
     }
     
     public List<Heart> getP1HP(){
