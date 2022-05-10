@@ -117,6 +117,9 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
    * Week 3
 ![image](https://user-images.githubusercontent.com/98684620/166723448-c5ab79a9-fbee-4cc7-91bb-33557c332211.png)
 
+   * Week 4
+![image](https://user-images.githubusercontent.com/98684620/167542515-f5d2bd8b-f883-42e6-bb5e-e481e1516c1c.png)
+
 ## Individual Contributions and team journals
 ### Contributions
 
