@@ -46,6 +46,10 @@ public class LocalScoreBoard extends Actor implements IDisplayComponent
         return instance;
     }
     
+    public static void reset() {
+        instance = null;
+    }
+    
     public void addSubComponent( IDisplayComponent c ) {
         // nothing
     };

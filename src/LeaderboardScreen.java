@@ -31,8 +31,9 @@ public class LeaderboardScreen extends Screen implements IDisplayComponent
     };
     
     public void display(){
-        for (IDisplayComponent dc : components) 
+        for (IDisplayComponent dc : components) {
             dc.display();
+        }
     };
     
     public void setLocation(int x, int y){
