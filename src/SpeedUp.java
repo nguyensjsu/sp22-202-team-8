@@ -25,6 +25,10 @@ public class SpeedUp extends Buff
         return theSUinstance;
     }
     
+    public static void resetInstance() {
+        theSUinstance = null;
+    }
+    
     public void act()
     {
         // Add your action code here.

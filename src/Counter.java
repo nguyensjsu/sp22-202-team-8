@@ -30,7 +30,7 @@ public class Counter extends Actor implements IScoreSubject
         suTracker = 300;
         released = false;
     }
-
+    
     /**
      * Create a new counter, initialised to 0.
      */

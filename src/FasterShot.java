@@ -25,6 +25,10 @@ public class FasterShot extends Buff
         return theFSinstance;
     }
     
+    public static void resetInstance() {
+        theFSinstance = null;
+    }
+    
     public void act()
     {
         // Add your action code here.

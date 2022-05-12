@@ -17,17 +17,20 @@ public class LeaderboardScreenGlyphFactory implements IGlyphFactory
     /**
      * Constructor for objects of class MenuScreenGlyphFactory
      */
-    public LeaderboardScreenGlyphFactory(MyWorld world)
+    private LeaderboardScreenGlyphFactory(MyWorld world)
     {
         this.world = world;
         CreateButton();
         CreateLabel();
     }
 
+    public static void reset() {
+        leaderboardScreenGlyphFactory = null;
+    }
+    
     public synchronized static LeaderboardScreenGlyphFactory getInstance(MyWorld world) {
         if(leaderboardScreenGlyphFactory == null) {
             leaderboardScreenGlyphFactory = new LeaderboardScreenGlyphFactory(world);
-            return leaderboardScreenGlyphFactory;
         }
         return leaderboardScreenGlyphFactory;
     }

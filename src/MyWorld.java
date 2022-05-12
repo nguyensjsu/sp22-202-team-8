@@ -50,10 +50,11 @@ public class MyWorld extends World implements IStopObserver
     {    
         // Create a new world with WIDTHxHEIGHT cells with a cell size of 1x1 pixels.
         super(WIDTH, HEIGHT, 1);  
+        reset();
         counter = new Counter();
         // Create GlyphFactory for screens
         menuScreenGlyphFactory = new MenuScreenGlyphFactory(this);
-        lbSGlyphFactory = new LeaderboardScreenGlyphFactory(this);
+        lbSGlyphFactory = LeaderboardScreenGlyphFactory.getInstance(this);
         gOSGlyphFactory = new GameOverScreenGlyphFactory(this);
         // Create singleton Settings and MusicControoller
         settings = new Settings();
@@ -77,6 +78,13 @@ public class MyWorld extends World implements IStopObserver
         
         setNextScreen(SCREENS.MENU);
         Greenfoot.start();
+    }
+    
+    private static void reset() {
+        LocalScoreBoard.reset();
+        LeaderboardScreenGlyphFactory.reset();
+        SpeedUp.resetInstance();
+        FasterShot.resetInstance();
     }
     
     public Counter getCounter(){
