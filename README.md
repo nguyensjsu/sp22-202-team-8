@@ -16,7 +16,7 @@
 - This game supports single player mode and dual players mode, each player have three hit points. You need to avoid obstacles and shot them to gain scores. As you destroy more obstacles, the game becomes more difficult. Try to survive in space and get a higher score!
 ### Feature Set
 - Support both single player mode and dual players mode
-- Support player-to-player rescue in two-players mode
+- Support player-to-player rescue in dual players mode
 - Automatic level upgrade 
 - Automatic buff objects release
 - Shot obstacles to gain scores 
