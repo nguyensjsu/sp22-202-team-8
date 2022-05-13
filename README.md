@@ -11,11 +11,11 @@
 
 ## About the project
 ### Description 
-- This project was built in Greenfoot integrated development environment and the mainly language we use is Java. The goal of this project is that we want to build a game which allow user to play together with their family or friends during the Covid pandemic.
+- This project is built in Greenfoot IDE and the main language we used is Java. The goal of this project is that we want to build a game for users to play with their family or friends during the Covid pandemic.
 
-- This game support one-player mode and two players mode, each player have three lifes to spend. You need to avoid the obstacles and shot them to get the score. As more obstacles you destoryed, the game will become more difficult. Try to survive in the space and get the higher score!
+- This game supports single player mode and dual players mode, each player have three hit points. You need to avoid obstacles and shot them to gain scores. As you destroy more obstacles, the game becomes more difficult. Try to survive in space and get a higher score!
 ### Feature Set
-- Support both one player and two players mode
+- Support both single player mode and dual players mode
 - Support player-to-player rescue in two-players mode
 - Automatic level upgrade 
 - Automatic buff objects release
@@ -44,6 +44,9 @@
 
 * Game Over Screen
   <img width="1101" alt="image" src="https://user-images.githubusercontent.com/90799662/166169680-c3ddc250-e7e0-40f3-920d-d47129e36a8e.png">
+
+* LeaderBoard Screen
+  <img width="1099" alt="04-LeaderBoardScreen" src="https://user-images.githubusercontent.com/90799662/168380940-b5a57cdb-7d8e-4033-8826-13c571f21eaa.png">
 
 ### High level diagrams
 #### Architecture Diagram
@@ -99,7 +102,7 @@ Different items should be displayed on Screens. Composite pattern is used to let
 
 ![observer pattern-level](https://user-images.githubusercontent.com/90799662/167265324-07ef0331-b330-468e-b97b-88c9c2452d9a.png)
 
-### State Machine Pattern
+### StateMachine Pattern
 * Totally we designed three levels, each level will add more obstacles than the previous one.
 * To allow later extension, we introduced state machine pattern.
 
@@ -132,13 +135,26 @@ Different items should be displayed on Screens. Composite pattern is used to let
 
 ## Individual Contributions and team journals
 ### Contributions
+* Di Chen
+  - Game Development
+    - Design and implementation of game logic - Observer pattern
+    - Implementation of automatic level upgrade - Observer, StateMachine pattern
+    - Implementation of automatic buff release - Singleton pattern
+    - Implementation of player-to-player rescue
+  - Code Maintenance
+  - UI Beautification
+  - Documentation Maintenance
+    - Design notes and related calss diagrams
+    - Burndown chart
+
+
 * Jing Shu
     - UI Wireframes
     - 1-min User Story Video
     - Implementation of Menu Screen(start screen ) - Composite pattern 
     - Implementation of MyWorld and transition of different screens - State Machine
-    - Implementation of MusicController to enable music in the game - singleton pattern 
-    - Display items on different screens - Abstract Factory pattern, singleton pattern, Composite pattern
+    - Implementation of MusicController to enable music in the game - Singleton pattern 
+    - Display items on different screens - Abstract Factory pattern, Singleton pattern, Composite pattern
     - Associated UML class diagrams and design notes
     - setup weekly stand-up meetings and maintain project materials
 
