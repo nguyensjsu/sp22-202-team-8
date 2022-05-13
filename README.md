@@ -132,6 +132,15 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
 
 ## Individual Contributions and team journals
 ### Contributions
+* Jing Shu
+    - UI Wireframes
+    - 1-min User Story Video
+    - Implementation of Menu Screen(start screen ) - Composite pattern 
+    - Implementation of MyWorld and transition of different screens - State Machine
+    - Implementation of MusicController to enable music in the game - singleton pattern 
+    - Display items on different screens - Abstract Factory pattern, singleton pattern
+    - Associated UML class diagrams
+    - setup weekly stand-up meetings and maintain project materials
 
 ### Journals
 * [BingJiun Miu's Journal](https://github.com/nguyensjsu/sp22-202-team-8/blob/main/journals/BingJiun%20Miu_Project_Journal.md)
