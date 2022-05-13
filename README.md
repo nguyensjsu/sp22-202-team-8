@@ -64,7 +64,7 @@ The factory method is used to create item objects (button, label) for different 
 * ConcreteProduct (eg: startButton, tryAgainButton, screenTitle): defines a product object to be created by the corresponding concrete factory.
 * Client(MenuScreen,GameOverScreen and LeaderboardScreen): uses a set of related products created in ConcreteFactory and doesn’t need to know how these products are created.
 
-![image](https://user-images.githubusercontent.com/98684620/165898089-7f72e115-d58a-4c6e-8538-fb194c2a3705.png)
+![image](https://user-images.githubusercontent.com/98684620/168223386-c838ec39-905f-412a-a355-da62a9681560.png)
 
 ### Singleton Pattern
 #### Factories as singletons
@@ -82,9 +82,9 @@ The factory method is used to create item objects (button, label) for different 
 * Introduced singleton pattern for subclasses of `Buff` to control the realse of buff object.
 
 ### Composite Pattern
-Different items should be displayed in Menu Screen. Composite pattern is used to let client treat these objects uniformly. The key of the Composite pattern is the interface IDisplayComponent, which declares operations that all composite object share for accessing and managing its child components, and also defines operation (setLocation()) that is specific to graphical objects.
+Different items should be displayed on Screens. Composite pattern is used to let client treat these objects uniformly. The key of the Composite pattern is the interface IDisplayComponent, which declares operations that all composite object share for accessing and managing its child components, and also defines operation (setLocation()) that is specific to graphical objects.
 
-![image](https://user-images.githubusercontent.com/98684620/165987438-2153fcbd-dbd5-4303-8d69-b070df2f4eaf.png)
+![image](https://user-images.githubusercontent.com/98684620/168221965-be368459-607a-483e-8017-8d81c6e4d46d.png)
 
 ### Observer Pattern
 #### Observer for Stopping Game
