@@ -33,6 +33,9 @@
 
 ## Project architecture
 ### UI Wireframes
+
+![image](https://user-images.githubusercontent.com/98684620/168208179-f066e43e-90fe-498f-b1a6-5a1da8f1041a.png)
+
 * Start Screen
   <img width="1101" alt="image" src="https://user-images.githubusercontent.com/90799662/166169722-7d798897-a194-4922-ae7c-b6aeb8873104.png">
 
@@ -48,6 +51,9 @@
 
 #### Component diagram
 ![image](https://user-images.githubusercontent.com/98665601/168164715-bfe0822b-ee1b-4dc8-8447-7ce198e6f16e.png)
+
+#### StateMachine diagram
+![image](https://user-images.githubusercontent.com/98684620/168186651-b8e33270-32fa-4bc7-81a7-9b1d61bdad5c.png)
 
 ## Key feature designs
 ### Abstract Factory Pattern
