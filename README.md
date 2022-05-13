@@ -138,8 +138,8 @@ Different items should be displayed in Menu Screen. Composite pattern is used to
     - Implementation of Menu Screen(start screen ) - Composite pattern 
     - Implementation of MyWorld and transition of different screens - State Machine
     - Implementation of MusicController to enable music in the game - singleton pattern 
-    - Display items on different screens - Abstract Factory pattern, singleton pattern
-    - Associated UML class diagrams
+    - Display items on different screens - Abstract Factory pattern, singleton pattern, Composite pattern
+    - Associated UML class diagrams and design notes
     - setup weekly stand-up meetings and maintain project materials
 
 ### Journals
