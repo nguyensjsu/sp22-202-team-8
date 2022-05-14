@@ -13,7 +13,7 @@
 ### Description 
 - This project is built in Greenfoot IDE and the main language we used is Java. The goal of this project is that we want to build a game for users to play with their family or friends during the Covid pandemic.
 
-- This game supports single player mode and dual players mode, each player have three hit points. You need to avoid obstacles and shot them to gain scores. As you destroy more obstacles, the game becomes more difficult. Try to survive in space and get a higher score!
+- This game supports single player mode and dual players mode, each player have three hit points. You need to avoid obstacles and shot back to gain scores. As you destroy more obstacles, the game becomes more difficult. Try to survive in space and get a higher score!
 ### Feature Set
 - Support both single player mode and dual players mode
 - Support player-to-player rescue in dual players mode
@@ -118,7 +118,7 @@ Different items should be displayed on Screens. Composite pattern is used to let
 * [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit?usp=sharing)
 * Burn down chart
 
-![Team 8 Burndown Chart](https://user-images.githubusercontent.com/90799662/167264001-e2251ba1-6fbe-429f-bef4-d10d6df2b987.svg)
+![00-Team 8 Burndown Chart](https://user-images.githubusercontent.com/90799662/168411875-b41634b7-12a3-4c87-b412-cfd79d46c47b.svg)
 
 * Weekly Scrum Task Board
    * Week 1
