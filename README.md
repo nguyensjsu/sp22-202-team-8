@@ -137,6 +137,19 @@ Different items should be displayed on Screens. Composite pattern is used to let
 
 ## Individual Contributions and team journals
 ### Contributions
+
+* BingJiun Miu
+  - Game Development
+    - Design and implementaion of Score counting function - Strategy pattern
+    - Implementation of score display and automatically update
+    - Implementation of level display and automatically update
+    - Implementation of three hits points function for player
+  - Code Maintenance
+  - Documentation Maintenance
+    - Architecture Diagram
+    - Component Diagram
+  - Depoly project to greenfoot 
+
 * Di Chen
   - Game Development
     - Design and implementation of game logic - Observer pattern
