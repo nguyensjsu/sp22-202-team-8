@@ -61,6 +61,7 @@ public class GameOverScreen extends Screen implements IDisplayComponent
                 UserInfo myInfo = UserInfo.getMyInfo();
                 if ( newScore > myInfo.getScore()) {
                     myInfo.setScore(newScore);
+                    myInfo.setString(0,world.gameMode);
                     myInfo.store();  // write back to server
                 }
             }
@@ -74,6 +75,7 @@ public class GameOverScreen extends Screen implements IDisplayComponent
                 UserInfo myInfo = UserInfo.getMyInfo();
                 if ( newScore > myInfo.getScore()) {
                     myInfo.setScore(newScore);
+                    myInfo.setString(0,world.gameMode);
                     myInfo.store();  // write back to server
                 }
             }

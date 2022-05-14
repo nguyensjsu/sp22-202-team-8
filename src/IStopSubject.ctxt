@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=IStopSubject
-comment0.text=\n\ Write\ a\ description\ of\ class\ IStopSubject\ here.\n\ \n\ @author\ (Dee)\ \n\ @version\ (v1.0)\n
-comment1.params=o
-comment1.target=void\ registerStopObserver(IStopObserver)
-comment2.params=
-comment2.target=void\ notifyGameOverObserver()
-numComments=3

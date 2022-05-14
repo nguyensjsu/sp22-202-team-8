@@ -152,7 +152,9 @@ public class LocalScoreBoard extends Actor implements IDisplayComponent
 
             int x = left + 10;
             drawString("#" + Integer.toString(playerData.getRank()), x, y+18, MAIN_COLOR, 14);
-            x += 50;
+            x += 25;
+            drawString(playerData.getString(0), x, y+18, MAIN_COLOR, 14);
+            x += 25;
             drawString(Integer.toString(playerData.getScore()), x, y+18, SCORE_COLOR, 14);
             x += 80;
             getImage().drawImage(playerData.getUserImage(), x, y);

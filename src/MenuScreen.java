@@ -76,12 +76,14 @@ public class MenuScreen extends Screen implements IDisplayComponent
                 Greenfoot.stop();
         }
         if(Greenfoot.mouseClicked(onePlayerMode)){
-               onePlayerMode.onClick();
-               twoPlayerMode.unClick();
+                world.gameMode = "SP";
+                onePlayerMode.onClick();
+                twoPlayerMode.unClick();
         }
         if(Greenfoot.mouseClicked(twoPlayerMode)){
-               twoPlayerMode.onClick();
-               onePlayerMode.unClick();
+                world.gameMode = "DP";
+                twoPlayerMode.onClick();
+                onePlayerMode.unClick();
         }
     }
 }

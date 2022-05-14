@@ -12,7 +12,7 @@ public class MyWorld extends World implements IStopObserver
     Counter counter;
     public static final int WIDTH = 1104;
     public static final int HEIGHT = 690;
-    
+    public static String gameMode = "SP";
     private Screen currentScreen;
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
