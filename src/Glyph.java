@@ -10,7 +10,7 @@ public abstract class Glyph extends Actor implements IDisplayComponent
     protected GreenfootImage img;
     protected int x, y; // location 
     protected MyWorld world;
-    protected static final GreenfootSound clickSound = new GreenfootSound("select-click.wav");
+    protected static final GreenfootSound clickSound = new GreenfootSound("select-click.mp3");
     
     /**
      * Constructor for objects of class Glyph

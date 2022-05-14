@@ -11,11 +11,11 @@ import java.util.HashMap;
 public class MusicController  
 {
     private HashMap<MusicState, GreenfootSound> musicMap;
-    private final GreenfootSound startMusic = new GreenfootSound("startMusic.wav");
-    private final GreenfootSound level1GameMusic = new GreenfootSound("gameMusic.wav");
+    private final GreenfootSound startMusic = new GreenfootSound("startMusic.mp3");
+    private final GreenfootSound level1GameMusic = new GreenfootSound("gameMusic.mp3");
     //private static final GreenfootSound level2GameMusic = new GreenfootSound("game1.mp3");
     //private static final GreenfootSound level3GameMusic = new GreenfootSound("game1.mp3");
-    private final GreenfootSound gameOverMusic = new GreenfootSound("gameOver.wav");
+    private final GreenfootSound gameOverMusic = new GreenfootSound("gameOver.mp3");
     
     private static MusicController theMusicController = null;
     
