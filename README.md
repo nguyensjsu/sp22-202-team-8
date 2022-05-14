@@ -115,7 +115,7 @@ Different items should be displayed on Screens. Composite pattern is used to let
 ![image](https://user-images.githubusercontent.com/98665601/167326537-2e6e6a08-1cb8-419e-aa81-64b79866b9df.png)
 
 ## Project backlog and chart
-* [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit#gid=0)
+* [Sprint Task Sheet](https://docs.google.com/spreadsheets/d/1DDuHcrnP0oVV-RvFCs6CP5kt70owV9LetTp2wmWGdMA/edit?usp=sharing)
 * Burn down chart
 
 ![Team 8 Burndown Chart](https://user-images.githubusercontent.com/90799662/167264001-e2251ba1-6fbe-429f-bef4-d10d6df2b987.svg)
