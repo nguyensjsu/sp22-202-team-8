@@ -158,6 +158,17 @@ Different items should be displayed on Screens. Composite pattern is used to let
     - Associated UML class diagrams and design notes
     - setup weekly stand-up meetings and maintain project materials
 
+
+* Yiyang Yin
+  - Game Development
+    - Design and implementation of leaderboard logic - Singleton pattern
+    - Implementation of Greenfoot UserInfo class integration
+    - Implementation of Score updating logic, in support of score ranking in both local and online
+    - Implementation of dual playing mode support and custom label storing in user profile
+  - Documentation Maintenance and development for recording and presentation
+  - UI design choice and architecture maintainance on Factory and Singleton patterns only
+  - Deployment to Greenfoot Scenarios backend
+
 ### Journals
 * [BingJiun Miu's Journal](https://github.com/nguyensjsu/sp22-202-team-8/blob/main/journals/BingJiun%20Miu_Project_Journal.md)
 * [Di Chen's Journal](https://github.com/nguyensjsu/sp22-202-team-8/blob/main/journals/Di%20Chen_Project_Journal.md)
