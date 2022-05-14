@@ -143,7 +143,7 @@ Different items should be displayed on Screens. Composite pattern is used to let
     - Design and implementaion of Score counting function - Strategy pattern
     - Implementation of score display and automatically update
     - Implementation of level display and automatically update
-    - Implementation of three hits points function for player
+    - Design and implementation of three hits points function for player
   - Code Maintenance
   - Documentation Maintenance
     - Architecture Diagram
