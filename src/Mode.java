@@ -40,6 +40,7 @@ public class Mode extends Glyph
     public void onClick() {
         settings = Settings.getInstance();
         settings.setPlayMode(mode);
+        clickSound.setVolume(30);
         clickSound.play();
         img.setTransparency(150);
         setImage(img);

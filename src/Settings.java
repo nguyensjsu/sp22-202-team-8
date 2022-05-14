@@ -11,7 +11,6 @@ public class Settings
     private static Settings theSettings = null;
     
     public enum MODE {
-    
         ONE_PLAYER,
         TWO_PLAYER
     }
