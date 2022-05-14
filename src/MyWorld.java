@@ -77,7 +77,6 @@ public class MyWorld extends World implements IStopObserver
         counter.registerScoreObserver(sm);
         
         setNextScreen(SCREENS.MENU);
-        Greenfoot.start();
     }
     
     private static void reset() {
