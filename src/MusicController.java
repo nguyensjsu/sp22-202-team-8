@@ -12,9 +12,7 @@ public class MusicController
 {
     private HashMap<MusicState, GreenfootSound> musicMap;
     private final GreenfootSound startMusic = new GreenfootSound("startMusic.mp3");
-    private final GreenfootSound level1GameMusic = new GreenfootSound("gameMusic.mp3");
-    //private static final GreenfootSound level2GameMusic = new GreenfootSound("game1.mp3");
-    //private static final GreenfootSound level3GameMusic = new GreenfootSound("game1.mp3");
+    private final GreenfootSound gameMusic = new GreenfootSound("gameMusic.mp3");
     private final GreenfootSound gameOverMusic = new GreenfootSound("gameOver.mp3");
     
     private static MusicController theMusicController = null;
@@ -23,9 +21,7 @@ public class MusicController
 
     enum MusicState {
         START,
-        LEVEL1,
-        LEVEL2,
-        LEVEL3,
+        GAME,
         GAME_OVER,
         NO_MUSIC
     }
@@ -50,10 +46,9 @@ public class MusicController
     public void startUp() {
         musicMap = new HashMap<>();
         musicMap.put(MusicState.START,startMusic);
-        musicMap.put(MusicState.LEVEL1,level1GameMusic);
-        musicMap.put(MusicState.LEVEL2,level1GameMusic);
-        musicMap.put(MusicState.LEVEL3,level1GameMusic);
+        musicMap.put(MusicState.GAME,gameMusic);
         musicMap.put(MusicState.GAME_OVER,gameOverMusic);
+        
         currentMusicState = MusicState.START;
         musicMap.get(currentMusicState).stop();
     }

@@ -77,6 +77,7 @@ public class MyWorld extends World implements IStopObserver
         counter.registerScoreObserver(sm);
         
         setNextScreen(SCREENS.MENU);
+        stopped();
     }
     
     private static void reset() {
@@ -194,7 +195,7 @@ public class MyWorld extends World implements IStopObserver
             case GAME: {
                 GameScreen.initialize();
                 counter.setValue(0);
-                mc.playLoop(MusicController.MusicState.LEVEL1);
+                mc.playLoop(MusicController.MusicState.GAME);
                 for (Heart heart : player1hp) {
                     heart.setLifeAmount(1);
                 }
