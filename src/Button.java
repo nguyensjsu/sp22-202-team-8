@@ -44,6 +44,7 @@ public class Button extends Glyph
      * To transite to nextScreen.
      */   
     public void onClick() {
+        clickSound.setVolume(30);
         clickSound.play();
         world.setNextScreen(nextScreen);
 

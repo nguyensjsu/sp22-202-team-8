@@ -57,7 +57,9 @@ public class MusicController
         stop();
         currentMusicState = state;
         if(currentMusicState != MusicState.NO_MUSIC) {
-            musicMap.get(currentMusicState).play();
+            GreenfootSound cur = musicMap.get(currentMusicState);
+            cur.setVolume(15);
+            cur.play();
         }
     }
     public void playLoop(MusicState state)
@@ -65,7 +67,9 @@ public class MusicController
         stop();
         currentMusicState = state;
         if(currentMusicState != MusicState.NO_MUSIC) {
-            musicMap.get(currentMusicState).playLoop();
+            GreenfootSound cur = musicMap.get(currentMusicState);
+            cur.setVolume(15);
+            cur.playLoop();
         }
     }
     public void stop()
