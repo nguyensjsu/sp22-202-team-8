@@ -87,6 +87,10 @@ The factory method is used to create item objects (button, label) for different 
 * The user can get one buff object from the same class at a time, but there could be two buff objects from different classes.
 * Introduced singleton pattern for subclasses of `Buff` to control the realse of buff object.
 
+#### Scoreboard as a singleton
+* There is only one scoreboard object realized in our game, in order to maintain an accurate representation of all the scores.
+* All score data will be obtained through methods in this only object, so that we don't need to worry about score update sequence order.
+
 ### Composite Pattern
 Different items should be displayed on Screens. Composite pattern is used to let client treat these objects uniformly. The key of the Composite pattern is the interface IDisplayComponent, which declares operations that all composite object share for accessing and managing its child components, and also defines operation (setLocation()) that is specific to graphical objects.
 
