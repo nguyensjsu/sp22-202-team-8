@@ -2,12 +2,12 @@
 
 ## Team members
 
-| Name          | Student ID    |  XP Core Value  |
-| ------------- |---------------| --------------- |
-| BingJiun Miu  | 015235233     |  Feedback       |
-| Di Chen       | 015905760     |  Simplicity     |
-| Jing Shu      | 015941146     |  Communication  |
-| Yiyang Yin    | 015973217     |  Courage        |
+| Name          |  XP Core Value  |
+| ------------- | --------------- |
+| BingJiun Miu  |  Feedback       |
+| Di Chen       |  Simplicity     |
+| Jing Shu      |  Communication  |
+| Yiyang Yin    |  Courage        |
 
 ## About the project
 ### Description 
@@ -30,6 +30,7 @@
 
 ## Links to project videos
 * [User Story Video](https://youtu.be/rzyDlRgbWqk)
+* [Project Demo Video](https://youtu.be/N-l3MLIJ5Io)
 * [Stand-up meeting](https://youtu.be/Z2-zADDSuik)
 * [Retrospective meeting](https://youtu.be/H5FF4OmhRXU)
 
@@ -57,7 +58,7 @@
 #### Component diagram
 ![image](https://user-images.githubusercontent.com/98665601/168164715-bfe0822b-ee1b-4dc8-8447-7ce198e6f16e.png)
 
-#### StateMachine diagram
+#### State diagram
 ![image](https://user-images.githubusercontent.com/98684620/168186651-b8e33270-32fa-4bc7-81a7-9b1d61bdad5c.png)
 
 ## Key feature designs
@@ -162,17 +163,16 @@ Different items should be displayed on Screens. Composite pattern is used to let
     - Design notes and related calss diagrams
     - Burndown chart
 
-
 * Jing Shu
-    - UI Wireframes
-    - 1-min User Story Video
-    - Implementation of Menu Screen(start screen ) - Composite pattern 
-    - Implementation of MyWorld and transition of different screens - State Machine
-    - Implementation of MusicController to enable music in the game - Singleton pattern 
-    - Display items on different screens - Abstract Factory pattern, Singleton pattern, Composite pattern
-    - Associated UML class diagrams and design notes
-    - setup weekly stand-up meetings and maintain project materials
-
+  - Game Development
+     - Implementation of Menu Screen(start screen ) - Composite pattern 
+     - Implementation of MyWorld and transition of different screens - State Machine
+     - Implementation of MusicController to enable music in the game - Singleton pattern 
+     - Display items on different screens - Abstract Factory pattern, Singleton pattern, Composite pattern
+  - UI Wireframes
+  - 1-min User Story Video
+  - Associated UML class diagrams and design notes
+  - Setup Scrum meetings and maintain project materials
 
 * Yiyang Yin
   - Game Development
